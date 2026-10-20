@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemapgrids.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.nandapath.com/</loc>
+    <loc>https://nandapath.vercel.app/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.nandapath.com/kedarkantha</loc>
+    <loc>https://nandapath.vercel.app/kedarkantha</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.nandapath.com/har-ki-dun</loc>
+    <loc>https://nandapath.vercel.app/har-ki-dun</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.nandapath.com/bali-pass</loc>
+    <loc>https://nandapath.vercel.app/bali-pass</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.nandapath.com/about</loc>
+    <loc>https://nandapath.vercel.app/about</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.nandapath.com/contact</loc>
+    <loc>https://nandapath.vercel.app/contact</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
