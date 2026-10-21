@@ -54,9 +54,7 @@ export default function HeroSlider() {
   return (
     <section id="home" className="relative min-h-[520px] sm:min-h-[640px] lg:min-h-[700px] w-full overflow-hidden bg-slate-900">
       
-      {/* =========================================================================
-          SLIDE 1: MAIN HERO
-         ========================================================================= */}
+      {/* SLIDE 1: MAIN HERO */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           currentSlide === 0 ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
@@ -100,7 +98,7 @@ export default function HeroSlider() {
               </a>
             </div>
 
-            {/* SEARCH BAR */}
+            {/* SEARCH BAR WITH CENTERING ALIGNMENT */}
             <div className="mt-5 sm:mt-8 relative w-full z-30" ref={searchRef}>
               <div className="flex items-center overflow-hidden rounded-xl bg-white/60 sm:bg-white/40 backdrop-blur-md border border-white/70 shadow-lg sm:shadow-[0_10px_25px_rgba(0,0,0,0.15)] transition-all focus-within:bg-white/80 focus-within:border-white">
                 <input
@@ -118,7 +116,7 @@ export default function HeroSlider() {
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="text-slate-600 hover:text-slate-900 text-xs font-bold px-2.5 sm:px-3 cursor-pointer"
+                    className="text-slate-600 hover:text-slate-900 text-xs font-bold px-2.5 sm:px-3 cursor-pointer shrink-0"
                   >
                     ✕
                   </button>
@@ -126,7 +124,7 @@ export default function HeroSlider() {
 
                 <button
                   onClick={() => setIsSearching(true)}
-                  className="bg-[#142957] hover:bg-sky-900 text-white p-3 sm:p-5 flex items-center justify-center shrink-0 transition cursor-pointer shadow-md"
+                  className="bg-[#142957] hover:bg-sky-900 text-white p-3.5 sm:p-5 flex items-center justify-center shrink-0 transition cursor-pointer shadow-md"
                   aria-label="Search"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,9 +165,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* =========================================================================
-          SLIDE 2: TRISHUL PARVAT
-         ========================================================================= */}
+      {/* SLIDE 2: TRISHUL PARVAT */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           currentSlide === 1 ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
@@ -229,9 +225,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* =========================================================================
-          SLIDE 3: SAFETY MEANS NANDAPATH
-         ========================================================================= */}
+      {/* SLIDE 3: SAFETY MEANS NANDAPATH */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           currentSlide === 2 ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
@@ -279,9 +273,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* =========================================================================
-          SLIDE 4: NANDA KOT & CUSTOM GROUP EXPEDITIONS
-         ========================================================================= */}
+      {/* SLIDE 4: NANDA KOT & CUSTOM GROUP EXPEDITIONS */}
       <div
         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
           currentSlide === 3 ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
@@ -350,7 +342,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* LEFT CAROUSEL ARROW - POSITIONED FLUSH TO EDGE ON MOBILE */}
+      {/* LEFT CAROUSEL ARROW */}
       <button
         onClick={prevSlide}
         aria-label="Previous Slide"
@@ -359,7 +351,7 @@ export default function HeroSlider() {
         &#10094;
       </button>
 
-      {/* RIGHT CAROUSEL ARROW - POSITIONED FLUSH TO EDGE ON MOBILE */}
+      {/* RIGHT CAROUSEL ARROW */}
       <button
         onClick={nextSlide}
         aria-label="Next Slide"

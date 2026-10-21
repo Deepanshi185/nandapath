@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import greenValleyGroupImg from "../assets/green-valley-group.jpg";
 
 const uttarakhandTreks = [
   {
@@ -39,8 +40,7 @@ const uttarakhandTreks = [
     altitude: "11,600 Ft",
     price: "₹10,500",
     discount: "19% OFF",
-    image:
-      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80",
+    image: greenValleyGroupImg, // Real authentic group photo on trail
     description:
       "Traverse through 2,000-year-old wooden architecture, alpine meadows, and serene riverside campsites in the Valley of Gods.",
     link: "/har-ki-dun",

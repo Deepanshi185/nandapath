@@ -16,9 +16,6 @@ import judaGroupImg from "../assets/juda-group.jpeg";
 const trekking =
   "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=85";
 
-const camping =
-  "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=85";
-
 const homestay =
   "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=85";
 
@@ -45,7 +42,6 @@ const BedVenturingIcon = () => (
 );
 
 // CONSULTATION & BOOKING FORM SECTION
-// CONSULTATION & BOOKING FORM SECTION - MOBILE OPTIMIZED (DESKTOP UNTOUCHED)
 function BookingConsultationForm() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -239,6 +235,7 @@ function BookingConsultationForm() {
     </section>
   );
 }
+
 // KEY INCLUSIONS STRIP
 function KeyInclusionsStrip() {
   const inclusions = [
@@ -313,7 +310,7 @@ function KeyInclusionsStrip() {
   );
 }
 
-// MODERN RESPONSIVE SAFETY PROTOCOL SECTION
+// SAFETY PROTOCOL SECTION
 function SafetySection() {
   const safetyPillars = [
     {
@@ -358,7 +355,6 @@ function SafetySection() {
     <section className="py-12 sm:py-16 bg-[#0B1736] text-white font-sans w-full overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* HEADER */}
         <div className="max-w-2xl mb-8 sm:mb-10 text-left space-y-2">
           <span className="text-[10px] sm:text-xs font-bold text-sky-400 uppercase tracking-widest bg-sky-950/80 px-3 py-1 rounded-md border border-sky-800/80 inline-block">
             UNCOMPROMISED SAFETY
@@ -371,7 +367,6 @@ function SafetySection() {
           </p>
         </div>
 
-        {/* 2-COLUMN COMPACT MOBILE GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
           {safetyPillars.map((pillar, idx) => (
             <div
@@ -397,6 +392,7 @@ function SafetySection() {
     </section>
   );
 }
+
 // TRAIL STORIES
 function TrekkerStoriesSection() {
   const stories = [
@@ -739,8 +735,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CLEAN MAIN FLAGSHIP CARD */}
-          <div className="lg:col-span-6">
+          {/* MAIN FLAGSHIP CARD - HIDDEN ON MOBILE TO PREVENT EXTRA SCROLL GAPS */}
+          <div className="hidden md:block lg:col-span-6">
             <Link
               to="/kedarkantha"
               className="group relative block h-60 sm:h-80 w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-lg transition-all duration-300 hover:shadow-2xl"
@@ -788,7 +784,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BEST OF UTTARAKHAND SECTION */}
+      {/* BEST OF UTTARAKHAND SECTION - MOBILE OPTIMIZED SLIDER */}
       <section id="best-uttarakhand" className="px-4 sm:px-10 lg:px-12 py-10 sm:py-12 bg-slate-50 border-t border-slate-100">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
@@ -797,11 +793,11 @@ export default function Home() {
             description="Handpicked Himalayan adventures across Garhwal and Kumaon valleys, pristine glaciers, and winter snow peaks."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div className="flex sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-4 sm:pb-0 scrollbar-none">
             {bestUttarakhandTreks.map((trek) => (
               <div
                 key={trek.id}
-                className="group rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-xs transition duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
+                className="min-w-[85%] sm:min-w-0 snap-center group rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs transition duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
               >
                 <div>
                   <div className="relative h-44 sm:h-48 overflow-hidden">
@@ -810,7 +806,7 @@ export default function Home() {
                       alt={trek.name}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
 
                     <span className="absolute top-3 left-3 rounded-full bg-sky-600 px-2.5 py-0.5 text-[10px] font-bold text-white shadow-xs">
                       {trek.region}
@@ -835,13 +831,13 @@ export default function Home() {
 
                     <h3 className="text-base sm:text-lg font-bold text-[#142957]">{trek.name}</h3>
 
-                    <p className="mt-1.5 text-xs leading-relaxed text-slate-600 line-clamp-2">
+                    <p className="mt-1.5 text-xs leading-relaxed text-slate-600 line-clamp-2 font-normal">
                       {trek.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-4 pb-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                <div className="px-4 pb-4 pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
                   <div>
                     <p className="text-[9px] uppercase font-bold tracking-wider text-slate-400">Package</p>
                     <p className="text-sm sm:text-base font-extrabold text-[#142957]">{trek.price}</p>
@@ -849,7 +845,7 @@ export default function Home() {
 
                   <Link
                     to={trek.path}
-                    className="rounded-full bg-[#142957] px-3.5 py-1.5 text-xs font-semibold text-white shadow-xs transition hover:bg-sky-800"
+                    className="rounded-xl bg-[#142957] px-4 py-2 text-xs font-bold text-white shadow-xs transition hover:bg-sky-800"
                   >
                     Explore &rarr;
                   </Link>
@@ -860,71 +856,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REGIONAL SECTION */}
+      {/* REGIONAL EXPLORE SECTION - BASELINE ALIGNED FIXED GRID */}
       <section className="w-full bg-white text-slate-800 py-12 sm:py-20 my-6 sm:my-10 border-t border-b border-slate-100 font-sans">
         <div className="mx-auto max-w-7xl px-4 sm:px-10 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
-            
-            <div className="lg:col-span-3 flex flex-col justify-between space-y-5 sm:space-y-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100">
-                  EXPLORE THE REGIONS
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-sans font-bold text-[#142957] mt-2.5 leading-tight tracking-tight">
-                  FEEL THE <br className="hidden sm:inline" />
-                  <span className="relative inline-block text-sky-600 pb-1 ml-1 sm:ml-0">
-                    ADVENTURE
-                    <span className="absolute bottom-0 left-0 w-full h-[3px] bg-sky-500 rounded-full" />
-                  </span>
-                </h2>
-                <p className="text-slate-500 text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed font-normal">
-                  From snow-capped peaks to high-altitude deserts, choose your next destination and start your journey.
-                </p>
-              </div>
+          
+          <div className="mb-6">
+            <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100">
+              EXPLORE THE REGIONS
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-sans font-bold text-[#142957] mt-2 tracking-tight">
+              FEEL THE ADVENTURE
+            </h2>
+            <p className="text-slate-500 text-xs sm:text-sm mt-1 max-w-md">
+              From snow-capped peaks to high-altitude deserts, choose your next destination and start your journey.
+            </p>
+          </div>
 
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
-                {regionsData.map((region, index) => {
-                  const isActive = activeRegionTab === index;
-                  return (
-                    <button
-                      key={region.id}
-                      onClick={() => setActiveRegionTab(index)}
-                      className={`w-full flex items-center gap-2.5 sm:gap-3.5 px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl text-left transition-all duration-300 cursor-pointer ${
-                        isActive
-                          ? "bg-[#142957] text-white font-bold shadow-md"
-                          : "text-slate-600 hover:text-[#142957] hover:bg-slate-50 border border-slate-200/80"
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[460px]">
+            
+            {/* LEFT COLUMN: 4 REGION BUTTONS */}
+            <div className="lg:col-span-3 flex flex-col justify-between gap-3 h-full">
+              {regionsData.map((region, index) => {
+                const isActive = activeRegionTab === index;
+                return (
+                  <button
+                    key={region.id}
+                    onClick={() => setActiveRegionTab(index)}
+                    className={`w-full flex-1 flex items-center gap-3 px-4 py-3 rounded-2xl text-xs sm:text-sm font-bold text-left transition cursor-pointer border ${
+                      isActive
+                        ? "bg-[#142957] text-white shadow-md border-[#142957]"
+                        : "bg-slate-50 text-slate-700 hover:text-[#142957] hover:bg-slate-100 border-slate-200"
+                    }`}
+                  >
+                    <div
+                      className={`p-1.5 rounded-lg transition-colors ${
+                        isActive ? "bg-sky-500 text-white" : "bg-sky-50 text-[#142957]"
                       }`}
                     >
-                      <div
-                        className={`p-1.5 sm:p-2 rounded-lg transition-colors ${
-                          isActive ? "bg-sky-500 text-white" : "bg-sky-50 text-[#142957]"
-                        }`}
-                      >
-                        {region.icon}
-                      </div>
-                      <span className="text-xs sm:text-sm font-semibold truncate">{region.name}</span>
-                    </button>
-                  );
-                })}
-              </div>
+                      {region.icon}
+                    </div>
+                    <span className="font-semibold truncate">{region.name}</span>
+                  </button>
+                );
+              })}
             </div>
 
+            {/* CENTER COLUMN: ACTIVE SHOWCASE CARD */}
             <Link
               to={activeRegion.link}
-              className="lg:col-span-6 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[300px] sm:min-h-[380px] lg:min-h-[460px] group shadow-lg border border-slate-200 block"
+              className="lg:col-span-6 relative rounded-3xl overflow-hidden min-h-[320px] lg:min-h-0 h-full group shadow-lg border border-slate-200 block flex flex-col justify-between p-6"
             >
               <img
                 src={activeRegion.image}
                 alt={activeRegion.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
 
-              <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold text-[#142957] shadow-sm">
-                {activeRegion.treksCount}
-              </span>
+              <div className="relative z-10 flex justify-end">
+                <span className="bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold text-[#142957] shadow-sm">
+                  {activeRegion.treksCount}
+                </span>
+              </div>
 
-              <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 sm:right-6 flex items-end justify-between">
+              <div className="relative z-10 flex items-end justify-between">
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-3xl font-bold font-sans text-white tracking-wide underline underline-offset-8 decoration-sky-400">
                     {activeRegion.title}
@@ -942,24 +937,25 @@ export default function Home() {
               </div>
             </Link>
 
-            <div className="lg:col-span-3 grid grid-cols-3 lg:flex lg:flex-col gap-2.5 sm:gap-4">
+            {/* RIGHT COLUMN: 3 MINI CARDS STRETCHED FLUSH AT BOTTOM BASELINE */}
+            <div className="lg:col-span-3 flex flex-col justify-between gap-3 h-full">
               {otherRegions.map((region) => {
                 const originalIndex = regionsData.findIndex((r) => r.id === region.id);
                 return (
                   <div
                     key={region.id}
                     onClick={() => setActiveRegionTab(originalIndex)}
-                    className="relative h-20 sm:h-28 lg:h-[136px] rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group shadow-sm border border-slate-200/90"
+                    className="relative flex-1 h-full rounded-2xl overflow-hidden cursor-pointer group shadow-sm border border-slate-200/90 flex items-end p-3.5"
                   >
                     <img
                       src={region.image}
                       alt={region.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition-colors" />
+                    <div className="absolute inset-0 bg-slate-950/50 group-hover:bg-slate-950/30 transition-colors" />
 
-                    <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-white">
-                      <span className="text-[10px] sm:text-xs font-bold tracking-wide font-sans drop-shadow-md truncate">
+                    <div className="relative z-10 text-white">
+                      <span className="text-xs font-bold tracking-wide font-sans drop-shadow-md truncate block">
                         {region.name}
                       </span>
                     </div>

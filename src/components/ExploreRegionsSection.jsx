@@ -43,38 +43,41 @@ export default function ExploreRegionsSection() {
     regionsData.find((r) => r.id === activeRegionId) || regionsData[0];
 
   return (
-    <section className="bg-[#0B132B] text-white py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+    <section className="bg-white text-slate-900 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-100 font-sans">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-sky-400">
+        
+        {/* HEADER */}
+        <div className="mb-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-sky-600">
             EXPLORE THE REGIONS
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-1 text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-1 text-[#142957]">
             FEEL THE ADVENTURE
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-slate-400 max-w-md">
+          <p className="mt-1 text-xs sm:text-sm text-slate-500 max-w-md">
             From snow-capped peaks to high-altitude deserts, choose your next destination and start your journey.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        {/* 3-COLUMN EQUAL-HEIGHT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[460px]">
           
-          {/* LEFT SIDEBAR: REGION SELECTOR TAB BUTTONS */}
-          <div className="lg:col-span-3 space-y-2 flex flex-col justify-center">
+          {/* LEFT COLUMN: 4 BUTTONS */}
+          <div className="lg:col-span-3 flex flex-col gap-3 h-full justify-between">
             {regionsData.map((reg) => {
               const isActive = reg.id === activeRegionId;
               return (
                 <button
                   key={reg.id}
                   onClick={() => setActiveRegionId(reg.id)}
-                  className={`w-full flex items-center gap-3 px-5 py-4 rounded-xl text-xs sm:text-sm font-bold text-left transition cursor-pointer ${
+                  className={`w-full flex-1 flex items-center gap-3 px-4 rounded-2xl text-xs sm:text-sm font-bold text-left transition cursor-pointer border ${
                     isActive
-                      ? "bg-sky-700/80 text-white shadow-lg border border-sky-500/50"
-                      : "bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-800/60"
+                      ? "bg-[#142957] text-white shadow-md border-[#142957]"
+                      : "bg-slate-50 text-slate-700 hover:text-[#142957] hover:bg-slate-100 border-slate-200"
                   }`}
                 >
                   <span className="text-base">
-                    {reg.id === "uttarakhand" && "🏔️"}
+                    {reg.id === "uttarakhand" && "📈"}
                     {reg.id === "himachal" && "🏔️"}
                     {reg.id === "kashmir" && "🛡️"}
                     {reg.id === "ladakh" && "⛺"}
@@ -85,37 +88,35 @@ export default function ExploreRegionsSection() {
             })}
           </div>
 
-          {/* MAIN CENTER HERO CARD - FULL CARD IS NOW A DIRECT CLICKABLE ROUTE LINK */}
+          {/* CENTER COLUMN: MAIN SHOWCASE CARD */}
           <Link
             to={activeRegion.link}
-            className="lg:col-span-6 relative rounded-2xl overflow-hidden border border-slate-800 min-h-[380px] group shadow-2xl block"
+            className="lg:col-span-6 relative rounded-3xl overflow-hidden border border-slate-200 h-full group shadow-lg flex flex-col justify-between p-6 block min-h-[350px] lg:min-h-0"
           >
             <img
               src={activeRegion.image}
               alt={activeRegion.name}
               className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
 
-            <span className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-slate-200 text-[10px] font-extrabold px-3 py-1 rounded-full border border-white/10">
-              {activeRegion.count}
-            </span>
+            <div className="relative z-10 flex justify-end">
+              <span className="bg-white/90 backdrop-blur-md text-[#142957] text-[11px] font-extrabold px-3 py-1 rounded-full shadow-xs">
+                {activeRegion.count}
+              </span>
+            </div>
 
-            {/* BOTTOM TITLE & CLICKABLE ARROW BUTTON */}
-            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+            <div className="relative z-10 flex items-end justify-between">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wider">
                   {activeRegion.name}
                 </h3>
-                <p className="text-xs text-slate-300 font-medium mt-1">
+                <p className="text-xs text-slate-200 font-medium mt-1">
                   {activeRegion.tagline}
                 </p>
               </div>
 
-              {/* ARROW CIRCLE BUTTON */}
-              <div
-                className="w-12 h-12 rounded-full bg-[#1E293B] group-hover:bg-sky-500 group-hover:text-white border border-slate-600 flex items-center justify-center text-white transition duration-300 group-hover:scale-110 shadow-xl shrink-0"
-              >
+              <div className="w-11 h-11 rounded-full bg-white text-[#142957] group-hover:bg-sky-500 group-hover:text-white flex items-center justify-center transition duration-300 group-hover:scale-110 shadow-lg shrink-0">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -123,23 +124,23 @@ export default function ExploreRegionsSection() {
             </div>
           </Link>
 
-          {/* RIGHT SIDEBAR: MINI CARDS */}
-          <div className="lg:col-span-3 grid grid-cols-1 gap-3">
+          {/* RIGHT COLUMN: 3 CARDS WITH flex-1 TO FILL EXACT HEIGHT */}
+          <div className="lg:col-span-3 flex flex-col gap-3 h-full justify-between">
             {regionsData
               .filter((r) => r.id !== activeRegionId)
               .map((reg) => (
                 <Link
                   key={reg.id}
                   to={reg.link}
-                  className="relative rounded-xl overflow-hidden h-28 border border-slate-800 group shadow-md block"
+                  className="relative flex-1 h-full rounded-2xl overflow-hidden border border-slate-200 group shadow-sm hover:shadow-md transition flex items-end p-4 block"
                 >
                   <img
                     src={reg.image}
                     alt={reg.name}
-                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-slate-950/60 group-hover:bg-slate-950/40 transition" />
-                  <div className="absolute bottom-3 left-3 text-white">
+                  <div className="absolute inset-0 bg-slate-950/50 group-hover:bg-slate-950/30 transition" />
+                  <div className="relative z-10 text-white">
                     <h4 className="font-bold text-xs uppercase tracking-wider">{reg.name}</h4>
                   </div>
                 </Link>
