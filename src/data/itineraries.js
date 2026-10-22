@@ -1,0 +1,107 @@
+export const trekItineraries = {
+  kedarkantha: {
+    title: "Kedarkantha Trek Itinerary",
+    duration: "5 Days / 4 Nights",
+    altitude: "12,500 Ft",
+    days: [
+      { day: "Day 1", title: "Drive from Dehradun to Sankri Basecamp", detail: "Drive through Mussoorie and along the Yamuna River to Sankri village (6,400 ft)." },
+      { day: "Day 2", title: "Trek from Sankri to Juda Ka Talab", detail: "Trek 4 km through oak and pine glades to camp beside the high alpine lake (9,100 ft)." },
+      { day: "Day 3", title: "Trek from Juda Ka Talab to Kedarkantha Basecamp", detail: "Ascend 4 km through open ridge meadows to the summit basecamp (11,250 ft)." },
+      { day: "Day 4", title: "Summit Push to Kedarkantha Peak & Descend to Sankri/Hargaon", detail: "Early morning summit push (12,500 ft) for 360° views, then descend to basecamp and Sankri." },
+      { day: "Day 5", title: "Drive from Sankri Back to Dehradun", detail: "Drive back to Dehradun arriving by early evening." },
+    ],
+  },
+  harKiDun: {
+    title: "Har Ki Dun Trek Itinerary",
+    duration: "7 Days / 6 Nights",
+    altitude: "11,600 Ft",
+    days: [
+      { day: "Day 1", title: "Dehradun to Sankri Basecamp", detail: "190 km drive to Sankri basecamp along mountain rivers." },
+      { day: "Day 2", title: "Sankri to Taluka Drive & Trek to Osla/Seema", detail: "Drive 12 km to Taluka, then trek 14 km along Supin River to ancient Osla village." },
+      { day: "Day 3", title: "Osla to Har Ki Dun Valley", detail: "Ascend 11 km through alpine meadows to the cradle-shaped valley (11,600 ft)." },
+      { day: "Day 4", title: "Har Ki Dun Exploration & Maninda Tal Walk", detail: "Day walk towards Maninda Tal alpine lake under Swargarohini peak." },
+      { day: "Day 5", title: "Har Ki Dun to Osla Village", detail: "Trek down 11 km to Osla campsite." },
+      { day: "Day 6", title: "Osla to Taluka & Drive to Sankri", detail: "Trek 14 km to Taluka and drive back to Sankri for hot shower and dinner." },
+      { day: "Day 7", title: "Sankri to Dehradun Drive", detail: "Return drive to Dehradun." },
+    ],
+  },
+  baliPass: {
+    title: "Bali Pass Crossover Itinerary",
+    duration: "8 Days / 7 Nights",
+    altitude: "16,207 Ft",
+    days: [
+      { day: "Day 1", title: "Dehradun to Sankri", detail: "Drive from Dehradun to Sankri basecamp." },
+      { day: "Day 2", title: "Sankri to Taluka & Trek to Chilurgad", detail: "Trek along Swargarohini valley trail." },
+      { day: "Day 3", title: "Chilurgad to Rainbasera", detail: "Hike along river beds into dense pine wilderness." },
+      { day: "Day 4", title: "Rainbasera to Ruinsara Tal", detail: "Reach the sacred high-altitude alpine lake Ruinsara Tal (11,800 ft)." },
+      { day: "Day 5", title: "Ruinsara Tal to Odari Camp", detail: "Ascend to Odari high camp (13,100 ft) for acclimatization." },
+      { day: "Day 6", title: "Odari to Bali Pass Basecamp", detail: "Trek over moraines to Bali Col Base (14,100 ft)." },
+      { day: "Day 7", title: "Summit Pass Crossover & Descend to Yamunotri/Lower Dhamni", detail: "Early morning pass crossing at 16,207 ft down to Lower Dhamni." },
+      { day: "Day 8", title: "Lower Dhamni to Janki Chatti & Drive to Dehradun", detail: "Short trek down and return drive." },
+    ],
+  },
+  pindariGlacier: {
+    title: "Pindari Glacier Trek Itinerary",
+    duration: "7 Days / 6 Nights",
+    altitude: "12,300 Ft",
+    days: [
+      { day: "Day 1", title: "Kathgodam to Loharkhet/Kharkiya", detail: "Drive along Kumaon hills via Almora and Bageshwar." },
+      { day: "Day 2", title: "Kharkiya to Khati Village", detail: "Trek 5 km to Khati, the largest traditional village on the trail." },
+      { day: "Day 3", title: "Khati to Dwali", detail: "Trek 11 km alongside roaring Pindar River through rhododendron forests." },
+      { day: "Day 4", title: "Dwali to Phurkia Basecamp", detail: "Gradual 5 km ascent to Phurkia basecamp (10,600 ft)." },
+      { day: "Day 5", title: "Phurkia to Zero Point (Pindari Glacier) & Return to Dwali", detail: "Early trek to Zero Point (12,300 ft) right beneath Mt Nanda Kot, return to Dwali." },
+      { day: "Day 6", title: "Dwali to Khati/Kharkiya", detail: "Trek back down along the river." },
+      { day: "Day 7", title: "Kharkiya to Kathgodam Drive", detail: "Return drive back to Kathgodam." },
+    ],
+  },
+  kuariPass: {
+    title: "Kuari Pass Trek Itinerary",
+    duration: "6 Days / 5 Nights",
+    altitude: "12,516 Ft",
+    days: [
+      { day: "Day 1", title: "Rishikesh/Haridwar to Dhak Village", detail: "Drive along the Alaknanda river to Dhak village basecamp near Joshimath." },
+      { day: "Day 2", title: "Dhak to Gulling Top", detail: "Trek 6 km through hemlock forests to Gulling campsite (9,600 ft)." },
+      { day: "Day 3", title: "Gulling Top to Tali Forest Camp", detail: "Ascend 5 km to Tali forest glade with views of Mt Nanda Devi." },
+      { day: "Day 4", title: "Tali to Kuari Pass Summit & Khullara", detail: "Trek across Lord Curzon trail pass (12,516 ft) with views of Mt Trishul and Kamet." },
+      { day: "Day 5", title: "Tali to Auli & Drive to Pipalkoti", detail: "Descend to Auli bugyal and drive down to Pipalkoti." },
+      { day: "Day 6", title: "Pipalkoti Drive to Rishikesh", detail: "Return drive to Rishikesh." },
+    ],
+  },
+  gaumukhTapovan: {
+    title: "Gaumukh Tapovan Trek Itinerary",
+    duration: "6 Days / 5 Nights",
+    altitude: "14,600 Ft",
+    days: [
+      {
+        day: "Day 1",
+        title: "Drive from Dehradun / Rishikesh to Gangotri Basecamp",
+        detail: "Drive 240 km along the Bhagirathi River through Uttarkashi to the holy town of Gangotri (10,000 ft). Overnight in homestay.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Gangotri to Chirbasa / Bhujbasa",
+        detail: "Trek 14 km inside Gangotri National Park along pine forests and boulder fields to Bhujbasa campsite (12,450 ft) facing Bhagirathi peaks.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Bhujbasa to Gaumukh Glacier & Tapovan High Camp",
+        detail: "Trek to Gaumukh Snout (the origin of Bhagirathi river), then climb steep moraines up to the alpine meadow of Tapovan (14,200 ft) right at the base of Mt Shivling.",
+      },
+      {
+        day: "Day 4",
+        title: "Explore Tapovan Meadows & Meru Glacier",
+        detail: "Acclimatization and exploration day at Tapovan with front-row vistas of Mt Shivling, Meru Peak, and Bhagirathi sister peaks.",
+      },
+      {
+        day: "Day 5",
+        title: "Trek from Tapovan Back to Chirbasa / Gangotri",
+        detail: "Descend 18 km through Gaumukh glacier moraines back to Gangotri basecamp.",
+      },
+      {
+        day: "Day 6",
+        title: "Drive from Gangotri Back to Dehradun",
+        detail: "Scenic return drive to Dehradun or Rishikesh by evening.",
+      },
+    ],
+  },  
+};

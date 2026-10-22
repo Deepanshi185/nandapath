@@ -8,6 +8,7 @@ import RegionDetail from "./pages/RegionDetail";
 import TrekDetail from "./pages/TrekDetail";
 import Kumaon from "./pages/Kumaon";
 import HarKiDunDetails from "./pages/HarKiDunDetails";
+import Faq from "./pages/Faq";
 import Newsletter from "./pages/Newsletter";
 import RupinPassDetails from "./pages/RupinPassDetails";
 
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/uttarakhand" element={<Uttarakhand />} />
           <Route path="/himachal" element={<Uttarakhand />} />
           <Route path="/kashmir" element={<Uttarakhand />} />
+          <Route path="/faqs" element={<Faq />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

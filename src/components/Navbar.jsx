@@ -23,15 +23,15 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm transition-all font-sans w-full">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all font-sans w-full">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         
         {/* LOGO */}
         <Link to="/" onClick={closeMobileMenu} className="flex items-center gap-3 py-1 shrink-0">
           <img
             src={nandaPathLogo}
             alt="NandaPath Adventures"
-            className="h-12 sm:h-16 md:h-20 w-auto max-h-full object-contain rounded-lg transition-transform duration-200 hover:scale-105 mix-blend-multiply bg-transparent"
+            className="h-10 sm:h-14 md:h-16 w-auto max-h-full object-contain rounded-lg transition-transform duration-200 hover:scale-105 mix-blend-multiply bg-transparent"
           />
         </Link>
 
@@ -220,8 +220,8 @@ export default function Navbar() {
               <div className="absolute top-full right-0 w-[200px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 z-50">
                 <ul className="space-y-2.5 text-xs font-medium text-slate-700">
                   <li><Link to="/blog" className="hover:text-sky-600 hover:underline block py-1">Our Blog</Link></li>
+                  <li><Link to="/faqs" className="hover:text-sky-600 hover:underline block py-1">FAQs</Link></li>
                   <li><Link to="/about" className="hover:text-sky-600 hover:underline block py-1">About Us</Link></li>
-                  <li><Link to="/newsletter" className="hover:text-sky-600 hover:underline block py-1">Newsletter</Link></li>
                   <li><Link to="/contact" className="hover:text-sky-600 hover:underline block py-1">Contact</Link></li>
                 </ul>
               </div>
@@ -242,7 +242,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={closeMobileMenu}
-            className="rounded-full bg-[#142957] px-4 sm:px-6 py-2 sm:py-2.5 text-xs font-bold text-white shadow-xs transition hover:bg-sky-800 shrink-0"
+            className="rounded-full bg-[#142957] hover:bg-sky-900 px-4 sm:px-6 py-2 sm:py-2.5 text-xs font-bold text-white shadow-xs transition shrink-0"
           >
             Let's Talk
           </Link>
@@ -378,8 +378,8 @@ export default function Navbar() {
             {activeMobileSubmenu === "more" && (
               <div className="pl-3 py-2 space-y-2 text-xs font-medium text-slate-600 bg-slate-50 rounded-xl mt-2 p-3">
                 <Link to="/blog" onClick={closeMobileMenu} className="block hover:text-[#142957] py-0.5">Our Blog</Link>
+                <Link to="/faqs" onClick={closeMobileMenu} className="block hover:text-[#142957] py-0.5">FAQs</Link>
                 <Link to="/about" onClick={closeMobileMenu} className="block hover:text-[#142957] py-0.5">About Us</Link>
-                <Link to="/newsletter" onClick={closeMobileMenu} className="block hover:text-[#142957] py-0.5">Newsletter</Link>
                 <Link to="/contact" onClick={closeMobileMenu} className="block hover:text-[#142957] py-0.5">Contact</Link>
               </div>
             )}
