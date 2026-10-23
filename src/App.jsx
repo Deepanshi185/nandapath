@@ -1,42 +1,33 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Uttarakhand from "./pages/Uttarakhand";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import RegionDetail from "./pages/RegionDetail";
-import TrekDetail from "./pages/TrekDetail";
-import Kumaon from "./pages/Kumaon";
-import HarKiDunDetails from "./pages/HarKiDunDetails";
-import Faq from "./pages/Faq";
-import Newsletter from "./pages/Newsletter";
-import RupinPassDetails from "./pages/RupinPassDetails";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+
+// Helper wrapper to handle dynamic slug routing for all treks
+function DynamicTrekRoute() {
+  const { slug } = useParams();
+  return <RegionDetail slug={slug} />;
+}
 
 export default function App() {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/uttarakhand" element={<Uttarakhand />} />
-          <Route path="/himachal" element={<Uttarakhand />} />
-          <Route path="/kashmir" element={<Uttarakhand />} />
-          <Route path="/faqs" element={<Faq />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          {/* Dynamic regional routes */}
-          <Route path="/region/:region" element={<RegionDetail />} />
-          <Route path="/garhwal" element={<RegionDetail />} />
-          <Route path="/kumaon" element={<Kumaon />} />
-          <Route path="/newsletter" element={<Newsletter />} />
-          {/* INDIVIDUAL TREK ROUTES */}
-          <Route path="/har-ki-dun" element={<HarKiDunDetails />} />
-          <Route path="/kedarkantha" element={<TrekDetail />} />
-          <Route path="/rupin-pass" element={<RupinPassDetails />} />
-          <Route path="/:slug" element={<TrekDetail />} />
-        </Routes>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+        {/* Region & Trek Specific Routes */}
+        <Route path="/:slug" element={<DynamicTrekRoute />} />
+        <Route path="/uttarakhand/:slug" element={<DynamicTrekRoute />} />
+        <Route path="/garhwal/:slug" element={<DynamicTrekRoute />} />
+        <Route path="/kumaon/:slug" element={<DynamicTrekRoute />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
