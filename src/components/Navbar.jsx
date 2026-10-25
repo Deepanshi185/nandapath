@@ -204,29 +204,29 @@ export default function Navbar() {
           </div>
 
           {/* MORE DROPDOWN */}
-          <div
-            className="relative"
-            onMouseEnter={() => setIsMoreOpen(true)}
-            onMouseLeave={() => setIsMoreOpen(false)}
-          >
-            <div className="flex items-center gap-1.5 hover:text-sky-600 py-6 transition cursor-pointer">
-              <span>More</span>
-              <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+<div
+  className="relative"
+  onMouseEnter={() => setIsMoreOpen(true)}
+  onMouseLeave={() => setIsMoreOpen(false)}
+>
+  <div className="flex items-center gap-1.5 hover:text-sky-600 py-6 transition cursor-pointer">
+    <span>More</span>
+    <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 
-            {isMoreOpen && (
-              <div className="absolute top-full right-0 w-[200px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 z-50">
-                <ul className="space-y-2.5 text-xs font-medium text-slate-700">
-                  <li><Link to="/blog" className="hover:text-sky-600 hover:underline block py-1">Our Blog</Link></li>
-                  <li><Link to="/faqs" className="hover:text-sky-600 hover:underline block py-1">FAQs</Link></li>
-                  <li><Link to="/about" className="hover:text-sky-600 hover:underline block py-1">About Us</Link></li>
-                  <li><Link to="/contact" className="hover:text-sky-600 hover:underline block py-1">Contact</Link></li>
-                </ul>
-              </div>
-            )}
-          </div>
+  {isMoreOpen && (
+    <div className="absolute top-full right-0 w-[200px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 z-50">
+      <ul className="space-y-2.5 text-xs font-medium text-slate-700">
+        <li><Link to="/blog" className="hover:text-sky-600 hover:underline block py-1">Our Blog</Link></li>
+        <li><Link to="/faqs" className="hover:text-sky-600 hover:underline block py-1">FAQs</Link></li>
+        <li><Link to="/about" className="hover:text-sky-600 hover:underline block py-1">About Us</Link></li>
+        <li><Link to="/contact" className="hover:text-sky-600 hover:underline block py-1">Contact</Link></li>
+      </ul>
+    </div>
+  )}
+</div>
 
           {/* RESORTS LINK */}
           <a href="#homestays" className="hover:text-sky-600 transition flex items-center gap-1.5">

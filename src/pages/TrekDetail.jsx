@@ -8,12 +8,18 @@ import summitShrineImg from "../assets/summit-shrine.jpeg";
 import basecampImg from "../assets/basecamp.jpeg";
 import campsiteMealImg from "../assets/campsite-meal.jpeg";
 import judaGroupImg from "../assets/juda-group.jpeg";
-import groupBatchImg from "../assets/group-batch2.jpeg"; // Authentic Sankri / Mountain Batch Photo
+import groupBatchImg from "../assets/group-batch2.jpeg";
 
 const nandaDeviImg =
   "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80";
 const harKiDunBannerImg =
-  "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80"; // Authentic Swargarohini & Har Ki Dun Valley
+  "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80";
+const baliPassImg =
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80";
+const roopkundImg =
+  "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80";
+const gaumukhImg =
+  "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80";
 
 const treksDatabase = {
   "kedarkantha": {
@@ -89,6 +95,366 @@ const treksDatabase = {
         altitude: "Dehradun drop",
         highlights: "Valley descent and return transfer.",
         details: "Trek down to Sankri basecamp and board vehicle back to Dehradun for evening drop.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+
+  "bali-pass": {
+    title: "Bali Pass High Altitude Expedition",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "Connecting Yamunotri Valley with Har Ki Dun Valley, Bali Pass is a thrilling crossover trek offering grand views of Swargarohini, Bandarpoonch, and Ruinsara Tal.",
+    bannerImage: baliPassImg,
+    sideImage: basecampImg,
+    specifications: [
+      { label: "Duration", value: "8 Days / 7 Nights", icon: "⏱️" },
+      { label: "Max Altitude", value: "16,200 ft / 4,940 m", icon: "🏔️" },
+      { label: "Trek Grade", value: "Difficult / Technical Pass", icon: "📈" },
+      { label: "Best Season", value: "May - June & Sep - Oct", icon: "☀️" },
+      { label: "Basecamp Hub", value: "Sankri Basecamp", icon: "📍" },
+    ],
+    inclusions: [
+      "All meals on trek freshly cooked at high camps",
+      "Alpine dome tents, crampons, ice axes & safety ropes",
+      "Technical Mountaineering Guide & support team",
+      "Forest permits, entry charges & camping permits",
+    ],
+    exclusions: [
+      "Backpack offloading charges",
+      "Personal gear & insurance",
+      "Transport outside itinerary",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Dehradun to Sankri Basecamp",
+        distance: "200 km drive",
+        altitude: "6,400 ft / 1,950 m",
+        highlights: "Scenic Yamuna river drive.",
+        details: "Pick up from Dehradun railway station early morning. Drive through Purola and Mori along Tons river into Sankri village.",
+      },
+      {
+        day: "Day 2",
+        title: "Drive to Taluka & Trek to Seema / Pauni Garaat",
+        distance: "12 km drive + 10 km trek",
+        altitude: "8,200 ft / 2,500 m",
+        highlights: "Supin river valley trail.",
+        details: "Drive to Taluka and trek alongside Supin river past wooden houses and walnut groves.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Seema to Rainbasera",
+        distance: "9 km trek",
+        altitude: "10,200 ft / 3,110 m",
+        highlights: "Ruinsara river confluence & waterfall trails.",
+        details: "Ascend past the confluence of Supin and Ruinsara rivers into remote alpine forest.",
+      },
+      {
+        day: "Day 4",
+        title: "Trek from Rainbasera to Ruinsara Tal Lake",
+        distance: "7 km trek",
+        altitude: "11,800 ft / 3,600 m",
+        highlights: "Sacred high alpine lake & Swargarohini views.",
+        details: "Reach the pristine glacier-fed Ruinsara Lake surrounded by birch trees and snow peaks.",
+      },
+      {
+        day: "Day 5",
+        title: "Trek from Ruinsara Tal to Bali Pass Basecamp (Thanga)",
+        distance: "6 km trek",
+        altitude: "14,100 ft / 4,300 m",
+        highlights: "Moraine ridge climbing & glacier camp.",
+        details: "Climb steep moraine ridges onto the high altitude snowfields below Bali Pass.",
+      },
+      {
+        day: "Day 6",
+        title: "Bali Pass Basecamp across Pass (16,200 ft) to Damini Camp",
+        distance: "9 km trek",
+        altitude: "16,200 ft / 4,940 m",
+        highlights: "Pass crossing with ropes & panoramic views of Kalanag.",
+        details: "3:00 AM alpine start. Use crampons and fixed ropes to cross Bali Pass ridge and descend to Damini camp.",
+      },
+      {
+        day: "Day 7",
+        title: "Trek from Damini Camp to Jankichatti & Drive to Barkot",
+        distance: "8 km trek + 15 km drive",
+        altitude: "7,800 ft / 2,375 m",
+        highlights: "Yamunotri holy trail descent.",
+        details: "Descend to Jankichatti pilgrims' trail and drive to Barkot hotel stay.",
+      },
+      {
+        day: "Day 8",
+        title: "Drive from Barkot back to Dehradun",
+        distance: "140 km drive",
+        altitude: "Dehradun drop",
+        highlights: "Return transfer.",
+        details: "Morning transfer back to Dehradun railway station/airport for evening departure.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+
+  "roopkund": {
+    title: "Roopkund Mystery Lake Trek",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "World famous high-altitude glacial lake trek in the Trishul massif, renowned for its skeletal remains and vast Bugyal meadows at Ali & Bedni.",
+    bannerImage: roopkundImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "8 Days / 7 Nights", icon: "⏱️" },
+      { label: "Max Altitude", value: "15,750 ft / 4,800 m", icon: "🏔️" },
+      { label: "Trek Grade", value: "Moderate to Difficult", icon: "📈" },
+      { label: "Best Season", value: "May - June & Sep - Oct", icon: "☀️" },
+      { label: "Basecamp Hub", value: "Lohajung Village", icon: "📍" },
+    ],
+    inclusions: [
+      "Nutritious vegetarian meals at all camps",
+      "Dome tent accommodation & Lohajung homestay",
+      "Certified Expedition Leader & Support Staff",
+      "Forest entry & meadow permits",
+    ],
+    exclusions: ["Backpack offloading charges", "Personal gear & insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Kathgodam / Dehradun to Lohajung",
+        distance: "210 km drive",
+        altitude: "7,600 ft / 2,316 m",
+        highlights: "Kumaon hills & river confluence drive.",
+        details: "Pick up from Kathgodam/Dehradun and drive through Almora and Kausani to Lohajung basecamp.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Lohajung to Didna Village",
+        distance: "8 km trek",
+        altitude: "8,050 ft / 2,450 m",
+        highlights: "Neel Ganga river cross & oak woodland.",
+        details: "Descend to Neel Ganga river and climb through dense forest to Didna homestay village.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Didna to Ali Bugyal Meadows",
+        distance: "10.5 km trek",
+        altitude: "11,500 ft / 3,500 m",
+        highlights: "Asia's largest alpine velvet grass meadows.",
+        details: "Climb through oak forest to open up onto the rolling green expanses of Ali Bugyal.",
+      },
+      {
+        day: "Day 4",
+        title: "Trek from Ali Bugyal to Ghora Lotani via Bedni Bugyal",
+        distance: "7 km trek",
+        altitude: "12,800 ft / 3,900 m",
+        highlights: "Views of Mt. Trishul & Nanda Ghunti.",
+        details: "Trek across Bedni Bugyal and ascend to Ghora Lotani high camp.",
+      },
+      {
+        day: "Day 5",
+        title: "Trek from Ghora Lotani to Bhagwabasa",
+        distance: "5 km trek",
+        altitude: "14,100 ft / 4,300 m",
+        highlights: "Cave stone shelters & snow landscape.",
+        details: "Ascend past Kalu Vinayak temple to reach the rocky snowbound Bhagwabasa camp.",
+      },
+      {
+        day: "Day 6",
+        title: "Bhagwabasa to Roopkund Lake & Junargali Pass, descend to Bedni",
+        distance: "10 km trek",
+        altitude: "15,750 ft / 4,800 m",
+        highlights: "Skeletal lake edge & Junargali ridge overlook.",
+        details: "3:00 AM push to Roopkund Glacial Lake. Option to reach Junargali pass ridge before descending back to Bedni Bugyal.",
+      },
+      {
+        day: "Day 7",
+        title: "Trek from Bedni Bugyal to Wan & Drive to Lohajung",
+        distance: "12 km trek + 15 km drive",
+        altitude: "7,600 ft / 2,316 m",
+        highlights: "Layan forest descent.",
+        details: "Trek down through cypress trees to Wan village and take vehicle transfer back to Lohajung.",
+      },
+      {
+        day: "Day 8",
+        title: "Drive from Lohajung back to Kathgodam",
+        distance: "210 km drive",
+        altitude: "Kathgodam drop",
+        highlights: "Return transfer.",
+        details: "Board morning transfer back to Kathgodam railway station.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+
+  "gaumukh-tapovan": {
+    title: "Gaumukh Tapovan Glacier Expedition",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "Sacred trail to the source of River Ganga at Gaumukh Glacier, leading to the high alpine meadows of Tapovan right at the foot of Mt. Shivling (21,466 ft).",
+    bannerImage: gaumukhImg,
+    sideImage: basecampImg,
+    specifications: [
+      { label: "Duration", value: "8 Days / 7 Nights", icon: "⏱️" },
+      { label: "Max Altitude", value: "14,600 ft / 4,450 m", icon: "🏔️" },
+      { label: "Trek Grade", value: "Moderate to Difficult", icon: "📈" },
+      { label: "Best Season", value: "May - June & Sep - Oct", icon: "☀️" },
+      { label: "Basecamp Hub", value: "Gangotri Temple Town", icon: "📍" },
+    ],
+    inclusions: [
+      "All vegetarian meals prepared on trail",
+      "Tent dome accommodation & Gangotri guesthouse",
+      "Certified Mountaineering Leader & Guides",
+      "Gangotri National Park entry permits & Bhagirathi permits",
+    ],
+    exclusions: ["Backpack offloading fee", "Personal gear & insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Dehradun / Haridwar to Gangotri",
+        distance: "240 km drive",
+        altitude: "10,200 ft / 3,100 m",
+        highlights: "Bhagirathi river drive & Uttarkashi stay.",
+        details: "Drive through Mussoorie and Uttarkashi along Bhagirathi river to Gangotri temple base.",
+      },
+      {
+        day: "Day 2",
+        title: "Acclimatization Day at Gangotri",
+        distance: "Local walks",
+        altitude: "10,200 ft / 3,100 m",
+        highlights: "Gangotri Temple Darshan & Surya Kund waterfall.",
+        details: "Acclimatize with short hikes to Surya Kund and evening Ganga Aarti.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Gangotri to Chirbasa",
+        distance: "9 km trek",
+        altitude: "11,800 ft / 3,600 m",
+        highlights: "Pine trees trail & valley views.",
+        details: "Enter Gangotri National Park and trek along Bhagirathi river to Chirbasa pine campsite.",
+      },
+      {
+        day: "Day 4",
+        title: "Trek from Chirbasa to Bhojwasa",
+        distance: "5 km trek",
+        altitude: "12,450 ft / 3,792 m",
+        highlights: "Bhojpatra birch tree forests & Bhagirathi peaks.",
+        details: "Short day climb to Bhojwasa campsite facing Bhagirathi I, II, III peaks.",
+      },
+      {
+        day: "Day 5",
+        title: "Trek from Bhojwasa to Gaumukh Glacier & Tapovan",
+        distance: "9 km trek",
+        altitude: "14,600 ft / 4,450 m",
+        highlights: "Gaumukh Ganga source ice snout & Mt. Shivling base.",
+        details: "Trek to Gaumukh ice snout, cross the moraine glacier, and climb steep ridge to Tapovan alpine meadow.",
+      },
+      {
+        day: "Day 6",
+        title: "Explore Tapovan Meadow & descend to Bhojwasa",
+        distance: "8 km trek",
+        altitude: "12,450 ft / 3,792 m",
+        highlights: "Close-up view of Mt. Shivling & Meru peak.",
+        details: "Morning reflection photos of Mt. Shivling before crossing glacier back to Bhojwasa camp.",
+      },
+      {
+        day: "Day 7",
+        title: "Trek from Bhojwasa back to Gangotri",
+        distance: "14 km trek",
+        altitude: "10,200 ft / 3,100 m",
+        highlights: "Return descent walk.",
+        details: "Trek down along Bhagirathi river to Gangotri base town.",
+      },
+      {
+        day: "Day 8",
+        title: "Drive from Gangotri back to Dehradun",
+        distance: "240 km drive",
+        altitude: "Dehradun drop",
+        highlights: "Return transfer.",
+        details: "Morning transfer from Gangotri back to Dehradun railway station/airport.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+
+  "pindari-glacier": {
+    title: "Pindari Glacier Kumaon Expedition",
+    region: "Uttarakhand • Kumaon Himalayas",
+    description:
+      "Classic Kumaon region glacier trek offering accessible ice routes, vibrant rhododendron forests, and dramatic mountain views of Changuch and Nanda Kot.",
+    bannerImage: campsiteMealImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "7 Days / 6 Nights", icon: "⏱️" },
+      { label: "Max Altitude", value: "12,300 ft / 3,749 m", icon: "🏔️" },
+      { label: "Trek Grade", value: "Moderate", icon: "📈" },
+      { label: "Best Season", value: "April - June & Sep - Nov", icon: "☀️" },
+      { label: "Basecamp Hub", value: "Khati Village / Bageshwar", icon: "📍" },
+    ],
+    inclusions: [
+      "All vegetarian meals freshly prepared",
+      "Khati village homestays and alpine dome tents",
+      "Certified Expedition Leader",
+      "Kumaon forest permits",
+    ],
+    exclusions: ["Backpack offloading fee", "Personal gear & insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Kathgodam to Bageshwar / Loharkhet",
+        distance: "180 km drive",
+        altitude: "5,800 ft / 1,760 m",
+        highlights: "Almora hill drive & Sarayu river views.",
+        details: "Pick up from Kathgodam railway station and drive into Kumaon valley hub.",
+      },
+      {
+        day: "Day 2",
+        title: "Drive to Kharkiya & Trek to Khati Village",
+        distance: "15 km drive + 5 km trek",
+        altitude: "7,210 ft / 2,197 m",
+        highlights: "Largest village in Pindar Valley.",
+        details: "Drive to Kharkiya trailhead and trek to the iconic Khati village homestays.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Khati to Dwali",
+        distance: "11 km trek",
+        altitude: "8,450 ft / 2,575 m",
+        highlights: "Pindar river gorge trail & rhododendron forests.",
+        details: "Trek through wooden bridges along Pindar river to Dwali campsite.",
+      },
+      {
+        day: "Day 4",
+        title: "Trek from Dwali to Phurkia",
+        distance: "5 km trek",
+        altitude: "10,695 ft / 3,260 m",
+        highlights: "Alpine tree line transition.",
+        details: "Short steep ascent towards the glacier base camp at Phurkia.",
+      },
+      {
+        day: "Day 5",
+        title: "Phurkia to Zero Point (Pindari Glacier) & return to Dwali",
+        distance: "14 km trek",
+        altitude: "12,300 ft / 3,749 m",
+        highlights: "Zero point ice snout & Mt. Changuch views.",
+        details: "Early morning push to Zero Point to witness Pindari glacier icefall before returning to Dwali.",
+      },
+      {
+        day: "Day 6",
+        title: "Trek from Dwali back to Khati Village",
+        distance: "11 km trek",
+        altitude: "7,210 ft / 2,197 m",
+        highlights: "Homestay culture evening.",
+        details: "Trek down along Pindar river and enjoy Kumaoni dinner at Khati.",
+      },
+      {
+        day: "Day 7",
+        title: "Trek to Kharkiya & Drive back to Kathgodam",
+        distance: "5 km trek + 180 km drive",
+        altitude: "Kathgodam drop",
+        highlights: "Return transfer.",
+        details: "Trek down to Kharkiya and board return vehicle to Kathgodam railway station.",
       },
     ],
     mapUrl:
@@ -257,10 +623,13 @@ const treksDatabase = {
   },
 };
 
+// Key alias mapping so alternative spellings (e.g. kuari-pass) resolve correctly
+treksDatabase["kuari-pass"] = treksDatabase["kwari-pass"];
+
 const similarTreksList = [
   { name: "Kedarkantha Trek", region: "Garhwal Himalayas", altitude: "12,500 ft", link: "/kedarkantha", image: summitShrineImg },
   { name: "Har Ki Dun Trek", region: "Garhwal Himalayas", altitude: "11,760 ft", link: "/har-ki-dun", image: harKiDunBannerImg },
-  { name: "Kuari Pass Trek", region: "Garhwal Himalayas", altitude: "12,516 ft", link: "/kwari-pass", image: nandaDeviImg },
+  { name: "Bali Pass Expedition", region: "Garhwal Himalayas", altitude: "16,200 ft", link: "/bali-pass", image: baliPassImg },
   { name: "Pindari Glacier", region: "Kumaon Himalayas", altitude: "12,300 ft", link: "/pindari-glacier", image: campsiteMealImg },
 ];
 
@@ -273,7 +642,7 @@ const commonPackingList = {
   gear: [
     { name: "Trekking Boots", desc: "High-ankle waterproof grip", icon: "🥾" },
     { name: "50L Rucksack", desc: "With rain cover", icon: "🎒" },
-    { name: "Trekking Poles", desc: "For snow balance", icon: "🦯" },
+    { name: "Trekking Poles", desc: "For balance & snow stability", icon: "🦯" },
   ],
   accessories: [
     { name: "UV Sunglasses", desc: "Snow glare protection", icon: "🕶️" },
@@ -288,12 +657,69 @@ const commonPackingList = {
 
 export default function TrekDetail({ slug: propSlug }) {
   const { slug: urlSlug } = useParams();
-  const rawSlug = (propSlug || urlSlug || "").toLowerCase();
+  const rawSlug = (propSlug || urlSlug || "").toLowerCase().trim();
 
+  // Dynamic Lookup with Clean Fallback
   const trekData = treksDatabase[rawSlug] || {
-    ...treksDatabase["kedarkantha"],
-    title: `${rawSlug.replace("-", " ").toUpperCase()} Expedition`,
+    title: `${rawSlug.replace(/-/g, " ").toUpperCase()} Expedition`,
     region: "Uttarakhand • Himalayan Wilderness",
+    description: `Detailed itinerary and expedition guide for ${rawSlug.replace(/-/g, " ")}. Join NandaPath for this mountain trek in Garhwal & Kumaon.`,
+    bannerImage: summitShrineImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "6 Days / 5 Nights", icon: "⏱️" },
+      { label: "Max Altitude", value: "12,000 ft / 3,650 m", icon: "🏔️" },
+      { label: "Trek Grade", value: "Moderate", icon: "📈" },
+      { label: "Best Season", value: "All Season", icon: "☀️" },
+      { label: "Basecamp Hub", value: "Uttarakhand Base", icon: "📍" },
+    ],
+    inclusions: [
+      "All vegetarian meals freshly cooked at high camps",
+      "Accommodation in dome tents & basecamp homestay",
+      "Certified Expedition Leader & Local Support Crew",
+      "Forest permits & entry passes",
+    ],
+    exclusions: [
+      "Backpack offloading charges",
+      "Personal clothing & trekking gear",
+      "Travel insurance & emergency evacuation",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Transfer to Basecamp",
+        distance: "Scenic Mountain Drive",
+        altitude: "Basecamp Hub",
+        highlights: "Mountain valley drive.",
+        details: "Morning pick up and transfer through mountain valleys to the expedition basecamp hub.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek to High Meadow Camp",
+        distance: "7 km trek",
+        altitude: "High Camp Meadow",
+        highlights: "Pine and oak forest trails.",
+        details: "Begin trek ascending through oak forests and alpine streams to camp.",
+      },
+      {
+        day: "Day 3",
+        title: "Summit / Pass Crossing Push",
+        distance: "8 km trek",
+        altitude: "High Summit Altitude",
+        highlights: "Panoramic Himalayan peak views.",
+        details: "Early morning push to reach summit / high pass point and descend back to camp.",
+      },
+      {
+        day: "Day 4",
+        title: "Descent & Return Transfer",
+        distance: "Descent + Drive",
+        altitude: "Dehradun / Base Drop",
+        highlights: "Return journey.",
+        details: "Trek down to basecamp and board vehicle transfer back.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   };
 
   const [activeTab, setActiveTab] = useState("itinerary");
