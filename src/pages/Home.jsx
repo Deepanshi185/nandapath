@@ -6,19 +6,18 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import FaqSection from "../components/FaqSection"; 
 import BlogVideoSection from "../components/BlogVideoSection";
 
-// Asset Imports
-import summitShrineImg from "../assets/summit-shrine.jpeg";
-import campMealImg from "../assets/camp-meal.jpeg";
-import trailActionImg from "../assets/trail-action.jpeg";
+// Local Asset Imports
 import basecampImg from "../assets/basecamp.jpeg";
 import groupBatchImg from "../assets/group-batch.jpeg";
 import campsiteMealImg from "../assets/campsite-meal.jpeg";
 import judaGroupImg from "../assets/juda-group.jpeg";
 import greenValleyGroupImg from "../assets/green-valley-group.jpg";
-import rockGroupImg from "../assets/rock-group.jpeg";
 import riverWaterfallImg from "../assets/river-waterfall-action.jpeg";
 import kedarkanthaSummitImg from "../assets/kedarkantha-summit-group.jpeg";
-import blueDomeTentImg from "../assets/blue-dome-tent.jpeg"; // NEW BLUE DOME TENT PHOTO
+import blueDomeTentImg from "../assets/blue-dome-tent.jpeg";
+import trailActionImg from "../assets/trail-action.jpeg";
+import campMealImg from "../assets/camp-meal.jpeg";
+import rockGroupImg from "../assets/rock-group1.jpeg"; // Kotgaon Base Camp 1 photo
 
 const homestay =
   "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=85";
@@ -28,21 +27,21 @@ const nandaDeviImg =
 
 // SVG Category Icons
 const TrekkingIcon = () => (
-  <svg className="h-6 w-6 sm:h-7 sm:w-7 text-[#142957]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg className="h-6 w-6 text-[#142957]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 4a2 2 0 100-4 2 2 0 000 4z" />
   </svg>
 );
 
 const CampingIcon = () => (
-  <svg className="h-6 w-6 sm:h-7 sm:w-7 text-[#142957]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg className="h-6 w-6 text-[#142957]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 3L2 21h20L12 3z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 3v18" />
   </svg>
 );
 
 const BedVenturingIcon = () => (
-  <svg className="h-6 w-6 sm:h-7 sm:w-7 text-[#142957]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg className="h-6 w-6 text-[#142957]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 21V12h6v9" />
   </svg>
@@ -89,11 +88,10 @@ function BookingConsultationForm() {
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-sky-50/60 font-sans text-slate-800 border-t border-sky-100/80 w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 sm:py-14 bg-sky-50/60 font-sans text-slate-800 border-t border-sky-100/80 w-full overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           
-          {/* LEFT COLUMN: HERO PHOTO CARD */}
           <div className="lg:col-span-5 relative min-h-[280px] sm:min-h-[380px] lg:min-h-full flex flex-col justify-between p-6 sm:p-10 text-white overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=85"
@@ -103,10 +101,10 @@ function BookingConsultationForm() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/95 via-[#0B1736]/75 to-[#0B1736]/40" />
 
             <div className="relative z-10 space-y-2">
-              <span className="bg-amber-400 text-[#0B1736] text-[9px] sm:text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+              <span className="bg-amber-400 text-[#0B1736] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
                 NANDAPATH SUPPORT
               </span>
-              <h2 className="text-xl sm:text-3xl font-sans font-bold text-white leading-tight tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-sans font-bold text-white leading-tight">
                 Plan Your Dream Expedition
               </h2>
               <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
@@ -117,17 +115,12 @@ function BookingConsultationForm() {
             <div className="relative z-10 space-y-2.5 my-4 sm:my-6">
               <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 flex items-center gap-3">
                 <span className="text-amber-300 text-sm sm:text-base">⚡</span>
-                <p className="text-[11px] sm:text-xs font-semibold text-white">Free Consultation & Seasonal Estimate within 1 Hour</p>
+                <p className="text-xs font-semibold text-white">Free Consultation & Estimate within 1 Hour</p>
               </div>
 
               <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 flex items-center gap-3">
                 <span className="text-sky-300 text-sm sm:text-base">🛡️</span>
-                <p className="text-[11px] sm:text-xs font-semibold text-white">Certified Mountaineering Guides & Field Logistics</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 flex items-center gap-3">
-                <span className="text-emerald-300 text-sm sm:text-base">⛰️</span>
-                <p className="text-[11px] sm:text-xs font-semibold text-white">Customized Dates & Private Family/Friends Batches</p>
+                <p className="text-xs font-semibold text-white">Certified Mountaineering Guides & Field Logistics</p>
               </div>
             </div>
 
@@ -137,10 +130,9 @@ function BookingConsultationForm() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: ENQUIRY FORM */}
-          <div className="lg:col-span-7 p-6 sm:p-12 space-y-4 sm:space-y-6 bg-white">
+          <div className="lg:col-span-7 p-6 sm:p-10 space-y-4 bg-white">
             <div>
-              <span className="text-[10px] sm:text-xs font-bold text-sky-600 uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md border border-sky-100">
+              <span className="text-xs font-bold text-sky-600 uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md border border-sky-100">
                 GET A FREE CONSULTATION
               </span>
               <h3 className="text-xl sm:text-3xl font-sans font-bold text-[#142957] mt-2 tracking-tight">
@@ -148,9 +140,9 @@ function BookingConsultationForm() {
               </h3>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3.5">
               <div>
-                <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                   Full Name
                 </label>
                 <input
@@ -159,13 +151,13 @@ function BookingConsultationForm() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="e.g. Rahul Sharma"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                     Email Address <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -175,12 +167,12 @@ function BookingConsultationForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. rahul@gmail.com"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                     Phone Number <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -190,32 +182,32 @@ function BookingConsultationForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="e.g. +91 98765 43210"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                   Select Your Destination
                 </label>
                 <select
                   name="destination"
                   value={formData.destination}
                   onChange={handleChange}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-[#142957] focus:bg-white transition cursor-pointer"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-[#142957] focus:bg-white transition cursor-pointer"
                 >
                   <option value="">Select a trek...</option>
                   <option value="Kedarkantha Trek">Kedarkantha Trek (Garhwal)</option>
-                  <option value="Brahmatal Trek">Brahmatal Trek (Garhwal)</option>
-                  <option value="Pindari Glacier Trek">Pindari Glacier Trek (Kumaon)</option>
                   <option value="Kuari Pass Trek">Kuari Pass Trek (Garhwal)</option>
+                  <option value="Gaumukh Tapovan Expedition">Gaumukh Tapovan Expedition</option>
+                  <option value="Pindari Glacier Trek">Pindari Glacier Trek (Kumaon)</option>
                   <option value="Custom Trek Route">Other / Custom Trek Route</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                   Comments / Travel Dates / Group Size
                 </label>
                 <textarea
@@ -224,13 +216,13 @@ function BookingConsultationForm() {
                   value={formData.comments}
                   onChange={handleChange}
                   placeholder="Expected travel month, group size, or special requirements..."
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition resize-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#142957] hover:bg-sky-900 text-white font-bold text-xs sm:text-sm py-3.5 sm:py-4 rounded-xl shadow-md transition cursor-pointer"
+                className="w-full bg-[#142957] hover:bg-sky-900 text-white font-bold text-sm py-3.5 rounded-xl shadow-md transition cursor-pointer"
               >
                 Send Enquiry & Get Detailed Itinerary &rarr;
               </button>
@@ -243,11 +235,11 @@ function BookingConsultationForm() {
   );
 }
 
-// KEY INCLUSIONS STRIP WITH NEW TENT PHOTO
+// KEY INCLUSIONS STRIP
 function KeyInclusionsStrip() {
   const inclusions = [
     {
-      image: blueDomeTentImg, // NEW BLUE DOME TENT REAL PHOTO
+      image: blueDomeTentImg,
       title: "Expedition Dome Tents",
       desc: "All-weather tents, insulated sleeping bags & thick foam mats.",
     },
@@ -266,18 +258,13 @@ function KeyInclusionsStrip() {
       title: "Certified Guide Supervision",
       desc: "Led by certified mountaineering leaders with full safety gear.",
     },
-    {
-      image: trailActionImg,
-      title: "Medical & Safety Support",
-      desc: "Pulse oximeters, medical O2 cylinders & emergency first-aid kit.",
-    },
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-amber-50/40 border-t border-b border-amber-100/60 font-sans w-full overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-10 sm:py-14 bg-amber-50/40 border-t border-b border-amber-100/60 font-sans w-full overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 pb-4 border-b border-amber-200/60 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-amber-200/60 gap-4">
           <div>
             <span className="text-xs font-bold text-amber-800 uppercase tracking-wider bg-amber-100/80 px-3 py-1 rounded-md border border-amber-200">
               THE NANDAPATH STANDARD
@@ -295,21 +282,19 @@ function KeyInclusionsStrip() {
           </span>
         </div>
 
-        {/* 5 REAL IMAGE CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {inclusions.map((item, index) => (
             <div
               key={index}
               className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-36 overflow-hidden">
+                <div className="relative h-36 sm:h-44 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 </div>
                 <div className="p-4">
                   <h4 className="text-sm font-bold text-[#142957] mb-1">
@@ -329,16 +314,16 @@ function KeyInclusionsStrip() {
   );
 }
 
-// TRAIL STORIES
+// TRAIL STORIES SECTION
 function TrekkerStoriesSection() {
   const stories = [
     {
       id: 1,
-      image: groupBatchImg,
-      trek: "Kedarkantha Expedition Batch",
-      quote: "Unforgettable group experience with NandaPath! The trek leaders made sure everyone stayed safe, hydrated, and motivated up to the summit.",
-      author: "Rahul & Autumn Batch",
-      location: "Sankri - Juda Ka Talab Trail",
+      image: kedarkanthaSummitImg,
+      trek: "Kedarkantha Summit Batch",
+      quote: "Unforgettable group summit experience with NandaPath! The trek leaders made sure everyone stayed safe, hydrated, and motivated up to the 12,500 ft summit shrine.",
+      author: "Rahul & Winter Batch",
+      location: "Kedarkantha Summit • 12,500 ft",
     },
     {
       id: 2,
@@ -359,9 +344,9 @@ function TrekkerStoriesSection() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-stone-50/80 border-t border-stone-200/60 font-sans w-full overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+    <section className="py-10 sm:py-14 bg-stone-50/80 border-t border-stone-200/60 font-sans w-full overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-sky-600">
             REAL TREKKERS, REAL MEMORIES
           </p>
@@ -373,21 +358,19 @@ function TrekkerStoriesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7">
           {stories.map((story) => (
             <div
               key={story.id}
               className="group bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-52 sm:h-60 overflow-hidden">
+                <div className="relative h-52 sm:h-64 overflow-hidden">
                   <img
                     src={story.image}
                     alt={story.trek}
                     className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  
                   <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-extrabold text-[#142957] shadow-xs">
                     {story.location}
                   </span>
@@ -397,7 +380,7 @@ function TrekkerStoriesSection() {
                   <h3 className="text-base font-bold text-[#142957]">
                     {story.trek}
                   </h3>
-                  <p className="mt-2 text-xs text-slate-600 italic leading-relaxed font-normal">
+                  <p className="mt-2 text-xs sm:text-sm text-slate-600 italic leading-relaxed font-normal">
                     "{story.quote}"
                   </p>
                 </div>
@@ -419,19 +402,19 @@ function TrekkerStoriesSection() {
   );
 }
 
-// POPULAR DESTINATIONS (FEATURED WINTER SUMMIT PHOTO FOR KEDARKANTHA)
+// POPULAR DESTINATIONS
 const popularDestinations = [
   {
     name: "Kedarkantha Trek",
     tagline: "12,500 ft Winter Snow Summit",
-    image: kedarkanthaSummitImg, // FEATURED WINTER SUMMIT PHOTO
+    image: kedarkanthaSummitImg,
     link: "/kedarkantha",
   },
   {
-    name: "Brahmatal Trek",
-    tagline: "Alpine Lake & Mt Trishul Views",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    link: "/uttarakhand",
+    name: "Gaumukh Tapovan Expedition",
+    tagline: "Sacred Ganges Origin & Mt. Shivling",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    link: "/gaumukh-tapovan",
   },
   {
     name: "Pindari Glacier Trek",
@@ -442,11 +425,12 @@ const popularDestinations = [
   {
     name: "Kuari Pass Trek",
     tagline: "Lord Curzon Trail & Nanda Devi Vistas",
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     link: "/kwari-pass",
   },
 ];
 
+// RESTORED 4 REGIONS DATASET
 const regionsData = [
   {
     id: "uttarakhand",
@@ -536,7 +520,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* FLOATING CATEGORY BAR */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-4 md:-mt-12 mb-10 sm:mb-12 z-20">
+      <div className="relative mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-8 mt-4 md:-mt-12 mb-8 sm:mb-10 z-20">
         <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 sm:p-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           
           <Link
@@ -593,12 +577,12 @@ export default function Home() {
       </div>
 
       {/* POPULAR COURSES / DESTINATIONS SHOWCASE */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-12 sm:my-16 bg-white w-full overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center mb-8 sm:mb-10">
+      <section className="mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-8 my-8 sm:my-12 bg-white w-full overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
           
           <div className="lg:col-span-6 space-y-3 sm:space-y-4">
-            <span className="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100">
-              FEATURED EXPEDITIONS
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.22em] text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100">
+              TRIPOTUDE
             </span>
             <h2 className="text-2xl sm:text-5xl font-sans font-bold text-[#142957] tracking-tight leading-tight">
               Popular Routes & Courses
@@ -607,11 +591,11 @@ export default function Home() {
               Explore our top-rated Himalayan trekking courses across Garhwal and Kumaon valleys, led by certified guides with complete safety logistics.
             </p>
 
-            <div className="pt-1 sm:pt-2 flex flex-wrap gap-2.5 sm:gap-4 text-xs font-bold text-[#142957]">
-              <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs">
+            <div className="pt-2 flex flex-wrap gap-3 sm:gap-4 text-xs font-bold text-[#142957]">
+              <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3.5 py-2 rounded-xl text-xs">
                 🏔️ 18+ Active Routes
               </span>
-              <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs">
+              <span className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3.5 py-2 rounded-xl text-xs">
                 Direct Pickup Support
               </span>
             </div>
@@ -634,7 +618,7 @@ export default function Home() {
         </div>
 
         {/* 4 SELECTED POPULAR TREKS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {popularDestinations.map((dest) => (
             <Link
               key={dest.name}
@@ -667,17 +651,16 @@ export default function Home() {
       </section>
 
       {/* BEST OF UTTARAKHAND SECTION */}
-      <section id="best-uttarakhand" className="px-4 sm:px-10 lg:px-12 py-12 sm:py-16 bg-sky-50/60 border-t border-sky-100/80">
-        <div className="mx-auto max-w-7xl">
+      <section id="best-uttarakhand" className="px-3 sm:px-6 lg:px-8 py-10 sm:py-14 bg-sky-50/60 border-t border-sky-100/80">
+        <div className="mx-auto max-w-[1400px]">
           <SectionHeading
             eyebrow="REGIONAL EXPEDITION GATEWAYS"
             title="Best of Uttarakhand"
             description="Explore our complete Himalayan catalog categorized by region. Click any region to browse all authentic expeditions."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
             
-            {/* 1. GARHWAL REGION GATEWAY */}
             <Link
               to="/uttarakhand?region=Garhwal"
               className="group relative rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-md hover:shadow-2xl transition duration-500 min-h-[320px] sm:min-h-[380px] flex flex-col justify-between p-6 sm:p-8 block"
@@ -712,7 +695,6 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* 2. KUMAON REGION GATEWAY */}
             <Link
               to="/uttarakhand?region=Kumaon"
               className="group relative rounded-3xl overflow-hidden border border-slate-200/90 bg-white shadow-md hover:shadow-2xl transition duration-500 min-h-[320px] sm:min-h-[380px] flex flex-col justify-between p-6 sm:p-8 block"
@@ -751,9 +733,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REGIONAL EXPLORE SECTION */}
-      <section className="w-full bg-white text-slate-800 py-12 sm:py-20 my-6 sm:my-10 border-t border-b border-slate-100 font-sans">
-        <div className="mx-auto max-w-7xl px-4 sm:px-10 lg:px-12">
+      {/* RESTORED 4-REGION INTERACTIVE SELECTOR SECTION */}
+      <section className="w-full bg-white text-slate-800 py-10 sm:py-16 my-4 border-t border-b border-slate-100 font-sans">
+        <div className="mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-8">
           
           <div className="mb-6">
             <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-md border border-sky-100">
@@ -863,98 +845,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REAL TRAIL MOMENTS GALLERY (2x2 GRID ON MOBILE, 4-COL ON DESKTOP) */}
-      <section id="real-moments" className="bg-[#f8fafc] px-4 sm:px-8 lg:px-12 py-12 sm:py-16 border-t border-slate-200/80">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="AUTHENTIC EXPEDITION GALLERY"
-            title="Real Trail Moments"
-            description="Genuine batch memories, high-altitude campsites, and freshly cooked meals captured live on Himalayan routes."
+{/* REAL TRAIL MOMENTS GALLERY */}
+<section id="real-moments" className="bg-[#f8fafc] px-3 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200/80">
+  <div className="mx-auto max-w-[1400px]">
+    <SectionHeading
+      eyebrow="AUTHENTIC EXPEDITION GALLERY"
+      title="Real Trail Moments"
+      description="Genuine batch memories, high-altitude campsites, and freshly cooked meals captured live on Himalayan routes."
+    />
+
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      {/* 1. SANKRI BASECAMP GROUP BATCH */}
+      <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
+        <div className="h-40 sm:h-56 overflow-hidden relative">
+          <img
+            src={groupBatchImg}
+            alt="Sankri Basecamp Batch"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
           />
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
-            {/* 1. JUDA KA TALAB BATCH */}
-            <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
-              <div className="h-36 sm:h-56 overflow-hidden relative">
-                <img
-                  src={judaGroupImg}
-                  alt="Juda Ka Talab Stopover"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-                <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
-                  📍 Juda Ka Talab • 9,100 ft
-                </span>
-              </div>
-              <div className="p-3 sm:p-4">
-                <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">High-Altitude Lake Stopover</h3>
-                <p className="text-[11px] sm:text-xs text-slate-500 mt-1 line-clamp-2">Real batch pausing beside alpine lake glades on Day 2 ascent.</p>
-              </div>
-            </div>
-
-            {/* 2. KEDARKANTHA BASECAMP */}
-            <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
-              <div className="h-36 sm:h-56 overflow-hidden relative">
-                <img
-                  src={basecampImg}
-                  alt="Kedarkantha Basecamp"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-                <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
-                  📍 Basecamp • 11,250 ft
-                </span>
-              </div>
-              <div className="p-3 sm:p-4">
-                <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">Wilderness Dome Encampment</h3>
-                <p className="text-[11px] sm:text-xs text-slate-500 mt-1 line-clamp-2">Dome tent setups set against pine forest glades and mountain ridges.</p>
-              </div>
-            </div>
-
-            {/* 3. CAMPSITE MEALS */}
-            <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
-              <div className="h-36 sm:h-56 overflow-hidden relative">
-                <img
-                  src={campsiteMealImg}
-                  alt="Campsite Dining"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-                <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
-                  📍 Trail Dining
-                </span>
-              </div>
-              <div className="p-3 sm:p-4">
-                <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">Hot Campsite Meals</h3>
-                <p className="text-[11px] sm:text-xs text-slate-500 mt-1 line-clamp-2">Freshly prepared hot vegetarian meals served right at trail camps.</p>
-              </div>
-            </div>
-
-            {/* 4. TRAIL GROUP BATCH */}
-            <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
-              <div className="h-36 sm:h-56 overflow-hidden relative">
-                <img
-                  src={greenValleyGroupImg}
-                  alt="Expedition Team"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-                <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
-                  📍 Garhwal Trail
-                </span>
-              </div>
-              <div className="p-3 sm:p-4">
-                <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">Guided Group Batches</h3>
-                <p className="text-[11px] sm:text-xs text-slate-500 mt-1 line-clamp-2">Certified leaders ensuring pace, safety, and team spirit on every route.</p>
-              </div>
-            </div>
-
-          </div>
+          <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+            📍 Sankri Basecamp • 6,400 ft
+          </span>
         </div>
-      </section>
+        <div className="p-4">
+          <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">Sankri Basecamp Team</h3>
+          <p className="text-xs text-slate-500 mt-1 line-clamp-2">Complete NandaPath expedition batch gathered at Sankri basecamp hub.</p>
+        </div>
+      </div>
 
+      {/* 2. JUDA KA TALAB STOP OVER */}
+      <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
+        <div className="h-40 sm:h-56 overflow-hidden relative">
+          <img
+            src={judaGroupImg}
+            alt="Juda Ka Talab Stopover"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+            📍 Juda Ka Talab • 9,100 ft
+          </span>
+        </div>
+        <div className="p-4">
+          <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">High-Altitude Lake Stopover</h3>
+          <p className="text-xs text-slate-500 mt-1 line-clamp-2">Real batch pausing beside alpine lake glades on Day 2 ascent.</p>
+        </div>
+      </div>
+
+      {/* 3. KOTGAON BASECAMP 1 */}
+      <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
+        <div className="h-40 sm:h-56 overflow-hidden relative">
+          <img
+            src={rockGroupImg}
+            alt="Kotgaon Basecamp 1 Batch"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+            📍 Kotgaon Basecamp 1
+          </span>
+        </div>
+        <div className="p-4">
+          <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">Kotgaon Base Camp Hub</h3>
+          <p className="text-xs text-slate-500 mt-1 line-clamp-2">Expedition team brief and certificate award before summit climb.</p>
+        </div>
+      </div>
+
+      {/* 4. CAMPSITE MEALS */}
+      <div className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-xs hover:shadow-xl transition duration-300 flex flex-col justify-between">
+        <div className="h-40 sm:h-56 overflow-hidden relative">
+          <img
+            src={campsiteMealImg}
+            alt="Campsite Dining"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur-md text-[#142957] text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+            📍 Trail Dining
+          </span>
+        </div>
+        <div className="p-4">
+          <h3 className="text-xs sm:text-sm font-bold text-[#142957] leading-snug">Hot Campsite Meals</h3>
+          <p className="text-xs text-slate-500 mt-1 line-clamp-2">Freshly prepared hot vegetarian meals served right at trail camps.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* RESORTS, BED VENTURING & HOMESTAYS SECTION */}
       <section
         id="homestays"
-        className="scroll-mt-24 bg-stone-50/80 px-4 sm:px-8 lg:px-12 py-12 sm:py-16 border-t border-slate-200 font-sans w-full overflow-hidden"
+        className="scroll-mt-24 bg-stone-50/80 px-3 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 font-sans w-full overflow-hidden"
       >
-        <div className="mx-auto grid max-w-7xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
+        <div className="mx-auto max-w-[1400px] grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
           <div>
             <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-300 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
               <span>⏳</span>
@@ -1023,8 +1005,8 @@ export default function Home() {
       <WhatsAppWidget />
 
       {/* FOOTER */}
-      <footer className="bg-[#0b1d3b] text-slate-300 pt-12 sm:pt-16 pb-8 px-4 sm:px-10 lg:px-12 border-t border-slate-800 font-sans w-full overflow-hidden">
-        <div className="mx-auto max-w-7xl">
+      <footer className="bg-[#0b1d3b] text-slate-300 pt-12 sm:pt-16 pb-8 px-3 sm:px-6 lg:px-8 border-t border-slate-800 font-sans w-full overflow-hidden">
+        <div className="mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-slate-800">
             
             <div className="lg:col-span-2 space-y-3 sm:space-y-4">
@@ -1045,8 +1027,7 @@ export default function Home() {
               <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Garhwal Treks</h4>
               <ul className="space-y-1.5 sm:space-y-2 text-xs text-slate-400">
                 <li><Link to="/kedarkantha" className="hover:text-white transition">Kedarkantha Trek</Link></li>
-                <li><Link to="/har-ki-dun" className="hover:text-white transition">Har Ki Dun Trek</Link></li>
-                <li><Link to="/bali-pass" className="hover:text-white transition">Bali Pass Trek</Link></li>
+                <li><Link to="/gaumukh-tapovan" className="hover:text-white transition">Gaumukh Tapovan</Link></li>
                 <li><Link to="/kwari-pass" className="hover:text-white transition">Kuari Pass Trek</Link></li>
               </ul>
             </div>
@@ -1055,9 +1036,9 @@ export default function Home() {
               <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Regions & Destinations</h4>
               <ul className="space-y-1.5 sm:space-y-2 text-xs text-slate-400">
                 <li><Link to="/uttarakhand" className="hover:text-white transition">Uttarakhand Treks</Link></li>
+                <li><Link to="/pindari-glacier" className="hover:text-white transition">Pindari Glacier Trek</Link></li>
                 <li><Link to="/himachal" className="hover:text-white transition">Himachal Treks</Link></li>
                 <li><Link to="/kashmir" className="hover:text-white transition">Jammu & Kashmir</Link></li>
-                <li><Link to="/pindari-glacier" className="hover:text-white transition">Pindari Glacier Trek</Link></li>
               </ul>
             </div>
 

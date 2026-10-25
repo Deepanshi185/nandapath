@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import rockGroupImg from "../assets/rock-group.jpeg";
+import groupBatchImg from "../assets/group-batch1.jpeg"; // NEW MOUNTAIN RIDGE GROUP PHOTO
 
 const homeFaqs = [
   {
@@ -25,19 +25,19 @@ export default function FaqSection() {
   const [openIdx, setOpenIdx] = useState(0);
 
   return (
-    <section className="py-10 sm:py-16 bg-sky-50/50 border-t border-b border-sky-100/60 font-sans w-full overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-16 bg-sky-50/50 border-t border-b border-sky-100/60 font-sans w-full overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-8">
         
-        {/* 2-COLUMN GRID STRETCHED TO MATCH PERFECTLY AT TOP AND BOTTOM BASELINES */}
+        {/* 2-COLUMN GRID STRETCHED TO MATCH PERFECTLY */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* LEFT COLUMN: HEADER & FAQS (SPAN 7) */}
-          <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-4">
+          <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-3.5 sm:space-y-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-100/80 px-3 py-1 rounded-md border border-sky-200 inline-block">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-100/80 px-2.5 py-1 rounded-md border border-sky-200 inline-block">
                 GOT QUESTIONS?
               </span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-[#142957] mt-2 tracking-tight">
+              <h2 className="text-xl sm:text-4xl font-bold text-[#142957] mt-1.5 sm:mt-2 tracking-tight">
                 Frequently Asked Questions
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 mt-1">
@@ -45,26 +45,26 @@ export default function FaqSection() {
               </p>
             </div>
 
-            <div className="space-y-3 my-2">
+            <div className="space-y-2.5 sm:space-y-3 my-1 sm:my-2">
               {homeFaqs.map((faq, idx) => {
                 const isOpen = openIdx === idx;
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs overflow-hidden transition"
+                    className="bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 shadow-2xs overflow-hidden transition"
                   >
                     <button
                       onClick={() => setOpenIdx(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left font-bold text-xs sm:text-sm text-[#142957] hover:text-sky-700 cursor-pointer"
+                      className="w-full flex items-center justify-between p-3 sm:p-4 text-left font-bold text-xs sm:text-sm text-[#142957] hover:text-sky-700 cursor-pointer"
                     >
-                      <span className="pr-2">{faq.q}</span>
+                      <span className="pr-2 leading-snug">{faq.q}</span>
                       <span className="text-base font-bold text-sky-600 shrink-0">
                         {isOpen ? "−" : "+"}
                       </span>
                     </button>
 
                     {isOpen && (
-                      <div className="px-4 pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                      <div className="px-3.5 pb-3.5 sm:px-4 sm:pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
                         {faq.a}
                       </div>
                     )}
@@ -76,7 +76,7 @@ export default function FaqSection() {
             <div>
               <Link
                 to="/faqs"
-                className="inline-flex items-center gap-2 bg-[#142957] hover:bg-sky-800 text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-xl shadow-md transition cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#142957] hover:bg-sky-800 text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-3 rounded-xl shadow-md transition cursor-pointer"
               >
                 <span>View All Frequently Asked Questions</span>
                 <span>&rarr;</span>
@@ -84,26 +84,26 @@ export default function FaqSection() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: FULL-HEIGHT STRETCHED BATCH SHOWCASE CARD (SPAN 5) */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl min-h-[320px] sm:min-h-[400px] lg:min-h-full h-full flex flex-col justify-between p-6 sm:p-8 text-white block">
+          {/* RIGHT COLUMN: FULL-HEIGHT MOUNTAIN RIDGE GROUP SHOWCASE CARD (SPAN 5) */}
+          <div className="lg:col-span-5 relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-xl min-h-[280px] sm:min-h-[380px] lg:min-h-full h-full flex flex-col justify-between p-5 sm:p-8 text-white block">
             <img
-              src={rockGroupImg}
+              src={groupBatchImg}
               alt="NandaPath Group Batch Resting on Mountain Trail"
               className="absolute inset-0 w-full h-full object-cover transition duration-700 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-slate-950/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 to-slate-950/10" />
 
             <div className="relative z-10 flex justify-end">
-              <span className="bg-amber-400 text-[#142957] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              <span className="bg-amber-400 text-[#142957] text-[9px] sm:text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                 100% Verified Batches
               </span>
             </div>
 
-            <div className="relative z-10 space-y-2 pt-20 sm:pt-0">
-              <span className="text-xs text-amber-300 font-bold block">
-                📍 Garhwal Pine Forest Trail
+            <div className="relative z-10 space-y-1.5 pt-16 sm:pt-0">
+              <span className="text-[11px] sm:text-xs text-amber-300 font-bold block">
+                📍 Garhwal Mountain Valley Trail
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold font-sans leading-tight">
+              <h3 className="text-lg sm:text-2xl font-bold font-sans leading-tight">
                 Safety First, Memories Always
               </h3>
               <p className="text-xs text-slate-200 font-normal leading-relaxed">

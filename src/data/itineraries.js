@@ -180,6 +180,16 @@ export const trekItineraries = {
       { day: "Day 7", title: "Khati to Kathgodam Drive", detail: "Return drive." }
     ]
   },
+  "gaumukh-tapovan": {
+    title: "Gaumukh Tapovan Expedition",
+    region: "Uttarakhand - Garhwal",
+    duration: "6 Days / 5 Nights",
+    altitude: "14,600 Ft",
+    grade: "Moderate to Difficult",
+    basecamp: "Gangotri (10,200 ft)",
+    description: "Trek to the source of the holy Ganges at Gaumukh glacier and witness the majestic Shivling peak from Tapovan meadows.",
+    // Match structure from HelloHikers itinerary details
+  },
   "pindari-glacier-trek": {
     title: "Pindari Glacier Trek",
     region: "UTTARAKHAND · KUMAON",

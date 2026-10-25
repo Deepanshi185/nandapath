@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-import RegionDetail from "./pages/RegionDetail";
+import TrekDetail from "./pages/TrekDetail";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
-// Helper wrapper to handle dynamic slug routing for all treks
-function DynamicTrekRoute() {
+// Wrapper component to pass the URL parameter as a prop
+function DynamicTrekWrapper() {
   const { slug } = useParams();
-  return <RegionDetail slug={slug} />;
+  return <TrekDetail slug={slug} />;
 }
 
 export default function App() {
@@ -22,11 +22,11 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-        {/* Region & Trek Specific Routes */}
-        <Route path="/:slug" element={<DynamicTrekRoute />} />
-        <Route path="/uttarakhand/:slug" element={<DynamicTrekRoute />} />
-        <Route path="/garhwal/:slug" element={<DynamicTrekRoute />} />
-        <Route path="/kumaon/:slug" element={<DynamicTrekRoute />} />
+        {/* Dynamic Trek Routes (Gaumukh Tapovan, Kedarkantha, Bali Pass, etc.) */}
+        <Route path="/:slug" element={<DynamicTrekWrapper />} />
+        <Route path="/uttarakhand/:slug" element={<DynamicTrekWrapper />} />
+        <Route path="/garhwal/:slug" element={<DynamicTrekWrapper />} />
+        <Route path="/kumaon/:slug" element={<DynamicTrekWrapper />} />
       </Routes>
     </BrowserRouter>
   );

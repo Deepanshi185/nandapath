@@ -18,29 +18,29 @@ const slideItems = [
     tagline: "ADVENTURE • NATURE • EXPLORATION",
     heading: "Mountains Call, \nWe Guide",
     description: "Discover breathtaking treks, wilderness camping, and cozy stays in the heart of the Himalayas.",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85", // Nanda Devi Summit
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85", // Nanda Devi Summit, Uttarakhand
   },
   {
     id: 1,
     tagline: "WINTER PASSAGES • GARHWAL HIMALAYAS",
     heading: "Snowy Ridges & \nWinter Trails",
     description: "Ascend pristine snow slopes through pine glades with certified local leaders and full high-altitude gear support.",
-    image: winterPineTrailImg, // Real Hand-Clicked Winter Trail
+    image: winterPineTrailImg, // Real Hand-Clicked Winter Trail, Uttarakhand
   },
   {
     id: 2,
     tagline: "EXPEDITION SAFETY • CERTIFIED LEADERS",
     heading: "Safety Means \nNandaPath",
     description: "Behind every high-altitude trek lies a rock-solid system built on certified Himalayan mountaineers, medical oxygen gear, and safety protocols.",
-    // FIXED: Green alpine valley & pine forest without snow
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=85", 
+    // REPLACED WITH VERIFIED UTTARAKHAND PEAKS
+    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1920&q=85", 
   },
   {
     id: 3,
     tagline: "GARHWAL & KUMAON • CUSTOM GROUP DEPARTURES",
     heading: "Custom Trails & \nPrivate Expeditions",
     description: "Planning a group trek or private departure? We design customized Himalayan routes with dedicated guides and camp support.",
-    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1920&q=85", // Kumaon/Garhwal Valley
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1920&q=85", // Garhwal Valley, Uttarakhand
   },
 ];
 
@@ -51,7 +51,6 @@ export default function HeroSlider() {
   const [isSearching, setIsSearching] = useState(false);
   const searchRef = useRef(null);
 
-  // AUTO-SLIDE TIMER SET TO 12 SECONDS (PAUSES AUTOMATICALLY WHILE SEARCHING)
   useEffect(() => {
     if (isSearching) return;
     const timer = setInterval(() => {
