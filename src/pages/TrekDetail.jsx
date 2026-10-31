@@ -100,7 +100,6 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-
   "bali-pass": {
     title: "Bali Pass High Altitude Expedition",
     region: "Uttarakhand • Garhwal Himalayas",
@@ -195,7 +194,6 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-
   "roopkund": {
     title: "Roopkund Mystery Lake Trek",
     region: "Uttarakhand • Garhwal Himalayas",
@@ -286,7 +284,6 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-
   "gaumukh-tapovan": {
     title: "Gaumukh Tapovan Glacier Expedition",
     region: "Uttarakhand • Garhwal Himalayas",
@@ -377,7 +374,6 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-
   "pindari-glacier": {
     title: "Pindari Glacier Kumaon Expedition",
     region: "Uttarakhand • Kumaon Himalayas",
@@ -460,7 +456,6 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-
   "har-ki-dun": {
     title: "Har Ki Dun Valley Expedition",
     region: "Uttarakhand • Garhwal Himalayas",
@@ -547,7 +542,6 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-
   "kwari-pass": {
     title: "Kwari Pass Winter Trek",
     region: "Uttarakhand • Garhwal Himalayas",
@@ -623,7 +617,6 @@ const treksDatabase = {
   },
 };
 
-// Key alias mapping so alternative spellings (e.g. kuari-pass) resolve correctly
 treksDatabase["kuari-pass"] = treksDatabase["kwari-pass"];
 
 const similarTreksList = [
@@ -635,31 +628,63 @@ const similarTreksList = [
 
 const commonPackingList = {
   clothing: [
-    { name: "Full Trekking Pants (2)", desc: "Quick-dry material", icon: "👖" },
-    { name: "Heavy Down Jacket (1)", desc: "Sub-zero rated", icon: "🧥" },
-    { name: "Thermal Base Layers", desc: "Merino wool or synthetic", icon: "👕" },
+    { name: "Full Trekking Pants (2)", desc: "Quick-dry synthetic material", icon: "👖" },
+    { name: "Heavy Down Jacket (1)", desc: "Sub-zero rated for high camps", icon: "🧥" },
+    { name: "Thermal Base Layers", desc: "Merino wool or warm thermal", icon: "👕" },
   ],
   gear: [
-    { name: "Trekking Boots", desc: "High-ankle waterproof grip", icon: "🥾" },
-    { name: "50L Rucksack", desc: "With rain cover", icon: "🎒" },
+    { name: "Trekking Boots", desc: "High-ankle waterproof grip boots", icon: "🥾" },
+    { name: "50L Rucksack", desc: "With waterproof rain cover", icon: "🎒" },
     { name: "Trekking Poles", desc: "For balance & snow stability", icon: "🦯" },
   ],
   accessories: [
-    { name: "UV Sunglasses", desc: "Snow glare protection", icon: "🕶️" },
-    { name: "Waterproof Gloves", desc: "Outer + inner fleece", icon: "🧤" },
-    { name: "Thermos Bottle", desc: "1L warm water bottle", icon: "🥤" },
+    { name: "UV Sunglasses", desc: "Snow glare & UV eye protection", icon: "🕶️" },
+    { name: "Waterproof Gloves", desc: "Outer shell + inner fleece gloves", icon: "🧤" },
+    { name: "Thermos Bottle", desc: "1L insulated warm water bottle", icon: "🥤" },
   ],
   medical: [
-    { name: "Govt ID & Fitness Form", desc: "Essential permits", icon: "📄" },
-    { name: "Power Bank", desc: "20,000 mAh for cold protection", icon: "🔋" },
+    { name: "Govt ID & Fitness Form", desc: "Essential forest permits", icon: "📄" },
+    { name: "Power Bank", desc: "20,000 mAh for sub-zero battery protection", icon: "🔋" },
   ],
 };
+
+const horizontalPackingItems = [
+  {
+    category: "CLOTHING & LAYERS",
+    tag: "ESSENTIAL",
+    icon: "🧥",
+    pills: ["Trekking Pants", "Down Jacket", "Thermals", "Fleece Jacket"],
+  },
+  {
+    category: "FOOTWEAR & HANDS",
+    tag: "MUST HAVE",
+    icon: "🥾",
+    pills: ["Waterproof Boots", "Woolen Socks", "Insulated Gloves"],
+  },
+  {
+    category: "RUCKSACK & GEAR",
+    tag: "GEAR",
+    icon: "🎒",
+    pills: ["50L Rucksack", "Sleeping Bag", "Trekking Poles", "Headlamp"],
+  },
+  {
+    category: "HYGIENE & TOILETRIES",
+    tag: "CARE",
+    icon: "🧴",
+    pills: ["SPF Sunscreen", "Quick-dry Towel", "SPF Lip Balm", "Wet Wipes"],
+  },
+  {
+    category: "MEDICAL & POWER",
+    tag: "SAFETY",
+    icon: "🩹",
+    pills: ["First Aid Kit", "Power Bank", "Thermos Bottle", "Govt ID"],
+  },
+];
 
 export default function TrekDetail({ slug: propSlug }) {
   const { slug: urlSlug } = useParams();
   const rawSlug = (propSlug || urlSlug || "").toLowerCase().trim();
 
-  // Dynamic Lookup with Clean Fallback
   const trekData = treksDatabase[rawSlug] || {
     title: `${rawSlug.replace(/-/g, " ").toUpperCase()} Expedition`,
     region: "Uttarakhand • Himalayan Wilderness",
@@ -737,31 +762,31 @@ export default function TrekDetail({ slug: propSlug }) {
   };
 
   return (
-    <main className="min-h-screen bg-white font-sans text-slate-800 pt-20 sm:pt-24 pb-24 relative">
+    <main className="min-h-screen bg-sky-50/50 font-sans text-slate-800 pt-0 pb-24 relative">
       <Navbar />
 
-      {/* HERO BANNER */}
-      <section className="bg-[#142957] text-white py-10 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          <div className="lg:col-span-7 space-y-3 sm:space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[10px] sm:text-xs font-bold text-emerald-300 uppercase tracking-wider bg-emerald-500/20 px-2.5 py-1 rounded-md border border-emerald-400/30">
+      {/* HERO BANNER - FLUSH TO TOP OF SCREEN UNDER NAVBAR */}
+      <section className="bg-[#142957] text-white pt-28 sm:pt-36 pb-12 sm:pb-20 px-4 sm:px-8 lg:px-12 shadow-inner">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-xs sm:text-sm font-black text-emerald-300 uppercase tracking-widest bg-emerald-500/20 px-3 py-1.5 rounded-lg border border-emerald-400/40">
                 TRIPOTUDE EXPEDITION
               </span>
-              <span className="text-[10px] sm:text-xs font-bold text-amber-300 uppercase tracking-wider bg-white/10 px-2.5 py-1 rounded-md border border-white/20">
+              <span className="text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-widest bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
                 {trekData.region}
               </span>
             </div>
-            <h1 className="text-2xl sm:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-6xl font-black text-white leading-tight">
               {trekData.title}
             </h1>
-            <p className="text-xs sm:text-base text-slate-200 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-xl text-sky-100 leading-relaxed font-medium max-w-3xl">
               {trekData.description}
             </p>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-2xl overflow-hidden border border-white/20 shadow-xl aspect-[16/10]">
+            <div className="rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl aspect-[16/10]">
               <img
                 src={trekData.bannerImage}
                 alt={trekData.title}
@@ -772,28 +797,28 @@ export default function TrekDetail({ slug: propSlug }) {
         </div>
       </section>
 
-      {/* SPECIFICATIONS - POLISHED FOR MOBILE */}
-      <section className="bg-white border-b border-slate-100 py-6 sm:py-10 px-3 sm:px-6 lg:px-8">
+      {/* KEY SPECIFICATIONS - LIGHT BLUE THEME */}
+      <section className="bg-sky-50 border-b border-sky-100 py-8 sm:py-12 px-4 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
-          <div className="bg-slate-50/90 rounded-2xl p-4 sm:p-6 border border-slate-200/90 shadow-xs">
-            <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-sky-700 mb-3 sm:mb-4 pb-2 border-b border-slate-200/80">
+          <div className="bg-sky-100/70 rounded-3xl p-6 sm:p-8 border border-sky-200 shadow-sm">
+            <h3 className="text-sm sm:text-base font-black uppercase tracking-widest text-sky-900 mb-6 pb-3 border-b border-sky-200">
               KEY TRIP SPECIFICATIONS
             </h3>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
               {trekData.specifications.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200/80 shadow-2xs flex items-center gap-2.5 sm:gap-3"
+                  className="bg-sky-50 p-4 sm:p-5 rounded-2xl border border-sky-200 shadow-xs flex items-center gap-3 sm:gap-4"
                 >
-                  <span className="text-xl sm:text-2xl p-1.5 sm:p-2 bg-sky-50 rounded-lg shrink-0">
+                  <span className="text-2xl sm:text-3xl p-2.5 sm:p-3 bg-sky-200/60 rounded-xl shrink-0">
                     {item.icon}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[9px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider truncate">
+                    <p className="text-xs sm:text-sm font-black text-sky-700 uppercase tracking-wider truncate">
                       {item.label}
                     </p>
-                    <p className="text-xs sm:text-sm font-bold text-[#142957] leading-tight mt-0.5">
+                    <p className="text-sm sm:text-lg font-black text-[#142957] leading-tight mt-1">
                       {item.value}
                     </p>
                   </div>
@@ -804,9 +829,61 @@ export default function TrekDetail({ slug: propSlug }) {
         </div>
       </section>
 
+      {/* UPGRADED VISUAL PACKING SHOWCASE */}
+      <section className="bg-sky-50/80 border-b border-sky-200/80 py-10 sm:py-14 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-[1400px] mx-auto space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-sky-200">
+            <div>
+              <span className="text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-3 py-1 rounded-md">
+                ESSENTIAL PACKING GUIDE
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-[#142957] mt-2">
+                What Important Gear To Bring With You
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm font-black text-sky-800 bg-sky-100/90 px-3 py-1.5 rounded-lg border border-sky-200">
+              📷 Equipment Checklist for Himalayan Treks
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {horizontalPackingItems.map((guide, i) => (
+              <div 
+                key={i} 
+                className="bg-sky-100/90 border border-sky-200 p-5 rounded-3xl shadow-xs flex flex-col justify-between hover:bg-sky-200/50 transition duration-300"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl p-2.5 bg-sky-50 rounded-2xl border border-sky-200 shadow-2xs">{guide.icon}</span>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-sky-900 bg-sky-200/80 px-2.5 py-1 rounded-md border border-sky-300">
+                      {guide.tag}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-sm font-black text-[#142957] tracking-wide">
+                    {guide.category}
+                  </h3>
+
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {guide.pills.map((pill, idx) => (
+                      <span 
+                        key={idx}
+                        className="text-[11px] font-bold text-slate-800 bg-sky-50/90 px-2.5 py-1 rounded-lg border border-sky-200/80"
+                      >
+                        ✓ {pill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TAB NAVIGATION */}
-      <section className="bg-white border-b border-slate-200 py-2 px-3 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto flex gap-4 sm:gap-8 text-xs sm:text-sm font-bold text-[#142957] overflow-x-auto">
+      <section className="bg-sky-100/50 border-b border-sky-200 py-3 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-[1400px] mx-auto flex gap-6 sm:gap-10 text-sm sm:text-lg font-black text-[#142957] overflow-x-auto">
           {[
             { id: "itinerary", label: "Day by Day Itinerary" },
             { id: "inclusions", label: "Inclusions & Exclusions" },
@@ -815,8 +892,8 @@ export default function TrekDetail({ slug: propSlug }) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`py-3 uppercase tracking-wider border-b-2 sm:border-b-3 transition whitespace-nowrap cursor-pointer ${
-                activeTab === tab.id ? "border-[#142957] font-extrabold text-[#142957]" : "border-transparent text-slate-500"
+              className={`py-3 uppercase tracking-wider border-b-4 transition whitespace-nowrap cursor-pointer ${
+                activeTab === tab.id ? "border-[#142957] font-black text-[#142957]" : "border-transparent text-slate-500"
               }`}
             >
               {tab.label}
@@ -826,54 +903,54 @@ export default function TrekDetail({ slug: propSlug }) {
       </section>
 
       {/* TAB CONTENT */}
-      <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-16 space-y-12">
         
         {/* 1. ITINERARY TAB */}
         {activeTab === "itinerary" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-7 border-l-2 border-sky-200 ml-2.5 sm:ml-4 space-y-5 sm:space-y-8 pl-4 sm:pl-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 border-l-4 border-sky-300 ml-3 sm:ml-5 space-y-6 sm:space-y-10 pl-6 sm:pl-10">
               {trekData.itinerary.map((day, idx) => {
                 const isExpanded = expandedDay === idx;
                 return (
                   <div key={idx} className="relative">
-                    <div className="absolute -left-[23px] sm:-left-[39px] top-3 h-5 w-5 sm:h-7 sm:w-7 rounded-full bg-[#142957] text-white text-[10px] sm:text-xs font-bold flex items-center justify-center ring-4 ring-white shadow-xs">
+                    <div className="absolute -left-[35px] sm:-left-[51px] top-4 h-7 w-7 sm:h-9 sm:w-9 rounded-full bg-[#142957] text-white text-xs sm:text-base font-black flex items-center justify-center ring-4 ring-sky-100 shadow-md">
                       {idx + 1}
                     </div>
 
                     <div
                       onClick={() => setExpandedDay(isExpanded ? null : idx)}
-                      className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200/90 shadow-xs space-y-3 cursor-pointer hover:border-sky-300 transition"
+                      className="bg-sky-100/70 rounded-3xl p-5 sm:p-8 border border-sky-200 shadow-xs space-y-4 cursor-pointer hover:border-sky-400 transition"
                     >
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <span className="text-[10px] sm:text-xs font-bold text-sky-800 bg-sky-50 px-2 py-0.5 rounded">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs sm:text-sm font-black text-sky-900 bg-sky-200/80 px-3 py-1 rounded-lg">
                             {day.day}
                           </span>
-                          <h3 className="text-xs sm:text-base font-bold text-[#142957] leading-snug">
+                          <h3 className="text-sm sm:text-xl font-black text-[#142957] leading-snug">
                             {day.title}
                           </h3>
                         </div>
-                        <span className="text-sky-600 font-extrabold text-sm sm:text-base">
+                        <span className="text-sky-700 font-black text-xl sm:text-2xl">
                           {isExpanded ? "−" : "+"}
                         </span>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      <p className="text-sm sm:text-base font-medium text-slate-800 leading-relaxed">
                         {day.details}
                       </p>
 
                       {day.image && isExpanded && (
-                        <div className="pt-2 space-y-1">
-                          <div className="rounded-xl overflow-hidden h-44 sm:h-56 border border-slate-200">
+                        <div className="pt-3 space-y-2">
+                          <div className="rounded-2xl overflow-hidden h-52 sm:h-72 border border-sky-200">
                             <img src={day.image} alt={day.title} className="w-full h-full object-cover" />
                           </div>
-                          {day.caption && <p className="text-[11px] text-slate-500 italic">📷 {day.caption}</p>}
+                          {day.caption && <p className="text-xs sm:text-sm font-bold text-slate-600 italic">📷 {day.caption}</p>}
                         </div>
                       )}
 
-                      <div className="text-[11px] sm:text-xs font-semibold text-slate-500 flex flex-wrap gap-2.5 bg-slate-50 p-2.5 rounded-lg border border-slate-200/60">
-                        <span>🏔️ {day.altitude}</span>
-                        <span>🚶 {day.distance}</span>
+                      <div className="text-xs sm:text-sm font-bold text-slate-700 flex flex-wrap gap-4 bg-sky-50 p-3 rounded-xl border border-sky-200">
+                        <span>🏔️ Altitude: {day.altitude}</span>
+                        <span>🚶 Distance: {day.distance}</span>
                       </div>
                     </div>
                   </div>
@@ -882,17 +959,17 @@ export default function TrekDetail({ slug: propSlug }) {
             </div>
 
             {/* SIDEBAR SHOWCASE */}
-            <div className="lg:col-span-5 lg:sticky top-28">
-              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-md space-y-3">
-                <span className="text-xs font-bold text-[#142957] uppercase tracking-wider">Featured Batch Photo</span>
-                <div className="rounded-xl overflow-hidden h-64 sm:h-80 border border-slate-200">
+            <div className="lg:col-span-5 lg:sticky top-36">
+              <div className="bg-sky-100/80 rounded-3xl p-6 border border-sky-200 shadow-md space-y-4">
+                <span className="text-xs sm:text-sm font-black text-[#142957] uppercase tracking-widest">Featured Expedition Batch Photo</span>
+                <div className="rounded-2xl overflow-hidden h-72 sm:h-96 border border-sky-200">
                   <img
                     src={trekData.sideImage || trekData.bannerImage}
                     alt="Expedition Team"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="text-xs text-slate-600">Genuine batch photo captured live with our NandaPath team.</p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-700 leading-relaxed">Genuine batch photo captured live with our NandaPath team on trail.</p>
               </div>
             </div>
           </div>
@@ -900,29 +977,29 @@ export default function TrekDetail({ slug: propSlug }) {
 
         {/* 2. INCLUSIONS & EXCLUSIONS TAB */}
         {activeTab === "inclusions" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-emerald-50/40 rounded-2xl p-5 border border-emerald-200/80 space-y-3">
-              <h3 className="text-sm sm:text-base font-bold text-emerald-900 flex items-center gap-2">
-                <span>✓</span> What's Included
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="bg-emerald-100/60 rounded-3xl p-6 sm:p-8 border border-emerald-200 space-y-4">
+              <h3 className="text-base sm:text-xl font-black text-emerald-950 flex items-center gap-3">
+                <span className="text-2xl">✓</span> What's Included
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+              <ul className="space-y-3 text-sm sm:text-base font-semibold text-slate-800">
                 {trekData.inclusions?.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">✓</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-emerald-700 font-bold text-lg">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-rose-50/40 rounded-2xl p-5 border border-rose-200/80 space-y-3">
-              <h3 className="text-sm sm:text-base font-bold text-rose-900 flex items-center gap-2">
-                <span>✕</span> What's Excluded
+            <div className="bg-rose-100/60 rounded-3xl p-6 sm:p-8 border border-rose-200 space-y-4">
+              <h3 className="text-base sm:text-xl font-black text-rose-950 flex items-center gap-3">
+                <span className="text-2xl">✕</span> What's Excluded
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+              <ul className="space-y-3 text-sm sm:text-base font-semibold text-slate-800">
                 {trekData.exclusions?.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-rose-500 font-bold">✕</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-rose-600 font-bold text-lg">✕</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -933,27 +1010,27 @@ export default function TrekDetail({ slug: propSlug }) {
 
         {/* 3. PACKING TAB */}
         {activeTab === "packing" && (
-          <div className="space-y-6">
-            <div className="flex gap-2 border-b border-slate-100 pb-3 overflow-x-auto">
+          <div className="space-y-8">
+            <div className="flex gap-3 border-b border-sky-200 pb-4 overflow-x-auto">
               {Object.keys(commonPackingList).map((key) => (
                 <button
                   key={key}
                   onClick={() => setActivePackingTab(key)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase transition whitespace-nowrap cursor-pointer ${
-                    activePackingTab === key ? "bg-[#142957] text-white" : "bg-slate-50 text-slate-600 border border-slate-200"
+                  className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-black uppercase transition whitespace-nowrap cursor-pointer ${
+                    activePackingTab === key ? "bg-[#142957] text-white shadow-md" : "bg-sky-100 text-slate-700 border border-sky-200"
                   }`}
                 >
                   {key}
                 </button>
               ))}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {commonPackingList[activePackingTab].map((item, idx) => (
-                <div key={idx} className="bg-white p-4 rounded-2xl border border-slate-200/90 shadow-xs flex items-start gap-3.5">
-                  <span className="text-2xl p-2 bg-sky-50 rounded-xl border border-sky-100 shrink-0">{item.icon}</span>
+                <div key={idx} className="bg-sky-100/70 p-5 sm:p-6 rounded-3xl border border-sky-200 shadow-xs flex items-start gap-4">
+                  <span className="text-3xl p-3 bg-sky-50 rounded-2xl border border-sky-200 shrink-0">{item.icon}</span>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-[#142957]">{item.name}</h3>
-                    <p className="text-xs text-slate-500 mt-0.5">{item.desc}</p>
+                    <h3 className="text-sm sm:text-base font-black text-[#142957]">{item.name}</h3>
+                    <p className="text-xs sm:text-sm font-medium text-slate-700 mt-1">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -962,35 +1039,35 @@ export default function TrekDetail({ slug: propSlug }) {
         )}
 
         {/* EXPLORE SIMILAR TREKS */}
-        <section className="pt-8 border-t border-slate-200">
-          <div className="mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2.5 py-1 rounded-md border border-sky-100">
+        <section className="pt-10 border-t border-sky-200">
+          <div className="mb-8">
+            <span className="text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-3 py-1.5 rounded-lg border border-sky-300">
               DISCOVER MORE ROUTES
             </span>
-            <h2 className="text-xl sm:text-3xl font-bold text-[#142957] mt-1">Explore Similar Treks</h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-0.5">Other top-rated Himalayan trekking expeditions in Uttarakhand.</p>
+            <h2 className="text-2xl sm:text-4xl font-black text-[#142957] mt-2">Explore Similar Treks</h2>
+            <p className="text-sm sm:text-base font-semibold text-slate-700 mt-1">Other top-rated Himalayan trekking expeditions in Uttarakhand.</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {similarTreksList.map((trek) => (
               <Link
                 key={trek.name}
                 to={trek.link}
-                className="group bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-lg transition flex flex-col justify-between"
+                className="group bg-sky-100/80 rounded-2xl overflow-hidden border border-sky-200 shadow-xs hover:shadow-xl transition flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-36 sm:h-44 overflow-hidden relative">
+                  <div className="h-44 sm:h-52 overflow-hidden relative">
                     <img src={trek.image} alt={trek.name} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                    <span className="absolute top-2 right-2 bg-white/90 backdrop-blur-md text-[#142957] text-[10px] font-black px-2 py-0.5 rounded-full">
+                    <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#142957] text-xs font-black px-2.5 py-1 rounded-full">
                       {trek.altitude}
                     </span>
                   </div>
-                  <div className="p-3">
-                    <h3 className="text-xs sm:text-sm font-bold text-[#142957]">{trek.name}</h3>
-                    <p className="text-[11px] text-slate-500 mt-0.5">{trek.region}</p>
+                  <div className="p-4">
+                    <h3 className="text-sm sm:text-base font-black text-[#142957]">{trek.name}</h3>
+                    <p className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">{trek.region}</p>
                   </div>
                 </div>
-                <div className="p-3 pt-0 text-xs font-bold text-sky-700 group-hover:translate-x-1 transition">
+                <div className="p-4 pt-0 text-xs sm:text-sm font-black text-sky-800 group-hover:translate-x-1 transition">
                   View Trek &rarr;
                 </div>
               </Link>
@@ -998,14 +1075,14 @@ export default function TrekDetail({ slug: propSlug }) {
           </div>
         </section>
 
-        {/* MAP */}
-        <section className="pt-8 border-t border-slate-100">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#142957] mb-4">Trek Route Map & Geographic Region</h2>
-          <div className="bg-slate-50 p-3 sm:p-4 rounded-2xl border border-slate-200/90 shadow-xs">
+        {/* ROUTE MAP */}
+        <section className="pt-10 border-t border-sky-200">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#142957] mb-6">Trek Route Map & Geographic Region</h2>
+          <div className="bg-sky-100/70 p-4 sm:p-6 rounded-3xl border border-sky-200 shadow-xs">
             <iframe
               title={`${trekData.title} Map`}
               src={trekData.mapUrl}
-              className="w-full h-72 sm:h-96 rounded-xl border border-slate-200"
+              className="w-full h-80 sm:h-[450px] rounded-2xl border border-sky-300"
               loading="lazy"
             />
           </div>
@@ -1013,18 +1090,18 @@ export default function TrekDetail({ slug: propSlug }) {
 
       </div>
 
-      {/* MOBILE STICKY FLOATING ACTION BAR */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xs border-t border-slate-200 p-2.5 flex gap-2 z-50 shadow-xl">
+      {/* MOBILE FLOATING ACTION BAR */}
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-sky-50/95 backdrop-blur-xs border-t border-sky-200 p-3 flex gap-3 z-50 shadow-2xl">
         <button
           onClick={() => setShowWhatsAppModal(true)}
-          className="flex-1 bg-emerald-600 text-white font-bold text-xs py-2.5 rounded-xl text-center shadow-xs flex items-center justify-center gap-1.5"
+          className="flex-1 bg-emerald-600 text-white font-black text-xs py-3 rounded-2xl text-center shadow-xs flex items-center justify-center gap-2"
         >
           <span>💬</span>
           <span>WhatsApp Inquiry</span>
         </button>
         <Link
           to="/contact"
-          className="flex-1 bg-[#142957] text-white font-bold text-xs py-2.5 rounded-xl text-center shadow-xs flex items-center justify-center gap-1.5"
+          className="flex-1 bg-[#142957] text-white font-black text-xs py-3 rounded-2xl text-center shadow-xs flex items-center justify-center gap-2"
         >
           <span>📍</span>
           <span>Book Expedition</span>
@@ -1033,23 +1110,23 @@ export default function TrekDetail({ slug: propSlug }) {
 
       {/* WHATSAPP MODAL */}
       {showWhatsAppModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 relative">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+          <div className="bg-sky-50 rounded-3xl max-w-sm w-full p-8 shadow-2xl border border-sky-200 relative">
             <button
               onClick={() => setShowWhatsAppModal(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 font-bold"
+              className="absolute top-5 right-5 text-slate-500 hover:text-slate-800 font-black text-lg"
             >
               ✕
             </button>
-            <div className="text-center space-y-3">
-              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">💬</div>
-              <h3 className="text-lg font-bold text-[#142957]">Direct WhatsApp Support</h3>
-              <p className="text-xs text-slate-500">Connect with our Lead Expedition Manager for instant booking details.</p>
-              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center justify-between">
-                <span className="font-mono text-sm font-bold text-slate-800">{whatsappNumber}</span>
+            <div className="text-center space-y-4">
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">💬</div>
+              <h3 className="text-xl font-black text-[#142957]">Direct WhatsApp Support</h3>
+              <p className="text-xs sm:text-sm font-semibold text-slate-700">Connect with our Lead Expedition Manager for instant booking details.</p>
+              <div className="bg-sky-100 p-4 rounded-2xl border border-sky-200 flex items-center justify-between">
+                <span className="font-mono text-sm sm:text-base font-black text-slate-900">{whatsappNumber}</span>
                 <button
                   onClick={handleCopyPhone}
-                  className="text-xs bg-[#142957] text-white px-3 py-1.5 rounded-lg font-semibold"
+                  className="text-xs bg-[#142957] text-white px-3.5 py-2 rounded-xl font-black"
                 >
                   {copied ? "Copied! ✓" : "Copy"}
                 </button>
@@ -1060,7 +1137,7 @@ export default function TrekDetail({ slug: propSlug }) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-emerald-600 text-white font-bold text-xs py-3 rounded-xl transition"
+                className="block w-full text-center bg-emerald-600 text-white font-black text-xs sm:text-sm py-3.5 rounded-2xl transition"
               >
                 Open WhatsApp Chat &rarr;
               </a>

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+// Import real local asset image from src/assets
+import winterExpeditionGroupImg from "../assets/winter-expedition-group.jpeg";
 
-export default function Contact() {
+export default function BookingConsultationForm() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -20,71 +21,79 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 font-sans text-slate-800 pt-20 sm:pt-24 pb-12 sm:pb-16 w-full overflow-x-hidden">
-      <Navbar />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+    <section className="py-12 sm:py-16 bg-sky-50/70 font-sans text-slate-800 border-t border-sky-200/80 w-full overflow-hidden">
+      <div className="max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-sky-100/90 rounded-3xl border border-sky-200 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           
-          {/* LEFT COLUMN: HERO PHOTO CARD */}
-          <div className="lg:col-span-5 relative min-h-[300px] sm:min-h-[380px] lg:min-h-full flex flex-col justify-between p-6 sm:p-10 text-white overflow-hidden">
+          {/* LEFT SIDE SHOWCASE PANEL WITH REAL LOCAL ASSET PHOTO */}
+          <div className="lg:col-span-5 relative min-h-[420px] sm:min-h-[480px] lg:min-h-full flex flex-col justify-between p-7 sm:p-10 text-white overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=85"
-              alt="Himalayan Wilderness Expedition"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              src={winterExpeditionGroupImg}
+              alt="Himalayan Winter Expedition Group"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/95 via-[#0B1736]/70 to-[#0B1736]/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1736]/98 via-[#0B1736]/80 to-[#0B1736]/45" />
 
-            <div className="relative z-10 space-y-2 sm:space-y-3">
-              <span className="bg-amber-400 text-[#0B1736] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+            <div className="relative z-10 space-y-3">
+              <span className="bg-amber-400 text-[#0B1736] text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
                 NANDAPATH SUPPORT
               </span>
-              <h1 className="text-2xl sm:text-4xl font-sans font-bold text-white leading-tight tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">
                 Plan Your Dream Expedition
-              </h1>
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+              </h2>
+              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-semibold">
                 Connect with our Himalayan trek experts for customized itineraries, seasonal advice, and group estimates.
               </p>
             </div>
 
-            <div className="relative z-10 space-y-2.5 my-4 sm:my-6">
-              <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 flex items-center gap-3">
-                <span className="text-amber-300 text-sm sm:text-base">⚡</span>
-                <p className="text-[11px] sm:text-xs font-semibold text-white">Free Consultation & Estimate within 1 Hour</p>
+            <div className="relative z-10 space-y-3 my-4 sm:my-6">
+              <div className="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 flex items-center gap-3">
+                <span className="text-amber-300 text-lg">⚡</span>
+                <p className="text-xs sm:text-sm font-extrabold text-white">Free Consultation &amp; Estimate within 1 Hour</p>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 flex items-center gap-3">
-                <span className="text-sky-300 text-sm sm:text-base">🛡️</span>
-                <p className="text-[11px] sm:text-xs font-semibold text-white">Certified Guides & Field Equipment</p>
+              <div className="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 flex items-center gap-3">
+                <span className="text-sky-300 text-lg">🛡️</span>
+                <p className="text-xs sm:text-sm font-extrabold text-white">Certified Guides &amp; Field Equipment</p>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 flex items-center gap-3">
-                <span className="text-emerald-300 text-base">⛰️</span>
-                <p className="text-[11px] sm:text-xs font-semibold text-white">Customized Dates & Private Group Batches</p>
+              <div className="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 flex items-center gap-3">
+                <span className="text-emerald-300 text-lg">🏕️</span>
+                <p className="text-xs sm:text-sm font-extrabold text-white">Customized Dates &amp; Private Group Batches</p>
               </div>
             </div>
 
-            <div className="relative z-10 pt-3 border-t border-white/15 space-y-1 text-xs font-medium text-slate-200">
-              <p>📍 <strong>Office:</strong> Dehradun, Uttarakhand, India</p>
-              <p>📞 <strong>Phone / WhatsApp:</strong> +91 98765 43210</p>
-              <p>✉️ <strong>Email:</strong> info@nandapathadventures.com</p>
+            {/* ENLARGED CONTACT INFO AREA AT THE BOTTOM */}
+            <div className="relative z-10 pt-4 border-t border-white/25 space-y-2 text-sm sm:text-base font-extrabold text-slate-100">
+              <p className="flex items-center gap-2">
+                <span>📍</span>
+                <span><strong>Office:</strong> Dehradun, Uttarakhand, India</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <span>📞</span>
+                <span><strong>Phone / WhatsApp:</strong> +91 98765 43210</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <span>✉️</span>
+                <span><strong>Email:</strong> info@nandapathadventures.com</span>
+              </p>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: ENQUIRY FORM */}
-          <div className="lg:col-span-7 p-6 sm:p-10 space-y-5">
+          {/* RIGHT SIDE FORM CONTAINER */}
+          <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 space-y-5 bg-sky-50">
             <div>
-              <span className="text-[10px] sm:text-xs font-bold text-sky-600 uppercase tracking-wider bg-sky-50 px-2.5 py-1 rounded-md border border-sky-100">
+              <span className="text-xs sm:text-sm font-black text-sky-900 uppercase tracking-wider bg-sky-200/80 px-3.5 py-1 rounded-md border border-sky-300">
                 GET A FREE CONSULTATION
               </span>
-              <h2 className="text-xl sm:text-3xl font-sans font-bold text-[#142957] mt-2 tracking-tight">
+              <h3 className="text-2xl sm:text-4xl font-black text-[#142957] mt-2 tracking-tight">
                 Get in Touch with NandaPath
-              </h2>
+              </h3>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-3.5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700 mb-1">
                   Full Name
                 </label>
                 <input
@@ -93,13 +102,13 @@ export default function Contact() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="e.g. Rahul Sharma"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
+                  className="w-full bg-white border border-sky-200 rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] transition"
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                  <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700 mb-1">
                     Email Address <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -109,12 +118,12 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. rahul@gmail.com"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
+                    className="w-full bg-white border border-sky-200 rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                  <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700 mb-1">
                     Phone Number <span className="text-rose-500">*</span>
                   </label>
                   <input
@@ -124,34 +133,32 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="e.g. +91 98765 43210"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition"
+                    className="w-full bg-white border border-sky-200 rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] transition"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700 mb-1">
                   Select Your Destination
                 </label>
                 <select
                   name="destination"
                   value={formData.destination}
                   onChange={handleChange}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 focus:outline-none focus:border-[#142957] focus:bg-white transition cursor-pointer"
+                  className="w-full bg-white border border-sky-200 rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold text-slate-800 focus:outline-none focus:border-[#142957] transition cursor-pointer"
                 >
                   <option value="">Select a trek...</option>
-                  <option value="Kedarkantha">Kedarkantha Trek (Garhwal)</option>
-                  <option value="Har Ki Dun">Har Ki Dun Trek (Garhwal)</option>
-                  <option value="Bali Pass">Bali Pass Trek (Garhwal)</option>
-                  <option value="Gaumukh Tapovan">Gaumukh Tapovan Trek (Garhwal)</option>
-                  <option value="Pindari Glacier">Pindari Glacier Trek (Kumaon)</option>
-                  <option value="Kuari Pass">Kuari Pass Trek (Garhwal)</option>
-                  <option value="Custom Trek">Other / Custom Trek Route</option>
+                  <option value="Kedarkantha Trek">Kedarkantha Trek (Garhwal)</option>
+                  <option value="Kuari Pass Trek">Kuari Pass Trek (Garhwal)</option>
+                  <option value="Gaumukh Tapovan Expedition">Gaumukh Tapovan Expedition</option>
+                  <option value="Pindari Glacier Trek">Pindari Glacier Trek (Kumaon)</option>
+                  <option value="Custom Trek Route">Other / Custom Trek Route</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700 mb-1">
                   Comments / Special Requirements
                 </label>
                 <textarea
@@ -160,21 +167,21 @@ export default function Contact() {
                   value={formData.comments}
                   onChange={handleChange}
                   placeholder="Tell us about expected travel dates, group size, or custom route requirements..."
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] focus:bg-white transition resize-none"
+                  className="w-full bg-white border border-sky-200 rounded-2xl px-4 py-3.5 text-sm sm:text-base font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#142957] transition resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#142957] hover:bg-sky-900 text-white font-bold text-xs sm:text-sm py-3.5 sm:py-4 rounded-xl shadow-md transition cursor-pointer mt-2"
+                className="w-full bg-[#142957] hover:bg-sky-900 text-white font-black text-sm sm:text-base py-4 rounded-2xl shadow-md transition cursor-pointer"
               >
-                Send Enquiry & Get Estimate &rarr;
+                Send Enquiry &amp; Get Estimate &rarr;
               </button>
             </form>
           </div>
 
         </div>
       </div>
-    </main>
+    </section>
   );
 }

@@ -32,8 +32,8 @@ const slideItems = [
     tagline: "EXPEDITION SAFETY • CERTIFIED LEADERS",
     heading: "Safety Means \nNandaPath",
     description: "Behind every high-altitude trek lies a rock-solid system built on certified Himalayan mountaineers, medical oxygen gear, and safety protocols.",
-    // REPLACED WITH VERIFIED UTTARAKHAND PEAKS
-    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1920&q=85", 
+    // NON-SNOWY GREEN UTTARAKHAND VALLEY & MOUNTAIN RIDGE
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=85",
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ export default function HeroSlider() {
     if (isSearching) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideItems.length);
-    }, 12000);
+    }, 10000);
     return () => clearInterval(timer);
   }, [isSearching]);
 
@@ -101,6 +101,7 @@ export default function HeroSlider() {
               backgroundPosition: "center",
             }}
           >
+            {/* LIGHT SOFT OVERLAY FOR BRIGHT NAVY TEXT */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 sm:via-white/60 to-transparent" />
 
             <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-12 lg:px-16 pt-8 sm:pt-14 pb-16 sm:pb-24 h-full flex flex-col justify-center">
