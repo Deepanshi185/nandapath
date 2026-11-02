@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import Faq from "./pages/Faq";
 import Uttarakhand from "./pages/Uttarakhand";
 import Kumaon from "./pages/Kumaon";
+import OffbeatTreks from "./pages/OffbeatTreks";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 // Wrapper component to pass the URL parameter as a prop
@@ -25,6 +26,9 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         
+        {/* Offbeat Treks Landing Page */}
+        <Route path="/offbeat" element={<OffbeatTreks />} />
+        
         {/* Fixed FAQ Routes (Handles both singular and plural URLs) */}
         <Route path="/faqs" element={<Faq />} />
         <Route path="/faq" element={<Faq />} />
@@ -40,6 +44,7 @@ export default function App() {
 
         {/* Dynamic Trek Routes */}
         <Route path="/:slug" element={<DynamicTrekWrapper />} />
+        <Route path="/offbeat/:slug" element={<DynamicTrekWrapper />} />
         <Route path="/uttarakhand/:slug" element={<DynamicTrekWrapper />} />
         <Route path="/garhwal/:slug" element={<DynamicTrekWrapper />} />
         <Route path="/kumaon/:slug" element={<DynamicTrekWrapper />} />

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import nandaPathLogo from "../assets/nanda-path1.jpg";
 
 export default function Navbar() {
+  const [isOffbeatOpen, setIsOffbeatOpen] = useState(false);
   const [isUttarakhandOpen, setIsUttarakhandOpen] = useState(false);
   const [isHimachalOpen, setIsHimachalOpen] = useState(false);
   const [isKashmirOpen, setIsKashmirOpen] = useState(false);
@@ -40,6 +41,70 @@ export default function Navbar() {
           <Link to="/" className="hover:text-sky-600 transition">
             Home
           </Link>
+
+          {/* 0. OFFBEAT TREKS DROPDOWN */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsOffbeatOpen(true)}
+            onMouseLeave={() => setIsOffbeatOpen(false)}
+          >
+            <Link
+              to="/offbeat"
+              className="flex items-center gap-1.5 hover:text-sky-600 py-6 transition cursor-pointer"
+            >
+              <span>Offbeat</span>
+              <span className="bg-amber-300 text-slate-900 text-[9px] font-black px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+                New
+              </span>
+              <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+
+            {isOffbeatOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[540px] bg-sky-50 rounded-2xl shadow-xl border border-sky-200/80 p-5 grid grid-cols-2 gap-6 z-50">
+                {/* GARHWAL OFFBEAT */}
+                <div>
+                  <div className="border-b border-sky-200 pb-2 mb-2.5">
+                    <Link 
+                      to="/offbeat" 
+                      className="text-xs font-black uppercase tracking-wider text-sky-800 hover:text-[#142957] flex items-center justify-between transition"
+                    >
+                      <span>Garhwal Offbeat</span>
+                      <span>&rarr;</span>
+                    </Link>
+                  </div>
+                  <ul className="space-y-2 text-xs font-bold text-slate-800">
+                    <li><Link to="/offbeat/panwali-kantha" className="hover:text-sky-600 hover:underline">Panwali Kantha (3,368 m)</Link></li>
+                    <li><Link to="/offbeat/satopanth-lake" className="hover:text-sky-600 hover:underline">Satopanth Lake (4,600 m)</Link></li>
+                    <li><Link to="/bali-pass" className="hover:text-sky-600 hover:underline">Bali Pass (4,950 m)</Link></li>
+                    <li><Link to="/offbeat/kagbhusandi-lake" className="hover:text-sky-600 hover:underline">Kagbhusandi Lake (4,490 m)</Link></li>
+                    <li><Link to="/offbeat/pangarchulla-peak" className="hover:text-sky-600 hover:underline">Pangarchulla Peak (4,700 m)</Link></li>
+                    <li><Link to="/roopkund" className="hover:text-sky-600 hover:underline">Roopkund (6N / 7D)</Link></li>
+                  </ul>
+                </div>
+
+                {/* KUMAON OFFBEAT */}
+                <div>
+                  <div className="border-b border-sky-200 pb-2 mb-2.5">
+                    <Link 
+                      to="/offbeat" 
+                      className="text-xs font-black uppercase tracking-wider text-sky-800 hover:text-[#142957] flex items-center justify-between transition"
+                    >
+                      <span>Kumaon Offbeat</span>
+                      <span>&rarr;</span>
+                    </Link>
+                  </div>
+                  <ul className="space-y-2 text-xs font-bold text-slate-800">
+                    <li><Link to="/offbeat/namik-glacier" className="hover:text-sky-600 hover:underline font-extrabold text-sky-700">Namik Glacier Trek</Link></li>
+                    <li><Link to="/offbeat/kafni-glacier" className="hover:text-sky-600 hover:underline font-extrabold text-sky-700">Kafni Glacier Trek</Link></li>
+                    <li><Link to="/pindari-glacier" className="hover:text-sky-600 hover:underline">Pindari Glacier Trek</Link></li>
+                    <li><Link to="/milam-glacier" className="hover:text-sky-600 hover:underline">Milam Glacier Trek</Link></li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* 1. UTTARAKHAND DROPDOWN */}
           <div
@@ -94,6 +159,8 @@ export default function Navbar() {
                     </Link>
                   </div>
                   <ul className="space-y-2 text-xs font-bold text-slate-800">
+                    <li><Link to="/offbeat/namik-glacier" className="hover:text-sky-600 hover:underline font-extrabold text-sky-700">Namik Glacier Trek</Link></li>
+                    <li><Link to="/offbeat/kafni-glacier" className="hover:text-sky-600 hover:underline font-extrabold text-sky-700">Kafni Glacier Trek</Link></li>
                     <li><Link to="/pindari-glacier" className="hover:text-sky-600 hover:underline">Pindari Glacier Trek</Link></li>
                     <li><Link to="/milam-glacier" className="hover:text-sky-600 hover:underline">Milam Glacier Trek</Link></li>
                     <li><Link to="/sundardunga-glacier" className="hover:text-sky-600 hover:underline">Sundardunga Glacier Trek</Link></li>
@@ -278,6 +345,39 @@ export default function Navbar() {
             Home
           </Link>
 
+          {/* MOBILE OFFBEAT */}
+          <div>
+            <button
+              onClick={() => toggleMobileSubmenu("offbeat")}
+              className="w-full flex items-center justify-between font-extrabold text-[#142957] text-sm py-2 border-b border-sky-200 cursor-pointer"
+            >
+              <div className="flex items-center gap-2">
+                <span>Offbeat Treks</span>
+                <span className="bg-amber-300 text-slate-900 text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  New
+                </span>
+              </div>
+              <span>{activeMobileSubmenu === "offbeat" ? "−" : "+"}</span>
+            </button>
+            {activeMobileSubmenu === "offbeat" && (
+              <div className="pl-3 py-2 space-y-2 text-xs font-bold text-slate-800 bg-sky-100/80 rounded-xl mt-2 p-3 border border-sky-200">
+                <p className="font-black text-sky-800 uppercase text-[10px] tracking-wider">Garhwal Offbeat</p>
+                <Link to="/offbeat/panwali-kantha" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Panwali Kantha (3,368 m)</Link>
+                <Link to="/offbeat/satopanth-lake" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Satopanth Lake (4,600 m)</Link>
+                <Link to="/bali-pass" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Bali Pass (4,950 m)</Link>
+                <Link to="/offbeat/kagbhusandi-lake" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Kagbhusandi Lake (4,490 m)</Link>
+                <Link to="/offbeat/pangarchulla-peak" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Pangarchulla Peak (4,700 m)</Link>
+                <Link to="/roopkund" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Roopkund (6N/7D)</Link>
+
+                <p className="font-black text-sky-800 uppercase text-[10px] tracking-wider pt-2 border-t border-sky-200">Kumaon Offbeat</p>
+                <Link to="/offbeat/namik-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5 font-extrabold text-sky-700">Namik Glacier Trek</Link>
+                <Link to="/offbeat/kafni-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5 font-extrabold text-sky-700">Kafni Glacier Trek</Link>
+                <Link to="/pindari-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Pindari Glacier Trek</Link>
+                <Link to="/milam-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Milam Glacier Trek</Link>
+              </div>
+            )}
+          </div>
+
           {/* MOBILE UTTARAKHAND */}
           <div>
             <button
@@ -300,6 +400,8 @@ export default function Navbar() {
                 <Link to="/roopkund" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Roopkund Trek</Link>
 
                 <p className="font-black text-sky-800 uppercase text-[10px] tracking-wider pt-2 border-t border-sky-200">Kumaon Region</p>
+                <Link to="/offbeat/namik-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5 font-extrabold text-sky-700">Namik Glacier Trek</Link>
+                <Link to="/offbeat/kafni-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5 font-extrabold text-sky-700">Kafni Glacier Trek</Link>
                 <Link to="/pindari-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Pindari Glacier Trek</Link>
                 <Link to="/milam-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Milam Glacier Trek</Link>
                 <Link to="/sundardunga-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Sundardunga Glacier Trek</Link>
