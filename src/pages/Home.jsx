@@ -5,6 +5,7 @@ import HeroSlider from "../components/HeroSlider";
 import TestimonialsSection from "../components/TestimonialsSection";
 import FaqSection from "../components/FaqSection"; 
 import BlogVideoSection from "../components/BlogVideoSection";
+import pindariNewImg from "../assets/pindari-glacier-card.jpeg";
 
 // Local Asset Imports
 import basecampImg from "../assets/basecamp.jpeg";
@@ -419,7 +420,7 @@ const popularDestinations = [
   {
     name: "Pindari Glacier Trek",
     tagline: "Kumaon Valley Glacier Snout",
-    image: campsiteMealImg,
+    image: pindariNewImg,
     link: "/pindari-glacier",
   },
   {
@@ -577,79 +578,94 @@ export default function Home() {
       </div>
 
       {/* POPULAR COURSES / DESTINATIONS SHOWCASE */}
-      <section className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 my-8 sm:my-14 bg-sky-50/50 w-full overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
-          
-          <div className="lg:col-span-6 space-y-3 sm:space-y-4">
-            <span className="inline-block text-xs font-black uppercase tracking-[0.22em] text-sky-800 bg-sky-200/80 px-3 py-1 rounded-md border border-sky-300">
-              TRIPOTUDE
-            </span>
-            <h2 className="text-2xl sm:text-5xl font-sans font-black text-[#142957] tracking-tight leading-tight">
-              Popular Routes & Courses
-            </h2>
-            <p className="text-sm sm:text-lg text-slate-700 font-bold leading-relaxed max-w-lg">
-              Explore our top-rated Himalayan trekking courses across Garhwal and Kumaon valleys, led by certified guides with complete safety logistics.
-            </p>
+<section className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 my-8 sm:my-14 bg-sky-50/50 w-full overflow-hidden rounded-3xl py-6 sm:py-8">
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
+    
+    <div className="lg:col-span-6 space-y-3 sm:space-y-4">
+      <span className="inline-block text-xs font-black uppercase tracking-[0.22em] text-sky-800 bg-sky-200/80 px-3 py-1 rounded-md border border-sky-300">
+        TRIPOTUDE
+      </span>
+      <h2 className="text-2xl sm:text-5xl font-sans font-black text-[#142957] tracking-tight leading-tight">
+        Popular Routes & Courses
+      </h2>
+      <p className="text-sm sm:text-lg text-slate-700 font-bold leading-relaxed max-w-lg">
+        Explore our top-rated Himalayan trekking courses across Garhwal and Kumaon valleys, led by certified guides with complete safety logistics.
+      </p>
 
-            <div className="pt-2 flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm font-black text-[#142957]">
-              <span className="flex items-center gap-1.5 bg-sky-100 border border-sky-200 px-4 py-2 rounded-2xl">
-                🏔️ 18+ Active Routes
+      <div className="pt-2 flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm font-black text-[#142957]">
+        <span className="flex items-center gap-1.5 bg-sky-100 border border-sky-200 px-4 py-2 rounded-2xl shadow-xs">
+          🏔️ 18+ Active Routes
+        </span>
+        <span className="flex items-center gap-1.5 bg-sky-100 border border-sky-200 px-4 py-2 rounded-2xl shadow-xs">
+          Direct Pickup Support
+        </span>
+      </div>
+    </div>
+
+    {/* MAIN FLAGSHIP CARD */}
+    <div className="hidden md:block lg:col-span-6">
+      <Link
+        to="/kedarkantha"
+        className="group relative block h-64 sm:h-80 w-full overflow-hidden rounded-3xl border border-sky-200 shadow-lg transition-all duration-300 hover:shadow-2xl"
+      >
+        <img
+          src={basecampImg}
+          alt="Sankri Basecamp Hub"
+          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+        />
+      </Link>
+    </div>
+
+  </div>
+
+  {/* 4 UPDATED LOCAL PHOTO CARDS (1 column on mobile, 2 on tablet, 4 on desktop) */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    {popularDestinations.map((dest) => {
+      // Custom image styling per trek to fix cropping & black bars
+      let imageStyle = "absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110";
+      
+      if (dest.link.includes("pindari")) {
+        imageStyle += " object-bottom scale-110"; // Centers hiker & peak for Pindari
+      } else if (dest.link.includes("gaumukh")) {
+        imageStyle += " object-center scale-125"; // Zooms Gaumukh image to eliminate black space
+      } else {
+        imageStyle += " object-center scale-105";
+      }
+
+      return (
+        <Link
+          key={dest.name}
+          to={dest.link}
+          className="group relative h-56 sm:h-64 overflow-hidden rounded-3xl border border-sky-200 bg-slate-900 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-end p-5"
+        >
+          <img
+            src={dest.image}
+            alt={dest.name}
+            className={imageStyle}
+          />
+          
+          {/* DARK GRADIENT OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
+
+          <div className="relative z-10 flex items-end justify-between text-white w-full">
+            <div className="pr-2">
+              <span className="text-[11px] sm:text-xs font-black text-amber-300 block mb-1 tracking-wide">
+                {dest.tagline}
               </span>
-              <span className="flex items-center gap-1.5 bg-sky-100 border border-sky-200 px-4 py-2 rounded-2xl">
-                Direct Pickup Support
-              </span>
+              <h3 className="text-base sm:text-lg font-black font-sans leading-tight text-white drop-shadow-sm">
+                {dest.name}
+              </h3>
+            </div>
+
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/25 text-white backdrop-blur-md transition-all group-hover:bg-amber-400 group-hover:text-[#142957] shrink-0">
+              &rarr;
             </div>
           </div>
-
-          {/* MAIN FLAGSHIP CARD */}
-          <div className="hidden md:block lg:col-span-6">
-            <Link
-              to="/kedarkantha"
-              className="group relative block h-64 sm:h-80 w-full overflow-hidden rounded-3xl border border-sky-200 shadow-lg transition-all duration-300 hover:shadow-2xl"
-            >
-              <img
-                src={basecampImg}
-                alt="Sankri Basecamp Hub"
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-            </Link>
-          </div>
-
-        </div>
-
-        {/* 4 UPDATED LOCAL PHOTO CARDS */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {popularDestinations.map((dest) => (
-            <Link
-              key={dest.name}
-              to={dest.link}
-              className="group relative h-52 sm:h-60 overflow-hidden rounded-3xl border border-sky-200 bg-sky-100 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-end p-4 sm:p-5"
-            >
-              <img
-                src={dest.image}
-                alt={dest.name}
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
-
-              <div className="relative z-10 flex items-end justify-between text-white">
-                <div>
-                  <span className="text-xs font-black text-amber-300 block mb-0.5">
-                    {dest.tagline}
-                  </span>
-                  <h3 className="text-sm sm:text-lg font-black font-sans leading-tight">
-                    {dest.name}
-                  </h3>
-                </div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/25 text-white backdrop-blur-md transition-all group-hover:bg-amber-400 group-hover:text-[#142957] shrink-0 ml-2">
-                  &rarr;
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
+        </Link>
+      );
+    })}
+  </div>
+</section>
       {/* BEST OF UTTARAKHAND SECTION */}
       <section id="best-uttarakhand" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-sky-100/40 border-t border-sky-200">
         <div className="mx-auto max-w-[1400px]">

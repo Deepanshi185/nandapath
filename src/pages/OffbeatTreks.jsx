@@ -1,40 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const offbeatData = [
   {
-    id: "namik-glacier",
-    name: "Namik Glacier Trek",
-    region: "Kumaon Region",
-    altitude: "3,600 m",
-    duration: "7 Days / 6 Nights",
-    difficulty: "Moderate",
-    season: "May–Jun, Sep–Nov",
-    desc: "A pristine wilderness trek in Pithoragarh surrounded by Nanda Devi, Nanda Kot, and Trishul peaks, passing ancient Kumaoni villages.",
-    link: "/offbeat/namik-glacier",
-    tag: "Kumaon Secret",
-  },
-  {
-    id: "kafni-glacier",
-    name: "Kafni Glacier Trek",
-    region: "Kumaon Region",
-    altitude: "3,853 m",
-    duration: "6 Days / 5 Nights",
-    difficulty: "Moderate",
-    season: "May–Jun, Sep–Oct",
-    desc: "Situated east of the Pindari Valley, this quiet trek offers expansive Himalayan meadows, rhododendron blooms, and views of Nandakot peak.",
-    link: "/offbeat/kafni-glacier",
-    tag: "Untouched Valley",
-  },
-  {
     id: "panwali-kantha",
-    name: "Panwali Kantha Trek",
+    name: "Panwali Dwar / Kantha Trek",
     region: "Garhwal Region",
     altitude: "3,368 m",
     duration: "4–6 Days",
     difficulty: "Easy–Moderate",
-    season: "May–Jun, Sep–Nov",
-    desc: "Famous for high alpine ridge meadows offering panoramic views of Kedarnath, Chaukhamba, and Yamunotri mountain ranges.",
+    season: "May–Jun, Oct–Nov, Sep–Nov",
+    desc: "High alpine ridge meadow offering panoramic views of Kedarnath, Chaukhamba, and Yamunotri peaks.",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
     link: "/offbeat/panwali-kantha",
     tag: "High Ridge Meadow",
   },
@@ -46,7 +26,9 @@ const offbeatData = [
     duration: "8–10 Days",
     difficulty: "Moderate–Hard",
     season: "Jun–Sep, Sep–Nov",
-    desc: "A sacred triangular glacial lake beyond Badrinath nestled beneath Neelkanth, Chaukhamba, and Swargarohini peaks.",
+    desc: "A sacred triangular glacial lake located beyond Badrinath under Neelkanth and Chaukhamba peaks.",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     link: "/offbeat/satopanth-lake",
     tag: "Sacred Glacial Lake",
   },
@@ -58,7 +40,9 @@ const offbeatData = [
     duration: "9–10 Days",
     difficulty: "Challenging",
     season: "May–Jun, Sep–Oct",
-    desc: "An exhilarating alpine pass crossing from Har Ki Dun Valley over to Yamunotri via the pristine Ruinsara Lake.",
+    desc: "An exhilarating alpine pass crossing connecting Har Ki Dun Valley to Yamunotri via Ruinsara Lake.",
+    image:
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
     link: "/bali-pass",
     tag: "High Altitude Pass",
   },
@@ -70,7 +54,9 @@ const offbeatData = [
     duration: "6 Days",
     difficulty: "Moderate",
     season: "Jun–Sep",
-    desc: "An emerald-green high-altitude lake hidden near Hathi Parbat, carpeted with rare Brahma Kamal flowers during monsoon.",
+    desc: "An emerald-green high-altitude lake hidden near Hathi Parbat with rare alpine blooms.",
+    image:
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
     link: "/offbeat/kagbhusandi-lake",
     tag: "Rare Floral Trail",
   },
@@ -82,90 +68,137 @@ const offbeatData = [
     duration: "6–7 Days",
     difficulty: "Moderate–Hard",
     season: "Mar–May, Oct–Nov",
-    desc: "A thrilling summit climb near Kuari Pass with exhilarating snow ridges and 360-degree views of Nanda Devi.",
+    desc: "A thrilling summit climb near Kuari Pass featuring steep snow ridges and clear Nanda Devi views.",
+    image:
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=800&q=80",
     link: "/offbeat/pangarchulla-peak",
     tag: "Summit Expedition",
   },
   {
     id: "roopkund",
-    name: "Roopkund Trek",
+    name: "Roopkund Mystery Lake",
     region: "Garhwal Region",
     altitude: "4,800 m",
     duration: "6 Nights / 7 Days",
     difficulty: "Moderate–Hard",
     season: "May–Jun, Sep–Oct",
-    desc: "The famous Mystery Lake trail passing through Ali and Bedni Bugyal meadows under the shadow of Trishul Peak.",
+    desc: "The famous Mystery Lake trail passing through Ali and Bedni Bugyal meadows under Trishul Peak.",
+    image:
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
     link: "/roopkund",
     tag: "Mystery Lake",
+  },
+  {
+    id: "namik-glacier",
+    name: "Namik Glacier Trek",
+    region: "Kumaon Region",
+    altitude: "3,600 m",
+    duration: "7 Days / 6 Nights",
+    difficulty: "Moderate",
+    season: "May–Jun, Sep–Nov",
+    desc: "A remote wilderness trek in Pithoragarh surrounded by Nanda Kot and Trishul peaks.",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    link: "/offbeat/namik-glacier",
+    tag: "Kumaon Secret",
+  },
+  {
+    id: "kafni-glacier",
+    name: "Kafni Glacier Trek",
+    region: "Kumaon Region",
+    altitude: "3,853 m",
+    duration: "6 Days / 5 Nights",
+    difficulty: "Moderate",
+    season: "May–Jun, Sep–Oct",
+    desc: "East of Pindari Valley, this quiet trek offers expansive meadows and views of Nandakot peak.",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    link: "/offbeat/kafni-glacier",
+    tag: "Untouched Valley",
   },
 ];
 
 export default function OffbeatTreks() {
   return (
-    <div className="pt-28 sm:pt-36 pb-20 bg-sky-50 min-h-screen font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* PAGE HEADER */}
-        <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-14">
-          <span className="bg-amber-300 text-[#142957] text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-xs">
-            Unexplored & Raw Himalayan Trails
+    <main className="min-h-screen bg-sky-50/50 font-sans text-slate-800">
+      <Navbar />
+
+      {/* HEADER SECTION */}
+      <section className="bg-[#142957] text-white pt-28 sm:pt-36 pb-12 sm:pb-20 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto text-center space-y-4">
+          <span className="bg-amber-300 text-[#142957] text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-sm">
+            Unexplored Himalayan Routes
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#142957] tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
             Offbeat Himalayan Expeditions
           </h1>
-          <p className="max-w-3xl mx-auto text-xs sm:text-base text-slate-600 font-medium leading-relaxed">
-            Escape overcrowded commercial commercial routes. Journey deep into pristine Garhwal alpine meadows and quiet Kumaon glacial valleys with certified mountain leaders.
+          <p className="max-w-3xl mx-auto text-xs sm:text-base text-sky-100 font-medium leading-relaxed">
+            Discover untouched trails, pristine glacial lakes, and raw alpine passes across Garhwal & Kumaon Himalayas with expert guides.
           </p>
         </div>
+      </section>
 
-        {/* TREKS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {/* TREKS CARDS GRID */}
+      <section className="py-10 sm:py-16 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {offbeatData.map((trek) => (
             <div
               key={trek.id}
-              className="bg-white rounded-3xl p-6 sm:p-7 border border-sky-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden border border-sky-200/80 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between group"
             >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-sky-800 bg-sky-100 px-3 py-1 rounded-full">
+              <div>
+                {/* CARD IMAGE CONTAINER */}
+                <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <img
+                    src={trek.image}
+                    alt={trek.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#142957]/90 backdrop-blur-xs text-amber-300 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
                     {trek.tag}
                   </span>
-                  <span className="text-xs font-bold text-slate-500">{trek.region}</span>
+                  <span className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-xs text-[#142957] text-[10px] font-extrabold px-2.5 py-1 rounded-lg">
+                    {trek.region}
+                  </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#142957] group-hover:text-sky-600 transition">
-                  {trek.name}
-                </h3>
+                {/* CARD BODY */}
+                <div className="p-5 sm:p-6 space-y-3">
+                  <h3 className="text-lg sm:text-2xl font-black text-[#142957] group-hover:text-sky-600 transition leading-tight">
+                    {trek.name}
+                  </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-                  {trek.desc}
-                </p>
+                  <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                    {trek.desc}
+                  </p>
 
-                {/* STATS TABLE */}
-                <div className="grid grid-cols-2 gap-2.5 pt-3 border-t border-slate-100 text-xs font-bold text-slate-700">
-                  <div className="bg-sky-50/70 rounded-xl p-2.5">
-                    <span className="block text-[10px] text-slate-400 font-bold uppercase">Max Altitude</span>
-                    <span className="text-[#142957]">{trek.altitude}</span>
-                  </div>
-                  <div className="bg-sky-50/70 rounded-xl p-2.5">
-                    <span className="block text-[10px] text-slate-400 font-bold uppercase">Duration</span>
-                    <span className="text-[#142957]">{trek.duration}</span>
-                  </div>
-                  <div className="bg-sky-50/70 rounded-xl p-2.5">
-                    <span className="block text-[10px] text-slate-400 font-bold uppercase">Difficulty</span>
-                    <span className="text-[#142957]">{trek.difficulty}</span>
-                  </div>
-                  <div className="bg-sky-50/70 rounded-xl p-2.5">
-                    <span className="block text-[10px] text-slate-400 font-bold uppercase">Best Season</span>
-                    <span className="text-[#142957]">{trek.season}</span>
+                  {/* SPECIFICATION DETAILS */}
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100 text-xs font-bold">
+                    <div className="bg-sky-50 p-2.5 rounded-xl border border-sky-100">
+                      <span className="block text-[9px] text-sky-800 font-black uppercase">Max Altitude</span>
+                      <span className="text-[#142957] text-xs font-black">{trek.altitude}</span>
+                    </div>
+                    <div className="bg-sky-50 p-2.5 rounded-xl border border-sky-100">
+                      <span className="block text-[9px] text-sky-800 font-black uppercase">Duration</span>
+                      <span className="text-[#142957] text-xs font-black">{trek.duration}</span>
+                    </div>
+                    <div className="bg-sky-50 p-2.5 rounded-xl border border-sky-100">
+                      <span className="block text-[9px] text-sky-800 font-black uppercase">Difficulty</span>
+                      <span className="text-[#142957] text-xs font-black">{trek.difficulty}</span>
+                    </div>
+                    <div className="bg-sky-50 p-2.5 rounded-xl border border-sky-100">
+                      <span className="block text-[9px] text-sky-800 font-black uppercase">Best Season</span>
+                      <span className="text-[#142957] text-xs font-black">{trek.season}</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6">
+              {/* CARD ACTION */}
+              <div className="p-5 sm:p-6 pt-0">
                 <Link
                   to={trek.link}
-                  className="block w-full text-center rounded-full bg-[#142957] hover:bg-sky-900 text-white py-3 text-xs sm:text-sm font-black transition shadow-sm"
+                  className="block w-full text-center rounded-2xl bg-[#142957] hover:bg-sky-900 text-white py-3 text-xs sm:text-sm font-black transition shadow-sm"
                 >
                   View Complete Itinerary &rarr;
                 </Link>
@@ -173,8 +206,9 @@ export default function OffbeatTreks() {
             </div>
           ))}
         </div>
+      </section>
 
-      </div>
-    </div>
+      <Footer />
+    </main>
   );
 }

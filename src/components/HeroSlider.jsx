@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import winterPineTrailImg from "../assets/winter-pine-trail.jpeg";
+import nandaDeviHero from "../assets/hero-mount-nanda.jpeg";
 
 const searchDatabase = [
   { name: "Kedarkantha Trek", region: "Uttarakhand", type: "Trek", link: "/kedarkantha" },
@@ -8,6 +9,8 @@ const searchDatabase = [
   { name: "Bali Pass Trek", region: "Uttarakhand", type: "Trek", link: "/bali-pass" },
   { name: "Gaumukh Tapovan Trek", region: "Uttarakhand", type: "Trek", link: "/gaumukh-tapovan" },
   { name: "Pindari Glacier Trek", region: "Kumaon", type: "Trek", link: "/pindari-glacier" },
+  { name: "Namik Glacier Trek", region: "Kumaon", type: "Trek", link: "/offbeat/namik-glacier" },
+  { name: "Kafni Glacier Trek", region: "Kumaon", type: "Trek", link: "/offbeat/kafni-glacier" },
   { name: "Kashmir Great Lakes", region: "Jammu & Kashmir", type: "Trek", link: "/kashmir-great-lakes" },
   { name: "Hampta Pass Trek", region: "Himachal", type: "Trek", link: "/hampta-pass" },
 ];
@@ -15,32 +18,31 @@ const searchDatabase = [
 const slideItems = [
   {
     id: 0,
-    tagline: "ADVENTURE • NATURE • EXPLORATION",
-    heading: "Mountains Call, \nWe Guide",
-    description: "Discover breathtaking treks, wilderness camping, and cozy stays in the heart of the Himalayas.",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85", // Nanda Devi Summit, Uttarakhand
+    tagline: "EXPLORE THE HIMALAYAS",
+    heading: "Mountains Call,\nWe Guide",
+    description: "Plan your next adventure with local experts. Explore scenic trekking routes, mountain camping, and cozy homestays.",
+    image: nandaDeviHero,
   },
   {
     id: 1,
-    tagline: "WINTER PASSAGES • GARHWAL HIMALAYAS",
-    heading: "Snowy Ridges & \nWinter Trails",
-    description: "Ascend pristine snow slopes through pine glades with certified local leaders and full high-altitude gear support.",
-    image: winterPineTrailImg, // Real Hand-Clicked Winter Trail, Uttarakhand
+    tagline: "GARHWAL WINTER TRAILS",
+    heading: "Snow Ridges &\nWinter Walks",
+    description: "Walk through pine forests and snow slopes with experienced local guides and complete safety support.",
+    image: winterPineTrailImg,
   },
   {
     id: 2,
-    tagline: "EXPEDITION SAFETY • CERTIFIED LEADERS",
-    heading: "Safety Means \nNandaPath",
-    description: "Behind every high-altitude trek lies a rock-solid system built on certified Himalayan mountaineers, medical oxygen gear, and safety protocols.",
-    // NON-SNOWY GREEN UTTARAKHAND VALLEY & MOUNTAIN RIDGE
+    tagline: "EXPEDITION SAFETY",
+    heading: "Safe & Certified\nExpeditions",
+    description: "Every trek is led by certified mountaineers equipped with medical oxygen, first-aid, and safety gear.",
     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=85",
   },
   {
     id: 3,
-    tagline: "GARHWAL & KUMAON • CUSTOM GROUP DEPARTURES",
-    heading: "Custom Trails & \nPrivate Expeditions",
-    description: "Planning a group trek or private departure? We design customized Himalayan routes with dedicated guides and camp support.",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1920&q=85", // Garhwal Valley, Uttarakhand
+    tagline: "CUSTOM GROUP TRIPS",
+    heading: "Custom &\nPrivate Treks",
+    description: "Trekking with friends or family? We plan custom routes, dates, and camping setups tailored for your group.",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1920&q=85",
   },
 ];
 
@@ -55,7 +57,7 @@ export default function HeroSlider() {
     if (isSearching) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideItems.length);
-    }, 10000);
+    }, 9000);
     return () => clearInterval(timer);
   }, [isSearching]);
 
@@ -85,7 +87,7 @@ export default function HeroSlider() {
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slideItems.length - 1 : prev - 1));
 
   return (
-    <section id="home" className="relative min-h-[500px] sm:min-h-[620px] lg:min-h-[680px] w-full overflow-hidden bg-slate-900 font-sans">
+    <section id="home" className="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] w-full overflow-hidden bg-slate-900 font-sans">
       
       {slideItems.map((slide, index) => {
         const isActive = index === currentSlide;
@@ -98,20 +100,21 @@ export default function HeroSlider() {
             style={{
               backgroundImage: `url(${slide.image})`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "top center", // Keeps peak top visible, crops bottom if needed!
             }}
           >
-            {/* LIGHT SOFT OVERLAY FOR BRIGHT NAVY TEXT */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 sm:via-white/60 to-transparent" />
+            {/* OVERLAY: Keeps deep navy text clearly readable over bright snow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 sm:via-white/70 to-white/20 sm:to-transparent" />
 
-            <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-12 lg:px-16 pt-8 sm:pt-14 pb-16 sm:pb-24 h-full flex flex-col justify-center">
-              <div className="max-w-xl text-left space-y-2.5 sm:space-y-4">
+            <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-12 lg:px-16 pt-28 sm:pt-24 pb-16 sm:pb-24 h-full flex flex-col justify-center">
+              <div className="max-w-xl text-left space-y-3 sm:space-y-4">
                 
                 <p className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-slate-600">
                   {slide.tagline}
                 </p>
 
-                <h1 className="text-2xl sm:text-5xl lg:text-6xl font-sans font-extrabold leading-snug sm:leading-tight tracking-tight text-[#142957] whitespace-pre-line">
+                {/* HEADING FONT SIZE INCREASED BY ONE LEVEL */}
+                <h1 className="text-3xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-[#142957] whitespace-pre-line">
                   {slide.heading}
                 </h1>
 
@@ -119,26 +122,27 @@ export default function HeroSlider() {
                   {slide.description}
                 </p>
 
-                <div className="pt-1 flex flex-wrap gap-2.5 sm:gap-3 relative z-30">
+                {/* ACTION BUTTONS */}
+                <div className="pt-2 flex flex-wrap gap-3 relative z-30">
                   <Link
                     to="/uttarakhand"
-                    className="rounded-full bg-amber-400 hover:bg-amber-300 text-[#142957] px-5 py-2.5 sm:px-7 sm:py-3 text-xs font-extrabold shadow-md transition flex items-center gap-1.5 cursor-pointer border border-amber-500/20"
+                    className="rounded-full bg-amber-400 hover:bg-amber-300 text-[#142957] px-6 py-3 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-extrabold shadow-md transition flex items-center gap-1.5 cursor-pointer border border-amber-500/20"
                   >
                     Explore Treks <span>&rarr;</span>
                   </Link>
 
                   <a
                     href="#homestays"
-                    className="rounded-full border border-slate-300 bg-white/80 backdrop-blur-md px-5 py-2.5 sm:px-7 sm:py-3 text-xs font-bold text-[#142957] transition hover:bg-white"
+                    className="rounded-full border border-slate-300 bg-white/90 backdrop-blur-md px-6 py-3 sm:px-8 sm:py-3.5 text-xs sm:text-sm font-bold text-[#142957] transition hover:bg-white shadow-xs"
                   >
                     View Stays
                   </a>
                 </div>
 
-                {/* SEARCH BAR (SLIDE 1 ONLY) */}
+                {/* DESTINATION SEARCH BAR (SLIDE 1 ONLY) */}
                 {index === 0 && (
-                  <div className="pt-2 relative w-full z-30" ref={searchRef}>
-                    <div className="flex items-center overflow-hidden rounded-xl bg-white/80 sm:bg-white/50 backdrop-blur-md border border-white/80 shadow-lg transition-all focus-within:bg-white focus-within:border-sky-500">
+                  <div className="pt-2 relative w-full max-w-md z-30" ref={searchRef}>
+                    <div className="flex items-center overflow-hidden rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-lg focus-within:bg-white focus-within:border-sky-500 transition-all">
                       <input
                         type="text"
                         value={searchQuery}
@@ -147,14 +151,14 @@ export default function HeroSlider() {
                           setSearchQuery(e.target.value);
                           setIsSearching(true);
                         }}
-                        placeholder="Search Your Destination..."
-                        className="w-full bg-transparent px-3.5 sm:px-5 py-3 sm:py-3.5 text-[#142957] placeholder-slate-500 text-xs sm:text-sm font-semibold focus:outline-none"
+                        placeholder="Search your trek destination..."
+                        className="w-full bg-transparent px-4 py-3 text-[#142957] placeholder-slate-400 text-xs sm:text-sm font-semibold focus:outline-none"
                       />
 
                       {searchQuery && (
                         <button
                           onClick={() => setSearchQuery("")}
-                          className="text-slate-600 hover:text-slate-900 text-xs font-bold px-2.5 cursor-pointer shrink-0"
+                          className="text-slate-500 hover:text-slate-900 text-xs font-bold px-2 cursor-pointer shrink-0"
                         >
                           ✕
                         </button>
@@ -162,7 +166,7 @@ export default function HeroSlider() {
 
                       <button
                         onClick={() => setIsSearching(true)}
-                        className="bg-[#142957] hover:bg-sky-900 text-white p-3 sm:p-4 flex items-center justify-center shrink-0 transition cursor-pointer shadow-md"
+                        className="bg-[#142957] hover:bg-sky-900 text-white p-3 sm:p-3.5 flex items-center justify-center shrink-0 transition cursor-pointer"
                         aria-label="Search"
                       >
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,7 +175,7 @@ export default function HeroSlider() {
                       </button>
                     </div>
 
-                    {/* SEARCH DROPDOWN */}
+                    {/* SEARCH RESULTS DROPDOWN */}
                     {isSearching && searchQuery.trim() !== "" && (
                       <div className="absolute top-full left-0 right-0 mt-2 bg-[#142957]/95 backdrop-blur-xl rounded-xl shadow-2xl border border-white/20 overflow-hidden max-h-60 sm:max-h-72 overflow-y-auto divide-y divide-white/10 z-50 text-white">
                         {filteredResults.length > 0 ? (
@@ -179,13 +183,13 @@ export default function HeroSlider() {
                             <button
                               key={idx}
                               onClick={() => handleSelectResult(item.link)}
-                              className="w-full px-4 sm:px-5 py-3 text-left hover:bg-sky-600/30 transition flex items-center justify-between group cursor-pointer"
+                              className="w-full px-4 py-3 text-left hover:bg-sky-600/30 transition flex items-center justify-between group cursor-pointer"
                             >
                               <div>
                                 <p className="text-xs sm:text-sm font-bold text-white group-hover:text-sky-300">{item.name}</p>
                                 <p className="text-[10px] sm:text-[11px] text-slate-300 font-medium">{item.region}</p>
                               </div>
-                              <span className="text-[9px] sm:text-[10px] font-extrabold uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-white/10 text-white group-hover:bg-sky-500 transition">
+                              <span className="text-[9px] sm:text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-white/10 text-white group-hover:bg-sky-500 transition">
                                 {item.type}
                               </span>
                             </button>
@@ -206,32 +210,31 @@ export default function HeroSlider() {
         );
       })}
 
-      {/* LEFT CAROUSEL ARROW */}
+      {/* CAROUSEL CONTROLS */}
       <button
         onClick={prevSlide}
         aria-label="Previous Slide"
-        className="absolute left-1.5 sm:left-4 top-1/2 -translate-y-1/2 z-40 flex h-7 w-7 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-[#142957] backdrop-blur-md border border-slate-200 shadow-md transition hover:bg-white cursor-pointer"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-40 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/80 text-[#142957] backdrop-blur-md border border-slate-200 shadow-md transition hover:bg-white cursor-pointer"
       >
         &#10094;
       </button>
 
-      {/* RIGHT CAROUSEL ARROW */}
       <button
         onClick={nextSlide}
         aria-label="Next Slide"
-        className="absolute right-1.5 sm:right-4 top-1/2 -translate-y-1/2 z-40 flex h-7 w-7 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-[#142957] backdrop-blur-md border border-slate-200 shadow-md transition hover:bg-white cursor-pointer"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-40 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/80 text-[#142957] backdrop-blur-md border border-slate-200 shadow-md transition hover:bg-white cursor-pointer"
       >
         &#10095;
       </button>
 
-      {/* BOTTOM SLIDE INDICATORS */}
+      {/* SLIDE INDICATORS */}
       <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-1.5 sm:gap-2">
         {slideItems.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-              idx === currentSlide ? "w-6 sm:w-8 bg-[#142957]" : "w-2 sm:w-2.5 bg-slate-400/60"
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+              idx === currentSlide ? "w-6 sm:w-8 bg-[#142957]" : "w-2 bg-slate-400/60"
             }`}
           />
         ))}

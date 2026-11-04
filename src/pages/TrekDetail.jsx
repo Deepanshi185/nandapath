@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // Local Asset Imports
 import judaKaTalabImg from "../assets/juda-ka-talab.jpeg";
@@ -8,6 +9,7 @@ import summitShrineImg from "../assets/summit-shrine.jpeg";
 import basecampImg from "../assets/basecamp.jpeg";
 import campsiteMealImg from "../assets/campsite-meal.jpeg";
 import judaGroupImg from "../assets/juda-group.jpeg";
+import pindariTrailPhoto from "../assets/pindari-trail.jpeg";
 import groupBatchImg from "../assets/group-batch2.jpeg";
 
 const nandaDeviImg =
@@ -20,26 +22,336 @@ const roopkundImg =
   "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80";
 const gaumukhImg =
   "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80";
+const brahmatalBannerImg =
+  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
 
 const treksDatabase = {
+  "panwali-kantha": {
+    title: "Panwali Dwar / Kantha Trek",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "Trek along high alpine ridge meadows offering panoramic views of Kedarnath, Chaukhamba, Gangotri, and Yamunotri mountain ranges.",
+    bannerImage: brahmatalBannerImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "4–6 Days", icon: "⏱️" },
+      { label: "Altitude", value: "3,368 m / 11,050 ft", icon: "🏔️" },
+      { label: "Grade", value: "Easy to Moderate", icon: "📈" },
+      { label: "Season", value: "May–Jun, Sep–Nov", icon: "☀️" },
+      { label: "Basecamp", value: "Ghuttu Village", icon: "📍" },
+    ],
+    inclusions: [
+      "All fresh high-altitude meals prepared at camps",
+      "Dome tent stay & base village homestay accommodation",
+      "Certified Expedition Leaders & experienced local guides",
+      "Forest entry permits, entry charges & camping permits",
+    ],
+    exclusions: ["Backpack offloading charges", "Personal clothing & travel insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Rishikesh to Ghuttu Basecamp",
+        distance: "160 km drive (6–7 hrs)",
+        altitude: "5,000 ft",
+        highlights: "Bhilangana river valley drive.",
+        details: "Pick up from Rishikesh morning. Scenic mountain drive into Ghuttu base village with team briefing.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Ghuttu to Panwali Bugyal Meadow",
+        distance: "10 km trek (5–6 hrs)",
+        altitude: "9,500 ft",
+        highlights: "Oak woods and meadow emergence.",
+        details: "Ascend through quiet oak and rhododendron forests opening onto rolling green ridge meadows.",
+      },
+      {
+        day: "Day 3",
+        title: "Explore Panwali Kantha Ridge & Overlook",
+        distance: "8 km trek (5 hrs)",
+        altitude: "11,050 ft (3,368 m)",
+        highlights: "Panoramic views of Kedarnath and Chaukhamba peaks.",
+        details: "Walk along the high meadow crest with 360-degree Himalayan mountain views.",
+      },
+      {
+        day: "Day 4",
+        title: "Descend to Triyuginarayan & Drive to Rishikesh",
+        distance: "Descent trek + 160 km drive",
+        altitude: "Rishikesh Drop (~7:00 PM)",
+        highlights: "Historic temple visit & return valley transfer.",
+        details: "Descend down the trail and board vehicle transfer back to Rishikesh.",
+      },
+    ],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "satopanth-lake": {
+    title: "Satopanth Lake Sacred Expedition",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "A sacred triangular glacial lake beyond Badrinath tucked under the foot of Mt. Neelkanth, Mt. Chaukhamba, and Swargarohini.",
+    bannerImage: baliPassImg,
+    sideImage: basecampImg,
+    specifications: [
+      { label: "Duration", value: "8–10 Days", icon: "⏱️" },
+      { label: "Altitude", value: "4,600 m / 15,100 ft", icon: "🏔️" },
+      { label: "Grade", value: "Moderate to Hard", icon: "📈" },
+      { label: "Season", value: "Jun–Sep, Sep–Nov", icon: "☀️" },
+      { label: "Basecamp", value: "Mana / Badrinath", icon: "📍" },
+    ],
+    inclusions: [
+      "All fresh high-altitude expedition meals",
+      "Dome tent stay, sleeping bags & safety gear",
+      "Certified Mountaineering Expedition Leaders",
+      "Inner-line permits & sanctuary permits",
+    ],
+    exclusions: ["Personal equipment", "Travel insurance & offloading charges"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Rishikesh to Badrinath / Mana",
+        distance: "300 km drive",
+        altitude: "10,200 ft",
+        highlights: "Alaknanda valley drive.",
+        details: "Full day mountain transfer to holy Badrinath town.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Mana to Vasudhara Falls to Laxmi Van",
+        distance: "9 km trek",
+        altitude: "11,800 ft",
+        highlights: "Vasudhara waterfall & birch tree forest camp.",
+        details: "Trek past Mana village to reach Laxmi Van campsite.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Laxmi Van to Chakratirth",
+        distance: "11 km trek",
+        altitude: "14,100 ft",
+        highlights: "Glacial moraine terrain.",
+        details: "Ascend past glacial boulders directly facing Mt. Chaukhamba.",
+      },
+      {
+        day: "Day 4",
+        title: "Chakratirth to Satopanth Lake & Return to Camp",
+        distance: "10 km trek",
+        altitude: "15,100 ft (4,600 m)",
+        highlights: "Crystal emerald triangular sacred lake.",
+        details: "Reach the holy waters of Satopanth Lake surrounded by towering glaciers.",
+      },
+    ],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "kagbhusandi-lake": {
+    title: "Kagbhusandi Lake Expedition",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "An emerald high-altitude glacial lake nestled near Hathi Parbat, carpeted with Brahma Kamal flowers during monsoon months.",
+    bannerImage: gaumukhImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "6 Days", icon: "⏱️" },
+      { label: "Altitude", value: "4,490 m / 14,730 ft", icon: "🏔️" },
+      { label: "Grade", value: "Moderate", icon: "📈" },
+      { label: "Season", value: "Jun–Sep", icon: "🌸" },
+      { label: "Basecamp", value: "Bhyundar / Govindghat", icon: "📍" },
+    ],
+    inclusions: [
+      "High camp meals & dome tents",
+      "Certified Guide & Support Team",
+      "Forest entry & meadow permits",
+    ],
+    exclusions: ["Offloading charges", "Personal travel insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Rishikesh to Govindghat",
+        distance: "275 km drive",
+        altitude: "6,000 ft",
+        highlights: "Alaknanda river valley transfer.",
+        details: "Drive to Govindghat base town and check in at guest house.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek to Kankul Pass & Meadow Camp",
+        distance: "8 km trek",
+        altitude: "11,500 ft",
+        highlights: "Dense rhododendron and wildflower trail.",
+        details: "Ascend quiet alpine trails into high floral meadows.",
+      },
+      {
+        day: "Day 3",
+        title: "Reach Kagbhusandi Lake (4,490 m)",
+        distance: "7 km trek",
+        altitude: "14,730 ft (4,490 m)",
+        highlights: "Emerald green lake and Brahma Kamal fields.",
+        details: "Trek to the pristine shores of Kagbhusandi Lake under Hathi Parbat.",
+      },
+    ],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "pangarchulla-peak": {
+    title: "Pangarchulla Peak Summit Trek",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "A thrilling summit climb near Kuari Pass with exciting snow ridge climbing and 360-degree views of Mt. Nanda Devi.",
+    bannerImage: nandaDeviImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "6–7 Days", icon: "⏱️" },
+      { label: "Altitude", value: "4,700 m / 15,420 ft", icon: "🏔️" },
+      { label: "Grade", value: "Moderate to Hard", icon: "📈" },
+      { label: "Season", value: "Mar–May, Oct–Nov", icon: "❄️" },
+      { label: "Basecamp", value: "Joshimath / Dhak", icon: "📍" },
+    ],
+    inclusions: [
+      "Expedition meals & high tent camp stays",
+      "Climbing guide, microspikes & gaiters",
+      "Forest permits & peak climbing permissions",
+    ],
+    exclusions: ["Personal gear offloading", "Travel insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Rishikesh to Joshimath",
+        distance: "250 km drive",
+        altitude: "6,150 ft",
+        highlights: "Scenic Himalayan drive.",
+        details: "Drive to Joshimath guest house with evening briefing.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Dhak to Gulling / Khulara Camp",
+        distance: "6 km trek",
+        altitude: "11,000 ft",
+        highlights: "Forest walk & meadow camp.",
+        details: "Trek to Khulara high camp facing Himalayan peaks.",
+      },
+      {
+        day: "Day 3",
+        title: "Summit Push to Pangarchulla Peak (4,700 m)",
+        distance: "12 km trek",
+        altitude: "15,420 ft (4,700 m)",
+        highlights: "Snow ridge climbing & Nanda Devi panorama.",
+        details: "3:00 AM summit push to reach peak top before returning to camp.",
+      },
+    ],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "namik-glacier": {
+    title: "Namik Glacier Wilderness Trek",
+    region: "Uttarakhand • Kumaon Himalayas",
+    description:
+      "A pristine wilderness trek in Pithoragarh surrounded by Nanda Devi, Nanda Kot, and Trishul peaks, passing ancient Kumaoni villages.",
+    bannerImage: pindariTrailPhoto,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "7 Days / 6 Nights", icon: "⏱️" },
+      { label: "Altitude", value: "3,600 m / 11,810 ft", icon: "🏔️" },
+      { label: "Grade", value: "Moderate", icon: "📈" },
+      { label: "Season", value: "May–Jun, Sep–Nov", icon: "☀️" },
+      { label: "Basecamp", value: "Munsiyari / Bageshwar", icon: "📍" },
+    ],
+    inclusions: [
+      "All meals on trek freshly cooked at high camps",
+      "Kumaoni village homestays & dome tents",
+      "Certified Expedition Leader & Local Guides",
+      "Forest entry permits & trail permits",
+    ],
+    exclusions: ["Backpack offloading charges", "Personal equipment & travel insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Kathgodam to Bageshwar / Munsiyari",
+        distance: "190 km drive",
+        altitude: "5,800 ft",
+        highlights: "Kumaon river valley scenery.",
+        details: "Pick up from Kathgodam railway station and drive to base village.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek to Gogina Village",
+        distance: "8 km trek",
+        altitude: "7,500 ft",
+        highlights: "Traditional wooden houses & terraced fields.",
+        details: "Trek through remote Kumaoni hamlets into Gogina homestay.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek to Namik Glacier Base & Zero Point",
+        distance: "10 km trek",
+        altitude: "11,810 ft (3,600 m)",
+        highlights: "Close views of Nanda Kot and Trishul peaks.",
+        details: "Reach the pristine glacial snout of Namik Glacier.",
+      },
+    ],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "kafni-glacier": {
+    title: "Kafni Glacier Expedition",
+    region: "Uttarakhand • Kumaon Himalayas",
+    description:
+      "Situated east of the Pindari Valley, this quiet trek offers expansive Himalayan meadows, rhododendron blooms, and views of Nandakot peak.",
+    bannerImage: pindariTrailPhoto,
+    sideImage: basecampImg,
+    specifications: [
+      { label: "Duration", value: "6 Days / 5 Nights", icon: "⏱️" },
+      { label: "Altitude", value: "3,853 m / 12,640 ft", icon: "🏔️" },
+      { label: "Grade", value: "Moderate", icon: "📈" },
+      { label: "Season", value: "May–Jun, Sep–Oct", icon: "☀️" },
+      { label: "Basecamp", value: "Khati Village / Bageshwar", icon: "📍" },
+    ],
+    inclusions: [
+      "All meals prepared fresh at high camps",
+      "Dome tent stays & village homestay",
+      "Certified Guide & Support Team",
+      "Forest entry charges & camping permits",
+    ],
+    exclusions: ["Personal backpack offloading", "Travel insurance"],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Kathgodam to Bageshwar / Kharkiya",
+        distance: "180 km drive",
+        altitude: "5,800 ft",
+        highlights: "Kumaon hill drive.",
+        details: "Drive to Kharkiya trailhead and trek to Khati village homestay.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Khati to Dwali to Khatia Camp",
+        distance: "11 km trek",
+        altitude: "8,450 ft",
+        highlights: "River confluence walk.",
+        details: "Trek past Dwali confluence towards Kafni river valley.",
+      },
+      {
+        day: "Day 3",
+        title: "Khatia to Kafni Glacier Zero Point (3,853 m)",
+        distance: "12 km trek",
+        altitude: "12,640 ft (3,853 m)",
+        highlights: "Unmatched views of Mt. Nanda Kot.",
+        details: "Trek to Zero Point of Kafni glacier before descending back to camp.",
+      },
+    ],
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
   "kedarkantha": {
     title: "Kedarkantha Winter Trek",
     region: "Uttarakhand • Garhwal Himalayas",
     description:
-      "Kedarkantha is India's top winter snow trek starting from Sankri wooden village, leading to Juda Ka Talab frozen lake and 360-degree summit views.",
+      "Trek through snow-covered pine forests, spend the night beside Juda Ka Talab, and climb to the 12,500 ft summit for clear sunrise views across Garhwal peaks.",
     bannerImage: summitShrineImg,
     sideImage: groupBatchImg,
     specifications: [
       { label: "Duration", value: "5 Days / 4 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "12,500 ft / 3,810 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Easy to Moderate", icon: "📈" },
-      { label: "Best Season", value: "Dec - April (Snow)", icon: "❄️" },
-      { label: "Basecamp Hub", value: "Sankri Village", icon: "📍" },
+      { label: "Altitude", value: "12,500 ft / 3,810 m", icon: "🏔️" },
+      { label: "Grade", value: "Easy to Moderate", icon: "📈" },
+      { label: "Season", value: "Dec - April", icon: "❄️" },
+      { label: "Basecamp", value: "Sankri Village", icon: "📍" },
     ],
     inclusions: [
-      "All vegetarian meals during the trek freshly cooked at high camps",
-      "Accommodation in all-weather dome tents / Sankri basecamp homestay",
-      "Certified Mountaineering Expedition Leader & Local Support Crew",
+      "All meals on trek freshly cooked at high camps",
+      "Sankri basecamp stay & high-altitude dome tents",
+      "Certified Mountaineering Expedition Leader & Support Crew",
       "Microspikes, gaiters, safety oxygen gear & pulse oximeter",
       "Forest permits, entry charges & camping permits",
     ],
@@ -47,58 +359,218 @@ const treksDatabase = {
       "Backpack offloading charges",
       "Personal clothing & personal trekking gear",
       "Travel insurance & emergency evacuation charges",
-      "Any transport / meal costs incurred outside the itinerary",
+      "Meals or transport outside the Dehradun pickup schedule",
     ],
     itinerary: [
       {
         day: "Day 1",
         title: "Drive from Dehradun to Sankri Basecamp",
-        distance: "200 km drive (approx 8 hrs)",
+        distance: "196 km drive (8–9 hrs)",
         altitude: "6,400 ft / 1,950 m",
-        highlights: "Scenic Yamuna river drive & Garhwali homestays.",
-        details: "Pick up early morning from Dehradun railway station. Drive through Mussoorie and Purola along the Tons river into Sankri village.",
+        highlights: "Scenic Yamuna river drive & Garhwali homestay arrival.",
+        details: "Pick up early morning from Dehradun railway station. Drive through Mussoorie and Purola along the Tons river into Sankri village for evening briefing & dinner.",
         image: groupBatchImg,
-        caption: "NandaPath expedition batch gathered at Sankri basecamp hub.",
+        caption: "Basecamp arrival at Sankri village.",
       },
       {
         day: "Day 2",
-        title: "Trek from Sankri to Juda Ka Talab",
-        distance: "4 km trek (approx 4 hrs)",
-        altitude: "9,100 ft / 2,773 m",
-        highlights: "Pine forest trail & frozen alpine lake.",
-        details: "Trek through dense pine and maple oak glades opening onto the legendary high-altitude lake at Juda Ka Talab.",
+        title: "Trek from Sankri to Juda Ka Talab Campsite",
+        distance: "3.5 km trek (5–6 hrs)",
+        altitude: "7,200 ft to 9,186 ft",
+        highlights: "Pine and maple oak glades, frozen lake camp.",
+        details: "Trek after breakfast through quiet pine forests opening onto the iconic high-altitude lake at Juda Ka Talab. Hot lunch and campsite evening rest.",
         image: judaGroupImg,
-        caption: "NandaPath batch pausing beside Juda Ka Talab lake.",
+        caption: "NandaPath team at Juda Ka Talab.",
       },
       {
         day: "Day 3",
-        title: "Trek from Juda Ka Talab to Kedarkantha Basecamp",
-        distance: "4 km trek (approx 3 hrs)",
-        altitude: "11,250 ft / 3,429 m",
-        highlights: "Open snow ridge walk & clear peak views.",
-        details: "Ascend past oak thickets to the open meadows of Kedarkantha Basecamp, set directly under the towering summit peak.",
+        title: "Trek from Juda Ka Talab to Kedarkantha Base Camp",
+        distance: "3 km trek (4–5 hrs)",
+        altitude: "9,186 ft to 10,334 ft",
+        highlights: "Snow meadow walk with clear peak views.",
+        details: "Gentle ascent across open snow slopes to Kedarkantha Base Camp directly under the peak. Rest and early sleep for summit morning.",
       },
       {
         day: "Day 4",
-        title: "Basecamp to Kedarkantha Summit & descend to Hargaon",
-        distance: "6 km trek (approx 7 hrs)",
-        altitude: "12,500 ft / 3,810 m (Summit)",
-        highlights: "3:00 AM summit push & 360-degree sunrise panorama.",
-        details: "Early morning push to the summit shrine at 12,500 ft. Witness sunrise over Swargarohini, Black Peak, and Bandarpoonch, then descend to Hargaon.",
+        title: "Summit Push & Descend to Hargaon Camp",
+        distance: "7 km trek (9–10 hrs)",
+        altitude: "10,334 ft to 12,500 ft (Summit)",
+        highlights: "Summit shrine sunrise & 360-degree peak panorama.",
+        details: "Early morning push to reach Kedarkantha Summit at 12,500 ft. Enjoy sunrise views over Swargarohini, Black Peak, and Bandarpoonch, then descend to Hargaon Camp for night stay.",
         image: summitShrineImg,
-        caption: "Kedarkantha summit shrine national flag moment.",
+        caption: "Kedarkantha summit shrine moment.",
       },
       {
         day: "Day 5",
-        title: "Trek from Hargaon to Sankri & Drive back to Dehradun",
-        distance: "6 km trek + 200 km drive",
+        title: "Descend to Sankri & Drive back to Dehradun",
+        distance: "4 km descent + 196 km drive",
         altitude: "Dehradun drop",
-        highlights: "Valley descent and return transfer.",
-        details: "Trek down to Sankri basecamp and board vehicle back to Dehradun for evening drop.",
+        highlights: "Valley descent and return drive.",
+        details: "Trek down from Hargaon to Sankri basecamp, board vehicle transfer, and return to Dehradun railway station by evening.",
       },
     ],
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "brahmatal": {
+    title: "Brahmatal Winter Trek",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "Trek through oak and rhododendron forests to the frozen glacial lake of Brahmatal. Experience panoramic summit views of Mt. Trishul, Mt. Nanda Ghunti, Mt. Chaukhamba, Nilgiri, and Neelkanth.",
+    bannerImage: brahmatalBannerImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "5 Days / 4 Nights", icon: "⏱️" },
+      { label: "Altitude", value: "12,250 ft / 3,734 m", icon: "🏔️" },
+      { label: "Grade", value: "Easy to Moderate", icon: "📈" },
+      { label: "Season", value: "Dec - April", icon: "❄️" },
+      { label: "Basecamp", value: "Lohajung Village", icon: "📍" },
+    ],
+    inclusions: [
+      "All meals on trek freshly cooked at high camps",
+      "Guesthouse stay in Lohajung & high-altitude dome tents",
+      "Certified Mountaineering Expedition Leader & Support Crew",
+      "Forest permits, entry charges & camping permits",
+      "Safety equipment: Oxygen cylinder, first-aid, gaiters & microspikes",
+    ],
+    exclusions: [
+      "Backpack offloading charges",
+      "Personal clothing & personal trekking gear",
+      "Travel insurance & emergency evacuation charges",
+      "Meals or transport outside the Kathgodam/Haldwani pickup schedule",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Haldwani / Kathgodam to Lohajung Basecamp",
+        distance: "250 km drive (10–12 hrs)",
+        altitude: "7,662 ft / 2,335 m",
+        highlights: "Ranikhet hill route, Kumaon-Garhwal valley drive.",
+        details: "Pick up at 6:00 AM near Kathgodam / Haldwani railway station. Scenic drive past Ranikhet and Kausani to Lohajung guest house halt with team briefing & dinner.",
+        image: basecampImg,
+        caption: "Basecamp guest house arrival at Lohajung.",
+      },
+      {
+        day: "Day 2",
+        title: "Trek from Lohajung to Bekaltal Campsite",
+        distance: "6 km trek (5–6 hrs)",
+        altitude: "9,950 ft / 3,032 m",
+        highlights: "Oak and rhododendron forest trail, valley vistas.",
+        details: "Begin trek after breakfast. Gradual ascent through dense forests opening into Bekaltal campsite. Hot lunch, acclimatization walk, and evening tea followed by dinner.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Bekaltal to Brahmatal Campsite",
+        distance: "7 km trek (6–7 hrs)",
+        altitude: "10,450 ft / 3,185 m",
+        highlights: "Telandi alpine meadows, Jhandi top ridge.",
+        details: "Ascend through oak forest into wide meadows at Telandi. Cross Jhandi top ridge and descend to Brahmatal campsite.",
+      },
+      {
+        day: "Day 4",
+        title: "Brahmatal to Brahmatal Top & Descend to Daldam",
+        distance: "12 km trek (8–10 hrs)",
+        altitude: "12,250 ft / 3,734 m (Summit)",
+        highlights: "Summit panorama of Mt. Trishul, Nanda Ghunti & Chaukhamba.",
+        details: "Moderate to steep climb to Brahmatal Top summit point. Enjoy packed lunch surrounded by Himalayan peaks before descending to Daldam campsite.",
+        image: brahmatalBannerImg,
+        caption: "Summit views facing Mt. Trishul & Mt. Nanda Ghunti.",
+      },
+      {
+        day: "Day 5",
+        title: "Daldam to Lohajung & Drive back to Kathgodam / Haldwani",
+        distance: "Descent + 250 km drive",
+        altitude: "Kathgodam drop (~11:00 PM)",
+        highlights: "Valley descent and return transfer.",
+        details: "Trek down to Lohajung base camp arriving by 12:00 Noon. Board return vehicle transfer to Haldwani/Kathgodam with late evening arrival.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+  },
+  "kwari-pass": {
+    title: "Kwari Pass Trek",
+    region: "Uttarakhand • Garhwal Himalayas",
+    description:
+      "Hike through ancient oak woods to Kuari Pass and soak in stunning views of Mt. Nanda Devi, Dronagiri, and Trishul. A perfect trail for beginners and nature lovers alike.",
+    bannerImage: nandaDeviImg,
+    sideImage: groupBatchImg,
+    specifications: [
+      { label: "Duration", value: "6 Days / 5 Nights", icon: "⏱️" },
+      { label: "Altitude", value: "12,500 ft / 3,810 m", icon: "🏔️" },
+      { label: "Grade", value: "Easy to Moderate", icon: "📈" },
+      { label: "Season", value: "Nov - April", icon: "❄️" },
+      { label: "Basecamp", value: "Pipalkoti / Joshimath", icon: "📍" },
+    ],
+    inclusions: [
+      "All meals during the trek prepared fresh at high camps",
+      "Hotel/Guest House stay in Pipalkoti and high-altitude dome tents",
+      "Certified Trek Leader & experienced local support team",
+      "Forest permits, entry fees & camping charges",
+      "Safety gear: First aid kit, oxygen cylinder & gaiters for snow",
+    ],
+    exclusions: [
+      "Personal backpack offloading charges",
+      "Personal trek gear and warm clothing",
+      "Meals during drive from Rishikesh to Pipalkoti and back",
+      "Travel insurance or personal expenses",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Drive from Dehradun / Rishikesh to Pipalkoti / Joshimath",
+        distance: "252 km drive (11–12 hrs)",
+        altitude: "4,100 ft to 6,150 ft",
+        highlights: "Drive along Alaknanda river via Devprayag, Srinagar & Rudraprayag.",
+        details: "Pick up from Rishikesh at 7:00 AM. Drive along holy river confluences into Pipalkoti/Joshimath. Check in at guest house, followed by team introduction and trip briefing.",
+        image: basecampImg,
+        caption: "Guest house stay at Pipalkoti.",
+      },
+      {
+        day: "Day 2",
+        title: "Drive to Tugasi Roadhead & Trek to Gulling Camp",
+        distance: "3 km trek (2–3 hrs)",
+        altitude: "6,150 ft to 9,000 ft",
+        highlights: "Short forest walk & quiet campsite arrival.",
+        details: "Drive to Tugasi village trailhead after breakfast. Start a gentle uphill trek to Gulling campsite, arriving around lunch. Enjoy an evening walk and warm camp dinner.",
+      },
+      {
+        day: "Day 3",
+        title: "Trek from Gulling to Khulara Campsite",
+        distance: "6 km trek (5–6 hrs)",
+        altitude: "9,000 ft to 11,800 ft",
+        highlights: "Oak and rhododendron glades, open mountain views.",
+        details: "Trek through lovely oak woods towards Khulara high camp. Reach camp for hot lunch, take an acclimatization walk around the meadow, and rest early.",
+      },
+      {
+        day: "Day 4",
+        title: "Summit Push to Kuari Pass & Descend to Tali Camp",
+        distance: "11 km trek (8–10 hrs)",
+        altitude: "11,800 ft to 12,500 ft (Summit)",
+        highlights: "Panoramic views of Mt. Nanda Devi, Dronagiri & Kamet.",
+        details: "Early morning start after breakfast to Kuari Pass summit. Enjoy 360-degree Himalayan views from the top before descending to Tali campsite for the night.",
+        image: nandaDeviImg,
+        caption: "Kuari Pass summit view facing Mt. Nanda Devi.",
+      },
+      {
+        day: "Day 5",
+        title: "Descend to Tugasi / Dhak & Drive to Pipalkoti / Joshimath",
+        distance: "Descent trek + short drive",
+        altitude: "Hotel Stay in Pipalkoti",
+        highlights: "Valley descent and relaxing hotel evening.",
+        details: "Descend down to Tugasi or Dhak village after breakfast. Board vehicle transfer back to Pipalkoti hotel for hot dinner and rest.",
+      },
+      {
+        day: "Day 6",
+        title: "Drive from Pipalkoti / Joshimath back to Rishikesh",
+        distance: "252 km drive (10–11 hrs)",
+        altitude: "Rishikesh drop (~7:00 PM)",
+        highlights: "Return drive through Ganga valley.",
+        details: "Depart after breakfast for the scenic drive back to Rishikesh, arriving by 7:00 PM for evening travel.",
+      },
+    ],
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109820.312948281!2d79.563847!3d30.554271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a79f323be45fbd%3A0xd680be4061a6c0bb!2sJoshimath%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
   "bali-pass": {
     title: "Bali Pass High Altitude Expedition",
@@ -109,10 +581,10 @@ const treksDatabase = {
     sideImage: basecampImg,
     specifications: [
       { label: "Duration", value: "8 Days / 7 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "16,200 ft / 4,940 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Difficult / Technical Pass", icon: "📈" },
-      { label: "Best Season", value: "May - June & Sep - Oct", icon: "☀️" },
-      { label: "Basecamp Hub", value: "Sankri Basecamp", icon: "📍" },
+      { label: "Altitude", value: "16,200 ft / 4,940 m", icon: "🏔️" },
+      { label: "Grade", value: "Difficult Pass", icon: "📈" },
+      { label: "Season", value: "May - June & Sep - Oct", icon: "☀️" },
+      { label: "Basecamp", value: "Sankri Basecamp", icon: "📍" },
     ],
     inclusions: [
       "All meals on trek freshly cooked at high camps",
@@ -203,10 +675,10 @@ const treksDatabase = {
     sideImage: groupBatchImg,
     specifications: [
       { label: "Duration", value: "8 Days / 7 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "15,750 ft / 4,800 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Moderate to Difficult", icon: "📈" },
-      { label: "Best Season", value: "May - June & Sep - Oct", icon: "☀️" },
-      { label: "Basecamp Hub", value: "Lohajung Village", icon: "📍" },
+      { label: "Altitude", value: "15,750 ft / 4,800 m", icon: "🏔️" },
+      { label: "Grade", value: "Moderate to Difficult", icon: "📈" },
+      { label: "Season", value: "May - June & Sep - Oct", icon: "☀️" },
+      { label: "Basecamp", value: "Lohajung Village", icon: "📍" },
     ],
     inclusions: [
       "Nutritious vegetarian meals at all camps",
@@ -293,10 +765,10 @@ const treksDatabase = {
     sideImage: basecampImg,
     specifications: [
       { label: "Duration", value: "8 Days / 7 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "14,600 ft / 4,450 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Moderate to Difficult", icon: "📈" },
-      { label: "Best Season", value: "May - June & Sep - Oct", icon: "☀️" },
-      { label: "Basecamp Hub", value: "Gangotri Temple Town", icon: "📍" },
+      { label: "Altitude", value: "14,600 ft / 4,450 m", icon: "🏔️" },
+      { label: "Grade", value: "Moderate to Difficult", icon: "📈" },
+      { label: "Season", value: "May - June & Sep - Oct", icon: "☀️" },
+      { label: "Basecamp", value: "Gangotri Temple Town", icon: "📍" },
     ],
     inclusions: [
       "All vegetarian meals prepared on trail",
@@ -379,14 +851,14 @@ const treksDatabase = {
     region: "Uttarakhand • Kumaon Himalayas",
     description:
       "Classic Kumaon region glacier trek offering accessible ice routes, vibrant rhododendron forests, and dramatic mountain views of Changuch and Nanda Kot.",
-    bannerImage: campsiteMealImg,
-    sideImage: groupBatchImg,
+    bannerImage: pindariTrailPhoto,
+    sideImage: pindariTrailPhoto,
     specifications: [
       { label: "Duration", value: "7 Days / 6 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "12,300 ft / 3,749 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Moderate", icon: "📈" },
-      { label: "Best Season", value: "April - June & Sep - Nov", icon: "☀️" },
-      { label: "Basecamp Hub", value: "Khati Village / Bageshwar", icon: "📍" },
+      { label: "Altitude", value: "12,300 ft / 3,749 m", icon: "🏔️" },
+      { label: "Grade", value: "Moderate", icon: "📈" },
+      { label: "Season", value: "April - June & Sep - Nov", icon: "☀️" },
+      { label: "Basecamp", value: "Khati Village / Bageshwar", icon: "📍" },
     ],
     inclusions: [
       "All vegetarian meals freshly prepared",
@@ -465,10 +937,10 @@ const treksDatabase = {
     sideImage: groupBatchImg,
     specifications: [
       { label: "Duration", value: "7 Days / 6 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "11,760 ft / 3,585 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Easy to Moderate", icon: "📈" },
-      { label: "Best Season", value: "April - June & Sep - Dec", icon: "☀️" },
-      { label: "Basecamp Hub", value: "Sankri / Taluka Village", icon: "📍" },
+      { label: "Altitude", value: "11,760 ft / 3,585 m", icon: "🏔️" },
+      { label: "Grade", value: "Easy to Moderate", icon: "📈" },
+      { label: "Season", value: "April - June & Sep - Dec", icon: "☀️" },
+      { label: "Basecamp", value: "Sankri / Taluka Village", icon: "📍" },
     ],
     inclusions: [
       "All organic vegetarian meals prepared at base & high camps",
@@ -542,88 +1014,17 @@ const treksDatabase = {
     mapUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110185.03487858632!2d78.1182419!3d31.0664878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908f97e682d3cd5%3A0x6b9d62886f76c5!2sSankri%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   },
-  "kwari-pass": {
-    title: "Kwari Pass Winter Trek",
-    region: "Uttarakhand • Garhwal Himalayas",
-    description:
-      "Curzon's Trail to Kwari Pass offers unmatched views of Mt. Nanda Devi (25,645 ft), Dronagiri, Kamet, and Trishul through vast oak forests and snow meadows above Auli.",
-    bannerImage: nandaDeviImg,
-    sideImage: basecampImg,
-    specifications: [
-      { label: "Duration", value: "6 Days / 5 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "12,516 ft / 3,815 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Easy to Moderate", icon: "📈" },
-      { label: "Best Season", value: "Nov - April (Winter Snow)", icon: "❄️" },
-      { label: "Basecamp Hub", value: "Dhak Village / Joshimath", icon: "📍" },
-    ],
-    inclusions: [
-      "Hot vegetarian meals prepared at high camps",
-      "Tent dome accommodation & Joshimath stay",
-      "Certified Expedition Leader",
-    ],
-    exclusions: ["Personal gear & insurance", "Backpack offloading"],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Drive from Haridwar / Dehradun to Joshimath",
-        distance: "250 km drive",
-        altitude: "6,150 ft / 1,875 m",
-        highlights: "Alaknanda river drive.",
-        details: "Drive along river confluences into Joshimath hub.",
-      },
-      {
-        day: "Day 2",
-        title: "Drive to Dhak Village & Trek to Guling",
-        distance: "12 km drive + 6 km trek",
-        altitude: "9,600 ft / 2,926 m",
-        highlights: "Oak forest trail.",
-        details: "Trek from Dhak village to Guling campsite.",
-      },
-      {
-        day: "Day 3",
-        title: "Guling to Tali Campsite",
-        distance: "5 km trek",
-        altitude: "11,070 ft / 3,374 m",
-        highlights: "Dronagiri peak view.",
-        details: "Climb through snow glades to Tali camp.",
-      },
-      {
-        day: "Day 4",
-        title: "Tali to Kwari Pass Summit & back",
-        distance: "8 km trek",
-        altitude: "12,516 ft / 3,815 m",
-        highlights: "Nanda Devi panorama.",
-        details: "Summit push to Kwari Pass.",
-      },
-      {
-        day: "Day 5",
-        title: "Tali to Auli & Joshimath",
-        distance: "8 km trek + drive",
-        altitude: "8,200 ft / 2,500 m",
-        highlights: "Gorson Bugyal.",
-        details: "Descend to Auli ski slopes and drive to Joshimath.",
-      },
-      {
-        day: "Day 6",
-        title: "Joshimath to Dehradun",
-        distance: "250 km drive",
-        altitude: "Return drop",
-        highlights: "Return drive.",
-        details: "Return drop to Dehradun / Haridwar.",
-      },
-    ],
-    mapUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109820.312948281!2d79.563847!3d30.554271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a79f323be45fbd%3A0xd680be4061a6c0bb!2sJoshimath%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-  },
 };
 
+// Map Aliases
+treksDatabase["panwali-dwar"] = treksDatabase["panwali-kantha"];
 treksDatabase["kuari-pass"] = treksDatabase["kwari-pass"];
 
 const similarTreksList = [
   { name: "Kedarkantha Trek", region: "Garhwal Himalayas", altitude: "12,500 ft", link: "/kedarkantha", image: summitShrineImg },
   { name: "Har Ki Dun Trek", region: "Garhwal Himalayas", altitude: "11,760 ft", link: "/har-ki-dun", image: harKiDunBannerImg },
   { name: "Bali Pass Expedition", region: "Garhwal Himalayas", altitude: "16,200 ft", link: "/bali-pass", image: baliPassImg },
-  { name: "Pindari Glacier", region: "Kumaon Himalayas", altitude: "12,300 ft", link: "/pindari-glacier", image: campsiteMealImg },
+  { name: "Pindari Glacier", region: "Kumaon Himalayas", altitude: "12,300 ft", link: "/pindari-glacier", image: pindariTrailPhoto },
 ];
 
 const commonPackingList = {
@@ -634,7 +1035,7 @@ const commonPackingList = {
   ],
   gear: [
     { name: "Trekking Boots", desc: "High-ankle waterproof grip boots", icon: "🥾" },
-    { name: "50L Rucksack", desc: "With waterproof rain cover", icon: "🎒" },
+    { name: "20–30L Daypack", desc: "With waterproof rain cover", icon: "🎒" },
     { name: "Trekking Poles", desc: "For balance & snow stability", icon: "🦯" },
   ],
   accessories: [
@@ -659,13 +1060,13 @@ const horizontalPackingItems = [
     category: "FOOTWEAR & HANDS",
     tag: "MUST HAVE",
     icon: "🥾",
-    pills: ["Waterproof Boots", "Woolen Socks", "Insulated Gloves"],
+    pills: ["Waterproof Boots", "Woolen Socks", "Insulated Gloves", "Gaiters"],
   },
   {
-    category: "RUCKSACK & GEAR",
+    category: "DAYPACK & GEAR",
     tag: "GEAR",
     icon: "🎒",
-    pills: ["50L Rucksack", "Sleeping Bag", "Trekking Poles", "Headlamp"],
+    pills: ["20–30L Daypack", "Trekking Poles", "Headlamp"],
   },
   {
     category: "HYGIENE & TOILETRIES",
@@ -688,15 +1089,15 @@ export default function TrekDetail({ slug: propSlug }) {
   const trekData = treksDatabase[rawSlug] || {
     title: `${rawSlug.replace(/-/g, " ").toUpperCase()} Expedition`,
     region: "Uttarakhand • Himalayan Wilderness",
-    description: `Detailed itinerary and expedition guide for ${rawSlug.replace(/-/g, " ")}. Join NandaPath for this mountain trek in Garhwal & Kumaon.`,
+    description: `Detailed itinerary and guide for ${rawSlug.replace(/-/g, " ")}. Join NandaPath for this mountain trek in Garhwal & Kumaon.`,
     bannerImage: summitShrineImg,
     sideImage: groupBatchImg,
     specifications: [
       { label: "Duration", value: "6 Days / 5 Nights", icon: "⏱️" },
-      { label: "Max Altitude", value: "12,000 ft / 3,650 m", icon: "🏔️" },
-      { label: "Trek Grade", value: "Moderate", icon: "📈" },
-      { label: "Best Season", value: "All Season", icon: "☀️" },
-      { label: "Basecamp Hub", value: "Uttarakhand Base", icon: "📍" },
+      { label: "Altitude", value: "12,000 ft / 3,650 m", icon: "🏔️" },
+      { label: "Grade", value: "Moderate", icon: "📈" },
+      { label: "Season", value: "All Season", icon: "☀️" },
+      { label: "Basecamp", value: "Uttarakhand Base", icon: "📍" },
     ],
     inclusions: [
       "All vegetarian meals freshly cooked at high camps",
@@ -762,31 +1163,31 @@ export default function TrekDetail({ slug: propSlug }) {
   };
 
   return (
-    <main className="min-h-screen bg-sky-50/50 font-sans text-slate-800 pt-0 pb-24 relative">
+    <main className="min-h-screen bg-sky-50/50 font-sans text-slate-800 pt-0 pb-24 sm:pb-0 relative">
       <Navbar />
 
-      {/* HERO BANNER - FLUSH TO TOP OF SCREEN UNDER NAVBAR */}
-      <section className="bg-[#142957] text-white pt-28 sm:pt-36 pb-12 sm:pb-20 px-4 sm:px-8 lg:px-12 shadow-inner">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-xs sm:text-sm font-black text-emerald-300 uppercase tracking-widest bg-emerald-500/20 px-3 py-1.5 rounded-lg border border-emerald-400/40">
+      {/* HERO BANNER */}
+      <section className="bg-[#142957] text-white pt-24 sm:pt-36 pb-10 sm:pb-20 px-4 sm:px-8 lg:px-12 shadow-inner">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+          <div className="lg:col-span-7 space-y-3 sm:space-y-6">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <span className="text-[10px] sm:text-sm font-black text-emerald-300 uppercase tracking-widest bg-emerald-500/20 px-2.5 py-1 rounded-lg border border-emerald-400/40">
                 TRIPOTUDE EXPEDITION
               </span>
-              <span className="text-xs sm:text-sm font-extrabold text-amber-300 uppercase tracking-widest bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
+              <span className="text-[10px] sm:text-sm font-extrabold text-amber-300 uppercase tracking-widest bg-white/10 px-2.5 py-1 rounded-lg border border-white/20">
                 {trekData.region}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-6xl font-black text-white leading-tight">
+            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
               {trekData.title}
             </h1>
-            <p className="text-sm sm:text-xl text-sky-100 leading-relaxed font-medium max-w-3xl">
+            <p className="text-xs sm:text-lg text-sky-100 leading-relaxed font-medium max-w-3xl">
               {trekData.description}
             </p>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl aspect-[16/10]">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl aspect-[16/10]">
               <img
                 src={trekData.bannerImage}
                 alt={trekData.title}
@@ -797,28 +1198,28 @@ export default function TrekDetail({ slug: propSlug }) {
         </div>
       </section>
 
-      {/* KEY SPECIFICATIONS - LIGHT BLUE THEME */}
-      <section className="bg-sky-50 border-b border-sky-100 py-8 sm:py-12 px-4 sm:px-8 lg:px-12">
+      {/* KEY SPECIFICATIONS */}
+      <section className="bg-sky-50 border-b border-sky-100 py-6 sm:py-12 px-4 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
-          <div className="bg-sky-100/70 rounded-3xl p-6 sm:p-8 border border-sky-200 shadow-sm">
-            <h3 className="text-sm sm:text-base font-black uppercase tracking-widest text-sky-900 mb-6 pb-3 border-b border-sky-200">
+          <div className="bg-sky-100/70 rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-sky-200 shadow-sm">
+            <h3 className="text-xs sm:text-base font-black uppercase tracking-widest text-sky-900 mb-4 sm:mb-6 pb-2.5 sm:pb-3 border-b border-sky-200">
               KEY TRIP SPECIFICATIONS
             </h3>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-5">
               {trekData.specifications.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-sky-50 p-4 sm:p-5 rounded-2xl border border-sky-200 shadow-xs flex items-center gap-3 sm:gap-4"
+                  className="bg-sky-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-sky-200 shadow-xs flex items-center gap-2.5 sm:gap-3"
                 >
-                  <span className="text-2xl sm:text-3xl p-2.5 sm:p-3 bg-sky-200/60 rounded-xl shrink-0">
+                  <span className="text-xl sm:text-2xl p-2 sm:p-2.5 bg-sky-200/60 rounded-lg sm:rounded-xl shrink-0">
                     {item.icon}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs sm:text-sm font-black text-sky-700 uppercase tracking-wider truncate">
+                    <p className="text-[10px] sm:text-xs font-black text-sky-700 uppercase tracking-wider">
                       {item.label}
                     </p>
-                    <p className="text-sm sm:text-lg font-black text-[#142957] leading-tight mt-1">
+                    <p className="text-xs sm:text-base font-black text-[#142957] leading-tight mt-0.5 whitespace-normal break-words">
                       {item.value}
                     </p>
                   </div>
@@ -829,38 +1230,38 @@ export default function TrekDetail({ slug: propSlug }) {
         </div>
       </section>
 
-      {/* UPGRADED VISUAL PACKING SHOWCASE */}
-      <section className="bg-sky-50/80 border-b border-sky-200/80 py-10 sm:py-14 px-4 sm:px-8 lg:px-12">
+      {/* VISUAL PACKING SHOWCASE - SMOOTH MOBILE HORIZONTAL SCROLL */}
+      <section className="bg-sky-50/80 border-b border-sky-200/80 py-8 sm:py-14 px-4 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-sky-200">
             <div>
               <span className="text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-3 py-1 rounded-md">
                 ESSENTIAL PACKING GUIDE
               </span>
-              <h2 className="text-2xl sm:text-4xl font-black text-[#142957] mt-2">
+              <h2 className="text-xl sm:text-4xl font-black text-[#142957] mt-2">
                 What Important Gear To Bring With You
               </h2>
             </div>
-            <p className="text-xs sm:text-sm font-black text-sky-800 bg-sky-100/90 px-3 py-1.5 rounded-lg border border-sky-200">
+            <p className="text-xs sm:text-sm font-black text-sky-800 bg-sky-100/90 px-3 py-1.5 rounded-lg border border-sky-200 self-start sm:self-auto">
               📷 Equipment Checklist for Himalayan Treks
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 overflow-x-auto pb-4 sm:pb-0 scrollbar-thin">
             {horizontalPackingItems.map((guide, i) => (
               <div 
                 key={i} 
-                className="bg-sky-100/90 border border-sky-200 p-5 rounded-3xl shadow-xs flex flex-col justify-between hover:bg-sky-200/50 transition duration-300"
+                className="min-w-[240px] sm:min-w-0 flex-1 bg-sky-100/90 border border-sky-200 p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-xs flex flex-col justify-between hover:bg-sky-200/50 transition duration-300 shrink-0"
               >
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl p-2.5 bg-sky-50 rounded-2xl border border-sky-200 shadow-2xs">{guide.icon}</span>
-                    <span className="text-[10px] font-black uppercase tracking-wider text-sky-900 bg-sky-200/80 px-2.5 py-1 rounded-md border border-sky-300">
+                    <span className="text-2xl sm:text-3xl p-2 sm:p-2.5 bg-sky-50 rounded-xl sm:rounded-2xl border border-sky-200 shadow-2xs">{guide.icon}</span>
+                    <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-sky-900 bg-sky-200/80 px-2 py-0.5 rounded-md border border-sky-300">
                       {guide.tag}
                     </span>
                   </div>
                   
-                  <h3 className="text-sm font-black text-[#142957] tracking-wide">
+                  <h3 className="text-xs sm:text-sm font-black text-[#142957] tracking-wide">
                     {guide.category}
                   </h3>
 
@@ -868,7 +1269,7 @@ export default function TrekDetail({ slug: propSlug }) {
                     {guide.pills.map((pill, idx) => (
                       <span 
                         key={idx}
-                        className="text-[11px] font-bold text-slate-800 bg-sky-50/90 px-2.5 py-1 rounded-lg border border-sky-200/80"
+                        className="text-[10px] sm:text-[11px] font-bold text-slate-800 bg-sky-50/90 px-2 py-0.5 rounded-lg border border-sky-200/80"
                       >
                         ✓ {pill}
                       </span>
@@ -883,7 +1284,7 @@ export default function TrekDetail({ slug: propSlug }) {
 
       {/* TAB NAVIGATION */}
       <section className="bg-sky-100/50 border-b border-sky-200 py-3 px-4 sm:px-8 lg:px-12">
-        <div className="max-w-[1400px] mx-auto flex gap-6 sm:gap-10 text-sm sm:text-lg font-black text-[#142957] overflow-x-auto">
+        <div className="max-w-[1400px] mx-auto flex gap-4 sm:gap-10 text-xs sm:text-lg font-black text-[#142957] overflow-x-auto">
           {[
             { id: "itinerary", label: "Day by Day Itinerary" },
             { id: "inclusions", label: "Inclusions & Exclusions" },
@@ -892,7 +1293,7 @@ export default function TrekDetail({ slug: propSlug }) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`py-3 uppercase tracking-wider border-b-4 transition whitespace-nowrap cursor-pointer ${
+              className={`py-2 sm:py-3 uppercase tracking-wider border-b-4 transition whitespace-nowrap cursor-pointer ${
                 activeTab === tab.id ? "border-[#142957] font-black text-[#142957]" : "border-transparent text-slate-500"
               }`}
             >
@@ -903,52 +1304,52 @@ export default function TrekDetail({ slug: propSlug }) {
       </section>
 
       {/* TAB CONTENT */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-16 space-y-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-16 space-y-8 sm:space-y-12">
         
         {/* 1. ITINERARY TAB */}
         {activeTab === "itinerary" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-7 border-l-4 border-sky-300 ml-3 sm:ml-5 space-y-6 sm:space-y-10 pl-6 sm:pl-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            <div className="lg:col-span-7 border-l-3 sm:border-l-4 border-sky-300 ml-2 sm:ml-5 space-y-4 sm:space-y-10 pl-4 sm:pl-10">
               {trekData.itinerary.map((day, idx) => {
                 const isExpanded = expandedDay === idx;
                 return (
                   <div key={idx} className="relative">
-                    <div className="absolute -left-[35px] sm:-left-[51px] top-4 h-7 w-7 sm:h-9 sm:w-9 rounded-full bg-[#142957] text-white text-xs sm:text-base font-black flex items-center justify-center ring-4 ring-sky-100 shadow-md">
+                    <div className="absolute -left-[27px] sm:-left-[51px] top-3.5 sm:top-4 h-6 w-6 sm:h-9 sm:w-9 rounded-full bg-[#142957] text-white text-[10px] sm:text-base font-black flex items-center justify-center ring-4 ring-sky-100 shadow-md">
                       {idx + 1}
                     </div>
 
                     <div
                       onClick={() => setExpandedDay(isExpanded ? null : idx)}
-                      className="bg-sky-100/70 rounded-3xl p-5 sm:p-8 border border-sky-200 shadow-xs space-y-4 cursor-pointer hover:border-sky-400 transition"
+                      className="bg-sky-100/70 rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-sky-200 shadow-xs space-y-3 sm:space-y-4 cursor-pointer hover:border-sky-400 transition"
                     >
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs sm:text-sm font-black text-sky-900 bg-sky-200/80 px-3 py-1 rounded-lg">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+                          <span className="text-[10px] sm:text-sm font-black text-sky-900 bg-sky-200/80 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg w-max">
                             {day.day}
                           </span>
-                          <h3 className="text-sm sm:text-xl font-black text-[#142957] leading-snug">
+                          <h3 className="text-xs sm:text-xl font-black text-[#142957] leading-snug">
                             {day.title}
                           </h3>
                         </div>
-                        <span className="text-sky-700 font-black text-xl sm:text-2xl">
+                        <span className="text-sky-700 font-black text-lg sm:text-2xl shrink-0 pt-0.5">
                           {isExpanded ? "−" : "+"}
                         </span>
                       </div>
 
-                      <p className="text-sm sm:text-base font-medium text-slate-800 leading-relaxed">
+                      <p className="text-xs sm:text-base font-medium text-slate-800 leading-relaxed">
                         {day.details}
                       </p>
 
                       {day.image && isExpanded && (
-                        <div className="pt-3 space-y-2">
-                          <div className="rounded-2xl overflow-hidden h-52 sm:h-72 border border-sky-200">
+                        <div className="pt-2 space-y-2">
+                          <div className="rounded-xl sm:rounded-2xl overflow-hidden h-44 sm:h-72 border border-sky-200">
                             <img src={day.image} alt={day.title} className="w-full h-full object-cover" />
                           </div>
-                          {day.caption && <p className="text-xs sm:text-sm font-bold text-slate-600 italic">📷 {day.caption}</p>}
+                          {day.caption && <p className="text-[10px] sm:text-sm font-bold text-slate-600 italic">📷 {day.caption}</p>}
                         </div>
                       )}
 
-                      <div className="text-xs sm:text-sm font-bold text-slate-700 flex flex-wrap gap-4 bg-sky-50 p-3 rounded-xl border border-sky-200">
+                      <div className="text-[10px] sm:text-sm font-bold text-slate-700 flex flex-wrap gap-3 sm:gap-4 bg-sky-50 p-2.5 sm:p-3 rounded-lg sm:rounded-xl border border-sky-200">
                         <span>🏔️ Altitude: {day.altitude}</span>
                         <span>🚶 Distance: {day.distance}</span>
                       </div>
@@ -960,16 +1361,16 @@ export default function TrekDetail({ slug: propSlug }) {
 
             {/* SIDEBAR SHOWCASE */}
             <div className="lg:col-span-5 lg:sticky top-36">
-              <div className="bg-sky-100/80 rounded-3xl p-6 border border-sky-200 shadow-md space-y-4">
-                <span className="text-xs sm:text-sm font-black text-[#142957] uppercase tracking-widest">Featured Expedition Batch Photo</span>
-                <div className="rounded-2xl overflow-hidden h-72 sm:h-96 border border-sky-200">
+              <div className="bg-sky-100/80 rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sky-200 shadow-md space-y-3 sm:space-y-4">
+                <span className="text-[10px] sm:text-sm font-black text-[#142957] uppercase tracking-widest">Featured Expedition Batch Photo</span>
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-60 sm:h-96 border border-sky-200">
                   <img
                     src={trekData.sideImage || trekData.bannerImage}
                     alt="Expedition Team"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="text-xs sm:text-sm font-semibold text-slate-700 leading-relaxed">Genuine batch photo captured live with our NandaPath team on trail.</p>
+                <p className="text-[11px] sm:text-sm font-semibold text-slate-700 leading-relaxed">Genuine batch photo captured live with our NandaPath team on trail.</p>
               </div>
             </div>
           </div>
@@ -977,29 +1378,29 @@ export default function TrekDetail({ slug: propSlug }) {
 
         {/* 2. INCLUSIONS & EXCLUSIONS TAB */}
         {activeTab === "inclusions" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="bg-emerald-100/60 rounded-3xl p-6 sm:p-8 border border-emerald-200 space-y-4">
-              <h3 className="text-base sm:text-xl font-black text-emerald-950 flex items-center gap-3">
-                <span className="text-2xl">✓</span> What's Included
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-emerald-100/60 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-emerald-200 space-y-4">
+              <h3 className="text-sm sm:text-xl font-black text-emerald-950 flex items-center gap-2.5">
+                <span className="text-xl sm:text-2xl">✓</span> What's Included
               </h3>
-              <ul className="space-y-3 text-sm sm:text-base font-semibold text-slate-800">
+              <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-base font-semibold text-slate-800">
                 {trekData.inclusions?.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-emerald-700 font-bold text-lg">✓</span>
+                  <li key={i} className="flex items-start gap-2.5 sm:gap-3">
+                    <span className="text-emerald-700 font-bold text-base sm:text-lg">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-rose-100/60 rounded-3xl p-6 sm:p-8 border border-rose-200 space-y-4">
-              <h3 className="text-base sm:text-xl font-black text-rose-950 flex items-center gap-3">
-                <span className="text-2xl">✕</span> What's Excluded
+            <div className="bg-rose-100/60 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-rose-200 space-y-4">
+              <h3 className="text-sm sm:text-xl font-black text-rose-950 flex items-center gap-2.5">
+                <span className="text-xl sm:text-2xl">✕</span> What's Excluded
               </h3>
-              <ul className="space-y-3 text-sm sm:text-base font-semibold text-slate-800">
+              <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-base font-semibold text-slate-800">
                 {trekData.exclusions?.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-rose-600 font-bold text-lg">✕</span>
+                  <li key={i} className="flex items-start gap-2.5 sm:gap-3">
+                    <span className="text-rose-600 font-bold text-base sm:text-lg">✕</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -1010,13 +1411,13 @@ export default function TrekDetail({ slug: propSlug }) {
 
         {/* 3. PACKING TAB */}
         {activeTab === "packing" && (
-          <div className="space-y-8">
-            <div className="flex gap-3 border-b border-sky-200 pb-4 overflow-x-auto">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex gap-2 sm:gap-3 border-b border-sky-200 pb-3 overflow-x-auto">
               {Object.keys(commonPackingList).map((key) => (
                 <button
                   key={key}
                   onClick={() => setActivePackingTab(key)}
-                  className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-black uppercase transition whitespace-nowrap cursor-pointer ${
+                  className={`px-4 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl text-[10px] sm:text-sm font-black uppercase transition whitespace-nowrap cursor-pointer ${
                     activePackingTab === key ? "bg-[#142957] text-white shadow-md" : "bg-sky-100 text-slate-700 border border-sky-200"
                   }`}
                 >
@@ -1024,13 +1425,13 @@ export default function TrekDetail({ slug: propSlug }) {
                 </button>
               ))}
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {commonPackingList[activePackingTab].map((item, idx) => (
-                <div key={idx} className="bg-sky-100/70 p-5 sm:p-6 rounded-3xl border border-sky-200 shadow-xs flex items-start gap-4">
-                  <span className="text-3xl p-3 bg-sky-50 rounded-2xl border border-sky-200 shrink-0">{item.icon}</span>
+                <div key={idx} className="bg-sky-100/70 p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-sky-200 shadow-xs flex items-start gap-3 sm:gap-4">
+                  <span className="text-2xl sm:text-3xl p-2.5 sm:p-3 bg-sky-50 rounded-xl sm:rounded-2xl border border-sky-200 shrink-0">{item.icon}</span>
                   <div>
-                    <h3 className="text-sm sm:text-base font-black text-[#142957]">{item.name}</h3>
-                    <p className="text-xs sm:text-sm font-medium text-slate-700 mt-1">{item.desc}</p>
+                    <h3 className="text-xs sm:text-base font-black text-[#142957]">{item.name}</h3>
+                    <p className="text-[11px] sm:text-sm font-medium text-slate-700 mt-0.5 sm:mt-1">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -1039,16 +1440,16 @@ export default function TrekDetail({ slug: propSlug }) {
         )}
 
         {/* EXPLORE SIMILAR TREKS */}
-        <section className="pt-10 border-t border-sky-200">
-          <div className="mb-8">
-            <span className="text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-3 py-1.5 rounded-lg border border-sky-300">
+        <section className="pt-8 sm:pt-10 border-t border-sky-200">
+          <div className="mb-6 sm:mb-8">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-2.5 py-1 rounded-lg border border-sky-300">
               DISCOVER MORE ROUTES
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-[#142957] mt-2">Explore Similar Treks</h2>
-            <p className="text-sm sm:text-base font-semibold text-slate-700 mt-1">Other top-rated Himalayan trekking expeditions in Uttarakhand.</p>
+            <h2 className="text-xl sm:text-4xl font-black text-[#142957] mt-2">Explore Similar Treks</h2>
+            <p className="text-xs sm:text-base font-semibold text-slate-700 mt-1">Other top-rated Himalayan trekking expeditions in Uttarakhand.</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {similarTreksList.map((trek) => (
               <Link
                 key={trek.name}
@@ -1056,18 +1457,18 @@ export default function TrekDetail({ slug: propSlug }) {
                 className="group bg-sky-100/80 rounded-2xl overflow-hidden border border-sky-200 shadow-xs hover:shadow-xl transition flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-44 sm:h-52 overflow-hidden relative">
+                  <div className="h-36 sm:h-52 overflow-hidden relative">
                     <img src={trek.image} alt={trek.name} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                    <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#142957] text-xs font-black px-2.5 py-1 rounded-full">
+                    <span className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-md text-[#142957] text-[10px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
                       {trek.altitude}
                     </span>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-sm sm:text-base font-black text-[#142957]">{trek.name}</h3>
-                    <p className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">{trek.region}</p>
+                  <div className="p-3 sm:p-4">
+                    <h3 className="text-xs sm:text-base font-black text-[#142957]">{trek.name}</h3>
+                    <p className="text-[10px] sm:text-sm font-semibold text-slate-700 mt-0.5 sm:mt-1">{trek.region}</p>
                   </div>
                 </div>
-                <div className="p-4 pt-0 text-xs sm:text-sm font-black text-sky-800 group-hover:translate-x-1 transition">
+                <div className="p-3 sm:p-4 pt-0 text-[10px] sm:text-sm font-black text-sky-800 group-hover:translate-x-1 transition">
                   View Trek &rarr;
                 </div>
               </Link>
@@ -1076,13 +1477,13 @@ export default function TrekDetail({ slug: propSlug }) {
         </section>
 
         {/* ROUTE MAP */}
-        <section className="pt-10 border-t border-sky-200">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#142957] mb-6">Trek Route Map & Geographic Region</h2>
-          <div className="bg-sky-100/70 p-4 sm:p-6 rounded-3xl border border-sky-200 shadow-xs">
+        <section className="pt-8 sm:pt-10 border-t border-sky-200">
+          <h2 className="text-xl sm:text-3xl font-black text-[#142957] mb-4 sm:mb-6">Trek Route Map & Geographic Region</h2>
+          <div className="bg-sky-100/70 p-3 sm:p-6 rounded-2xl sm:rounded-3xl border border-sky-200 shadow-xs">
             <iframe
               title={`${trekData.title} Map`}
               src={trekData.mapUrl}
-              className="w-full h-80 sm:h-[450px] rounded-2xl border border-sky-300"
+              className="w-full h-64 sm:h-[450px] rounded-xl sm:rounded-2xl border border-sky-300"
               loading="lazy"
             />
           </div>
@@ -1111,22 +1512,22 @@ export default function TrekDetail({ slug: propSlug }) {
       {/* WHATSAPP MODAL */}
       {showWhatsAppModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="bg-sky-50 rounded-3xl max-w-sm w-full p-8 shadow-2xl border border-sky-200 relative">
+          <div className="bg-sky-50 rounded-3xl max-w-sm w-full p-6 sm:p-8 shadow-2xl border border-sky-200 relative">
             <button
               onClick={() => setShowWhatsAppModal(false)}
-              className="absolute top-5 right-5 text-slate-500 hover:text-slate-800 font-black text-lg"
+              className="absolute top-4 right-4 text-slate-500 hover:text-slate-800 font-black text-lg"
             >
               ✕
             </button>
             <div className="text-center space-y-4">
-              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">💬</div>
-              <h3 className="text-xl font-black text-[#142957]">Direct WhatsApp Support</h3>
-              <p className="text-xs sm:text-sm font-semibold text-slate-700">Connect with our Lead Expedition Manager for instant booking details.</p>
-              <div className="bg-sky-100 p-4 rounded-2xl border border-sky-200 flex items-center justify-between">
-                <span className="font-mono text-sm sm:text-base font-black text-slate-900">{whatsappNumber}</span>
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">💬</div>
+              <h3 className="text-lg font-black text-[#142957]">Direct WhatsApp Support</h3>
+              <p className="text-xs font-semibold text-slate-700">Connect with our Lead Expedition Manager for instant booking details.</p>
+              <div className="bg-sky-100 p-3 rounded-2xl border border-sky-200 flex items-center justify-between">
+                <span className="font-mono text-xs sm:text-base font-black text-slate-900">{whatsappNumber}</span>
                 <button
                   onClick={handleCopyPhone}
-                  className="text-xs bg-[#142957] text-white px-3.5 py-2 rounded-xl font-black"
+                  className="text-xs bg-[#142957] text-white px-3 py-1.5 rounded-xl font-black"
                 >
                   {copied ? "Copied! ✓" : "Copy"}
                 </button>
@@ -1137,7 +1538,7 @@ export default function TrekDetail({ slug: propSlug }) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-emerald-600 text-white font-black text-xs sm:text-sm py-3.5 rounded-2xl transition"
+                className="block w-full text-center bg-emerald-600 text-white font-black text-xs sm:text-sm py-3 rounded-2xl transition"
               >
                 Open WhatsApp Chat &rarr;
               </a>
@@ -1145,6 +1546,9 @@ export default function TrekDetail({ slug: propSlug }) {
           </div>
         </div>
       )}
+
+      {/* GLOBAL FOOTER */}
+      <Footer />
     </main>
   );
 }
