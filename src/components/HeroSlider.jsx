@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import winterPineTrailImg from "../assets/winter-pine-trail.jpeg";
 import nandaDeviHero from "../assets/hero-mount-nanda.jpeg";
+import hero1 from "../assets/hero1.png";
 
 const searchDatabase = [
   { name: "Kedarkantha Trek", region: "Uttarakhand", type: "Trek", link: "/kedarkantha" },
@@ -42,7 +43,7 @@ const slideItems = [
     tagline: "CUSTOM GROUP TRIPS",
     heading: "Custom &\nPrivate Treks",
     description: "Trekking with friends or family? We plan custom routes, dates, and camping setups tailored for your group.",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1920&q=85",
+    image: hero1,
   },
 ];
 
@@ -100,10 +101,10 @@ export default function HeroSlider() {
             style={{
               backgroundImage: `url(${slide.image})`,
               backgroundSize: "cover",
-              backgroundPosition: "top center", // Keeps peak top visible, crops bottom if needed!
+              backgroundPosition: "top center",
             }}
           >
-            {/* OVERLAY: Keeps deep navy text clearly readable over bright snow */}
+            {/* OVERLAY: Keeps text readable over high contrast mountain photos */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 sm:via-white/70 to-white/20 sm:to-transparent" />
 
             <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-12 lg:px-16 pt-28 sm:pt-24 pb-16 sm:pb-24 h-full flex flex-col justify-center">
@@ -113,7 +114,6 @@ export default function HeroSlider() {
                   {slide.tagline}
                 </p>
 
-                {/* HEADING FONT SIZE INCREASED BY ONE LEVEL */}
                 <h1 className="text-3xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-[#142957] whitespace-pre-line">
                   {slide.heading}
                 </h1>
