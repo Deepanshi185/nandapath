@@ -4,7 +4,8 @@ import nandaPathLogo from "../assets/nanda-path1.jpg";
 
 export default function Navbar() {
   const [isOffbeatOpen, setIsOffbeatOpen] = useState(false);
-  const [isUttarakhandOpen, setIsUttarakhandOpen] = useState(false);
+  const [isGarhwalOpen, setIsGarhwalOpen] = useState(false);
+  const [isKumaonOpen, setIsKumaonOpen] = useState(false);
   const [isHimachalOpen, setIsHimachalOpen] = useState(false);
   const [isKashmirOpen, setIsKashmirOpen] = useState(false);
   const [isToursOpen, setIsToursOpen] = useState(false);
@@ -25,24 +26,24 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white border-b border-slate-200/80 shadow-xs transition-all font-sans">
-      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8 h-22 sm:h-26 flex items-center justify-between">
         
-        {/* LOGO - Fits Seamlessly */}
+        {/* LOGO - INCREASED SIZE */}
         <Link to="/" onClick={closeMobileMenu} className="flex items-center gap-2 shrink-0 my-auto">
           <img
             src={nandaPathLogo}
             alt="NandaPath Adventures"
-            className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto object-contain transition-transform duration-200 hover:scale-105"
+            className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain transition-transform duration-200 hover:scale-105"
           />
         </Link>
 
         {/* DESKTOP NAVIGATION LINKS */}
-        <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-sm lg:text-[15px] font-extrabold text-[#142957]">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-sm lg:text-[15px] font-extrabold text-[#142957]">
           <Link to="/" className="hover:text-sky-600 transition">
             Home
           </Link>
 
-          {/* 0. OFFBEAT TREKS DROPDOWN */}
+          {/* OFFBEAT DROPDOWN */}
           <div
             className="relative"
             onMouseEnter={() => setIsOffbeatOpen(true)}
@@ -63,7 +64,6 @@ export default function Navbar() {
 
             {isOffbeatOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-[520px] bg-sky-50 rounded-2xl shadow-xl border border-sky-200/80 p-5 grid grid-cols-2 gap-6 z-50">
-                {/* GARHWAL OFFBEAT */}
                 <div>
                   <div className="border-b border-sky-200 pb-2 mb-2.5">
                     <Link 
@@ -85,7 +85,6 @@ export default function Navbar() {
                   </ul>
                 </div>
 
-                {/* KUMAON OFFBEAT */}
                 <div>
                   <div className="border-b border-sky-200 pb-2 mb-2.5">
                     <Link 
@@ -107,73 +106,76 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* 1. UTTARAKHAND DROPDOWN */}
+          {/* 1. GARHWAL DIRECT HEADER ITEM */}
           <div
             className="relative"
-            onMouseEnter={() => setIsUttarakhandOpen(true)}
-            onMouseLeave={() => setIsUttarakhandOpen(false)}
+            onMouseEnter={() => setIsGarhwalOpen(true)}
+            onMouseLeave={() => setIsGarhwalOpen(false)}
           >
             <Link
-              to="/uttarakhand"
+              to="/garhwal"
               className="flex items-center gap-1 hover:text-sky-600 py-6 transition cursor-pointer"
             >
-              <span>Uttarakhand</span>
+              <span>Garhwal</span>
               <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
               </svg>
             </Link>
 
-            {isUttarakhandOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[540px] bg-sky-50 rounded-2xl shadow-xl border border-sky-200/80 p-5 grid grid-cols-2 gap-6 z-50">
-                {/* GARHWAL REGION */}
-                <div>
-                  <div className="border-b border-sky-200 pb-2 mb-2.5">
-                    <Link 
-                      to="/garhwal" 
-                      className="text-xs font-black uppercase tracking-wider text-sky-800 hover:text-[#142957] flex items-center justify-between transition"
-                    >
-                      <span>Garhwal Region</span>
-                      <span>&rarr;</span>
-                    </Link>
-                  </div>
-                  <ul className="space-y-2 text-xs font-bold text-slate-800">
-                    <li><Link to="/kedarkantha" className="hover:text-sky-600 hover:underline">Kedarkantha Trek</Link></li>
-                    <li><Link to="/har-ki-dun" className="hover:text-sky-600 hover:underline">Har Ki Dun Trek</Link></li>
-                    <li><Link to="/offbeat/run-sara-lake" className="hover:text-sky-600 hover:underline">Run Sara Lake Trek</Link></li>
-                    <li><Link to="/valley-of-flowers" className="hover:text-sky-600 hover:underline">Valley of Flowers</Link></li>
-                    <li><Link to="/brahmatal" className="hover:text-sky-600 hover:underline">Brahmatal Trek</Link></li>
-                    <li><Link to="/bali-pass" className="hover:text-sky-600 hover:underline">Bali Pass Trek</Link></li>
-                    <li><Link to="/gaumukh-tapovan" className="hover:text-sky-600 hover:underline">Gaumukh Tapovan Trek</Link></li>
-                    <li><Link to="/kwari-pass" className="hover:text-sky-600 hover:underline">Kwari Pass Trek</Link></li>
-                    <li><Link to="/roopkund" className="hover:text-sky-600 hover:underline">Roopkund Trek</Link></li>
-                  </ul>
-                </div>
-
-                {/* KUMAON REGION */}
-                <div>
-                  <div className="border-b border-sky-200 pb-2 mb-2.5">
-                    <Link 
-                      to="/kumaon" 
-                      className="text-xs font-black uppercase tracking-wider text-sky-800 hover:text-[#142957] flex items-center justify-between transition"
-                    >
-                      <span>Kumaon Region</span>
-                      <span>&rarr;</span>
-                    </Link>
-                  </div>
-                  <ul className="space-y-2 text-xs font-bold text-slate-800">
-                    <li><Link to="/offbeat/namik-glacier" className="hover:text-sky-600 hover:underline">Namik Glacier Trek</Link></li>
-                    <li><Link to="/offbeat/kafni-glacier" className="hover:text-sky-600 hover:underline">Kafni Glacier Trek</Link></li>
-                    <li><Link to="/pindari-glacier" className="hover:text-sky-600 hover:underline">Pindari Glacier Trek</Link></li>
-                    <li><Link to="/milam-glacier" className="hover:text-sky-600 hover:underline">Milam Glacier Trek</Link></li>
-                    <li><Link to="/sundardunga-glacier" className="hover:text-sky-600 hover:underline">Sundardunga Glacier Trek</Link></li>
-                    <li><Link to="/ranthang-kharak" className="hover:text-sky-600 hover:underline">Ranthang Kharak Trek</Link></li>
-                  </ul>
-                </div>
+            {isGarhwalOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-sky-50 rounded-2xl shadow-xl border border-sky-200/80 p-5 z-50">
+                <h4 className="text-xs font-black uppercase tracking-wider text-sky-800 mb-2.5 border-b border-sky-200 pb-1.5">
+                  Garhwal Region Treks
+                </h4>
+                <ul className="space-y-2 text-xs font-bold text-slate-800">
+                  <li><Link to="/kedarkantha" className="hover:text-sky-600 hover:underline block">Kedarkantha Trek</Link></li>
+                  <li><Link to="/har-ki-dun" className="hover:text-sky-600 hover:underline block">Har Ki Dun Trek</Link></li>
+                  <li><Link to="/offbeat/run-sara-lake" className="hover:text-sky-600 hover:underline block">Run Sara Lake Trek</Link></li>
+                  <li><Link to="/valley-of-flowers" className="hover:text-sky-600 hover:underline block">Valley of Flowers</Link></li>
+                  <li><Link to="/brahmatal" className="hover:text-sky-600 hover:underline block">Brahmatal Trek</Link></li>
+                  <li><Link to="/bali-pass" className="hover:text-sky-600 hover:underline block">Bali Pass Trek</Link></li>
+                  <li><Link to="/gaumukh-tapovan" className="hover:text-sky-600 hover:underline block">Gaumukh Tapovan Trek</Link></li>
+                  <li><Link to="/kwari-pass" className="hover:text-sky-600 hover:underline block">Kwari Pass Trek</Link></li>
+                  <li><Link to="/roopkund" className="hover:text-sky-600 hover:underline block">Roopkund Trek</Link></li>
+                </ul>
               </div>
             )}
           </div>
 
-          {/* 2. HIMACHAL DROPDOWN */}
+          {/* 2. KUMAON DIRECT HEADER ITEM */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsKumaonOpen(true)}
+            onMouseLeave={() => setIsKumaonOpen(false)}
+          >
+            <Link
+              to="/kumaon"
+              className="flex items-center gap-1 hover:text-sky-600 py-6 transition cursor-pointer"
+            >
+              <span>Kumaon</span>
+              <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+
+            {isKumaonOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] bg-sky-50 rounded-2xl shadow-xl border border-sky-200/80 p-5 z-50">
+                <h4 className="text-xs font-black uppercase tracking-wider text-sky-800 mb-2.5 border-b border-sky-200 pb-1.5">
+                  Kumaon Region Treks
+                </h4>
+                <ul className="space-y-2 text-xs font-bold text-slate-800">
+                  <li><Link to="/offbeat/namik-glacier" className="hover:text-sky-600 hover:underline block">Namik Glacier Trek</Link></li>
+                  <li><Link to="/offbeat/kafni-glacier" className="hover:text-sky-600 hover:underline block">Kafni Glacier Trek</Link></li>
+                  <li><Link to="/pindari-glacier" className="hover:text-sky-600 hover:underline block">Pindari Glacier Trek</Link></li>
+                  <li><Link to="/milam-glacier" className="hover:text-sky-600 hover:underline block">Milam Glacier Trek</Link></li>
+                  <li><Link to="/sundardunga-glacier" className="hover:text-sky-600 hover:underline block">Sundardunga Glacier Trek</Link></li>
+                  <li><Link to="/ranthang-kharak" className="hover:text-sky-600 hover:underline block">Ranthang Kharak Trek</Link></li>
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* HIMACHAL */}
           <div
             className="relative"
             onMouseEnter={() => setIsHimachalOpen(true)}
@@ -218,7 +220,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* 3. JAMMU & KASHMIR DROPDOWN */}
+          {/* JAMMU & KASHMIR */}
           <div
             className="relative"
             onMouseEnter={() => setIsKashmirOpen(true)}
@@ -248,7 +250,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* 4. OUR TOURS DROPDOWN */}
+          {/* OUR TOURS */}
           <div
             className="relative"
             onMouseEnter={() => setIsToursOpen(true)}
@@ -381,18 +383,17 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* MOBILE UTTARAKHAND */}
+          {/* MOBILE GARHWAL */}
           <div>
             <button
-              onClick={() => toggleMobileSubmenu("uttarakhand")}
+              onClick={() => toggleMobileSubmenu("garhwal")}
               className="w-full flex items-center justify-between font-extrabold text-[#142957] text-sm py-2 border-b border-sky-200 cursor-pointer"
             >
-              <span>Uttarakhand Treks</span>
-              <span>{activeMobileSubmenu === "uttarakhand" ? "−" : "+"}</span>
+              <span>Garhwal Treks</span>
+              <span>{activeMobileSubmenu === "garhwal" ? "−" : "+"}</span>
             </button>
-            {activeMobileSubmenu === "uttarakhand" && (
+            {activeMobileSubmenu === "garhwal" && (
               <div className="pl-3 py-2 space-y-2 text-xs font-bold text-slate-800 bg-sky-100/80 rounded-xl mt-2 p-3 border border-sky-200">
-                <p className="font-black text-sky-800 uppercase text-[10px] tracking-wider">Garhwal Region</p>
                 <Link to="/kedarkantha" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Kedarkantha Trek</Link>
                 <Link to="/har-ki-dun" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Har Ki Dun Trek</Link>
                 <Link to="/offbeat/run-sara-lake" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Run Sara Lake Trek</Link>
@@ -402,8 +403,21 @@ export default function Navbar() {
                 <Link to="/gaumukh-tapovan" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Gaumukh Tapovan Trek</Link>
                 <Link to="/kwari-pass" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Kwari Pass Trek</Link>
                 <Link to="/roopkund" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Roopkund Trek</Link>
+              </div>
+            )}
+          </div>
 
-                <p className="font-black text-sky-800 uppercase text-[10px] tracking-wider pt-2 border-t border-sky-200">Kumaon Region</p>
+          {/* MOBILE KUMAON */}
+          <div>
+            <button
+              onClick={() => toggleMobileSubmenu("kumaon")}
+              className="w-full flex items-center justify-between font-extrabold text-[#142957] text-sm py-2 border-b border-sky-200 cursor-pointer"
+            >
+              <span>Kumaon Treks</span>
+              <span>{activeMobileSubmenu === "kumaon" ? "−" : "+"}</span>
+            </button>
+            {activeMobileSubmenu === "kumaon" && (
+              <div className="pl-3 py-2 space-y-2 text-xs font-bold text-slate-800 bg-sky-100/80 rounded-xl mt-2 p-3 border border-sky-200">
                 <Link to="/offbeat/namik-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Namik Glacier Trek</Link>
                 <Link to="/offbeat/kafni-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Kafni Glacier Trek</Link>
                 <Link to="/pindari-glacier" onClick={closeMobileMenu} className="block hover:text-sky-600 py-0.5">Pindari Glacier Trek</Link>
