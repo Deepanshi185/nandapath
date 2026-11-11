@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -714,7 +714,7 @@ const treksDatabase = {
       },
       {
         day: "Day 4",
-        title: "Trek from Ali Bugyal to Ghora Lotani via Bedni Bugyal",
+        title: "Trek from Didna to Ali Bugyal to Ghora Lotani via Bedni Bugyal",
         distance: "7 km trek",
         altitude: "12,800 ft / 3,900 m",
         highlights: "Views of Mt. Trishul & Nanda Ghunti.",
@@ -1084,7 +1084,13 @@ const horizontalPackingItems = [
 
 export default function TrekDetail({ slug: propSlug }) {
   const { slug: urlSlug } = useParams();
+  const location = useLocation();
   const rawSlug = (propSlug || urlSlug || "").toLowerCase().trim();
+
+  // AUTOMATIC SCROLL TO TOP ON ROUTE CHANGE / SLUG CHANGE
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname, rawSlug]);
 
   const trekData = treksDatabase[rawSlug] || {
     title: `${rawSlug.replace(/-/g, " ").toUpperCase()} Expedition`,
@@ -1163,7 +1169,7 @@ export default function TrekDetail({ slug: propSlug }) {
   };
 
   return (
-    <main className="min-h-screen bg-sky-50/50 font-sans text-slate-800 pt-0 pb-24 sm:pb-0 relative">
+    <main className="min-h-screen bg-sky-50/50 font-sans text-slate-800 pt-0 pb-24 sm:pb-0 relative tracking-normal">
       <Navbar />
 
       {/* HERO BANNER */}
@@ -1171,10 +1177,10 @@ export default function TrekDetail({ slug: propSlug }) {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div className="lg:col-span-7 space-y-3 sm:space-y-6">
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-              <span className="text-[10px] sm:text-sm font-black text-emerald-300 uppercase tracking-widest bg-emerald-500/20 px-2.5 py-1 rounded-lg border border-emerald-400/40">
-                TRIPOTUDE EXPEDITION
+              <span className="text-[10px] sm:text-xs font-black text-emerald-300 uppercase tracking-normal bg-emerald-500/20 px-3 py-1 rounded-lg border border-emerald-400/40">
+                HIMALAYAN EXPEDITION
               </span>
-              <span className="text-[10px] sm:text-sm font-extrabold text-amber-300 uppercase tracking-widest bg-white/10 px-2.5 py-1 rounded-lg border border-white/20">
+              <span className="text-[10px] sm:text-xs font-extrabold text-amber-300 uppercase tracking-normal bg-white/10 px-3 py-1 rounded-lg border border-white/20">
                 {trekData.region}
               </span>
             </div>
@@ -1202,7 +1208,7 @@ export default function TrekDetail({ slug: propSlug }) {
       <section className="bg-sky-50 border-b border-sky-100 py-6 sm:py-12 px-4 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
           <div className="bg-sky-100/70 rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-sky-200 shadow-sm">
-            <h3 className="text-xs sm:text-base font-black uppercase tracking-widest text-sky-900 mb-4 sm:mb-6 pb-2.5 sm:pb-3 border-b border-sky-200">
+            <h3 className="text-xs sm:text-base font-black uppercase tracking-normal text-sky-900 mb-4 sm:mb-6 pb-2.5 sm:pb-3 border-b border-sky-200">
               KEY TRIP SPECIFICATIONS
             </h3>
             
@@ -1216,7 +1222,7 @@ export default function TrekDetail({ slug: propSlug }) {
                     {item.icon}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[10px] sm:text-xs font-black text-sky-700 uppercase tracking-wider">
+                    <p className="text-[10px] sm:text-xs font-black text-sky-700 uppercase tracking-normal">
                       {item.label}
                     </p>
                     <p className="text-xs sm:text-base font-black text-[#142957] leading-tight mt-0.5 whitespace-normal break-words">
@@ -1230,12 +1236,12 @@ export default function TrekDetail({ slug: propSlug }) {
         </div>
       </section>
 
-      {/* VISUAL PACKING SHOWCASE - SMOOTH MOBILE HORIZONTAL SCROLL */}
+      {/* VISUAL PACKING SHOWCASE */}
       <section className="bg-sky-50/80 border-b border-sky-200/80 py-8 sm:py-14 px-4 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-sky-200">
             <div>
-              <span className="text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-3 py-1 rounded-md">
+              <span className="text-xs font-black uppercase tracking-normal text-sky-900 bg-sky-200 px-3 py-1 rounded-md">
                 ESSENTIAL PACKING GUIDE
               </span>
               <h2 className="text-xl sm:text-4xl font-black text-[#142957] mt-2">
@@ -1256,12 +1262,12 @@ export default function TrekDetail({ slug: propSlug }) {
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-2xl sm:text-3xl p-2 sm:p-2.5 bg-sky-50 rounded-xl sm:rounded-2xl border border-sky-200 shadow-2xs">{guide.icon}</span>
-                    <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-sky-900 bg-sky-200/80 px-2 py-0.5 rounded-md border border-sky-300">
+                    <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-normal text-sky-900 bg-sky-200/80 px-2 py-0.5 rounded-md border border-sky-300">
                       {guide.tag}
                     </span>
                   </div>
                   
-                  <h3 className="text-xs sm:text-sm font-black text-[#142957] tracking-wide">
+                  <h3 className="text-xs sm:text-sm font-black text-[#142957]">
                     {guide.category}
                   </h3>
 
@@ -1293,7 +1299,7 @@ export default function TrekDetail({ slug: propSlug }) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`py-2 sm:py-3 uppercase tracking-wider border-b-4 transition whitespace-nowrap cursor-pointer ${
+              className={`py-2 sm:py-3 uppercase tracking-normal border-b-4 transition whitespace-nowrap cursor-pointer ${
                 activeTab === tab.id ? "border-[#142957] font-black text-[#142957]" : "border-transparent text-slate-500"
               }`}
             >
@@ -1362,7 +1368,7 @@ export default function TrekDetail({ slug: propSlug }) {
             {/* SIDEBAR SHOWCASE */}
             <div className="lg:col-span-5 lg:sticky top-36">
               <div className="bg-sky-100/80 rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-sky-200 shadow-md space-y-3 sm:space-y-4">
-                <span className="text-[10px] sm:text-sm font-black text-[#142957] uppercase tracking-widest">Featured Expedition Batch Photo</span>
+                <span className="text-[10px] sm:text-sm font-black text-[#142957] uppercase tracking-normal">Featured Expedition Batch Photo</span>
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden h-60 sm:h-96 border border-sky-200">
                   <img
                     src={trekData.sideImage || trekData.bannerImage}
@@ -1442,7 +1448,7 @@ export default function TrekDetail({ slug: propSlug }) {
         {/* EXPLORE SIMILAR TREKS */}
         <section className="pt-8 sm:pt-10 border-t border-sky-200">
           <div className="mb-6 sm:mb-8">
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-sky-900 bg-sky-200 px-2.5 py-1 rounded-lg border border-sky-300">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-normal text-sky-900 bg-sky-200 px-2.5 py-1 rounded-lg border border-sky-300">
               DISCOVER MORE ROUTES
             </span>
             <h2 className="text-xl sm:text-4xl font-black text-[#142957] mt-2">Explore Similar Treks</h2>
@@ -1454,22 +1460,25 @@ export default function TrekDetail({ slug: propSlug }) {
               <Link
                 key={trek.name}
                 to={trek.link}
-                className="group bg-sky-100/80 rounded-2xl overflow-hidden border border-sky-200 shadow-xs hover:shadow-xl transition flex flex-col justify-between"
+                className="group bg-sky-100/80 rounded-2xl overflow-hidden border border-sky-200 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer touch-manipulation active:scale-[0.98]"
               >
                 <div>
                   <div className="h-36 sm:h-52 overflow-hidden relative">
                     <img src={trek.image} alt={trek.name} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                    <span className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-md text-[#142957] text-[10px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
+                    <span className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-md text-[#142957] text-[10px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-2xs">
                       {trek.altitude}
                     </span>
                   </div>
                   <div className="p-3 sm:p-4">
-                    <h3 className="text-xs sm:text-base font-black text-[#142957]">{trek.name}</h3>
+                    <h3 className="text-xs sm:text-base font-black text-[#142957] group-hover:text-sky-600 transition">
+                      {trek.name}
+                    </h3>
                     <p className="text-[10px] sm:text-sm font-semibold text-slate-700 mt-0.5 sm:mt-1">{trek.region}</p>
                   </div>
                 </div>
-                <div className="p-3 sm:p-4 pt-0 text-[10px] sm:text-sm font-black text-sky-800 group-hover:translate-x-1 transition">
-                  View Trek &rarr;
+                <div className="p-3 sm:p-4 pt-0 text-[10px] sm:text-sm font-black text-sky-800 group-hover:translate-x-1 transition flex items-center gap-1">
+                  <span>View Trek</span>
+                  <span>&rarr;</span>
                 </div>
               </Link>
             ))}

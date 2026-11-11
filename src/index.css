@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@layer base {
+  html, body {
+    letter-spacing: 0px !important;
+  }
+
+  * {
+    letter-spacing: 0px !important;
+  }
+}
